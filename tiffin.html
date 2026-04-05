@@ -29,7 +29,7 @@
         </div>
         <div class="flex items-center gap-1.5">
           <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
-          <span>Open: 5 PM – 2 AM</span>
+          <span data-restaurant-text="timings"></span>
         </div>
       </div>
       <div class="flex items-center gap-6">
@@ -37,11 +37,10 @@
           <span class="material-symbols-outlined text-[14px] text-primary">call</span>
           <span>Call Now</span>
         </a>
-        <a class="flex items-center gap-1.5 hover:text-secondary-fixed transition-colors"
-          href="#" data-restaurant-link="whatsapp" data-override-text="WhatsApp">
-          <span class="material-symbols-outlined text-[14px] text-primary">chat</span>
-          <span>WhatsApp</span>
-        </a>
+                    <a class="flex items-center gap-1.5 hover:text-green-400 transition-colors" href="#" data-restaurant-link="whatsapp" data-override-text="WhatsApp">
+                        <span class="material-symbols-outlined text-[14px] text-green-500">chat</span>
+                        <span>WhatsApp</span>
+                    </a>
       </div>
     </div>
     <nav class="flex justify-between items-center px-6 md:px-12 w-full max-w-none py-3">
@@ -56,10 +55,10 @@
         <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
           href="tiffin.html">tiffin</a>
       </div>
-      <button
+      <a href="zomato.html"
         class="px-6 py-2.5 rounded-lg font-headline text-xs tracking-widest uppercase active:scale-90 transition-transform hover:shadow-lg hover:shadow-primary/20 bg-secondary-fixed text-on-secondary-fixed font-bold scale-100">
         order on zomato
-      </button>
+      </a>
     </nav>
   </header>
 
@@ -82,10 +81,10 @@
                         Subscribe Now
                         <span class="material-symbols-outlined">arrow_forward</span>
 </button>
-<a class="border border-outline-variant/30 text-on-background px-8 py-4 rounded-full font-headline font-extrabold uppercase tracking-tight flex items-center gap-2 hover:bg-surface-bright transition-colors" href="#" data-restaurant-link="whatsapp">
-                        Chat on WhatsApp
+<a class="bg-green-500 text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 hover:scale-105 transition-all duration-300" href="#" data-restaurant-link="whatsapp">
                         <span class="material-symbols-outlined">chat</span>
-</a>
+                        WhatsApp
+                        </a>
 </div>
 </div>
 <div class="relative">
@@ -302,7 +301,7 @@
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-secondary-fixed mt-1">location_on</span>
               <div>
-                <p class="text-on-surface-variant">Ground Floor, Near Chocolate Circle,<br/>Adajan, Surat, Gujarat 395009</p>
+                <p class="text-on-surface-variant" data-restaurant-text="address"></p>
                 <a class="inline-flex items-center gap-2 text-primary font-semibold uppercase tracking-[0.3em] text-xs hover:text-secondary-fixed transition-colors"
                   href="#" data-restaurant-link="maps" data-override-text="View Location">
                   View Location
@@ -315,7 +314,7 @@
             </div>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-secondary-fixed">schedule</span>
-              <span class="text-on-surface-variant">Daily: 5 PM – 2 AM</span>
+              <span class="text-on-surface-variant" data-restaurant-text="timings"></span>
             </div>
           </div>
         </div>

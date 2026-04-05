@@ -33,7 +33,7 @@
                 </div>
                 <div class="flex items-center gap-1.5">
                     <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
-                    <span>Open: 5 PM – 2 AM</span>
+                    <span data-restaurant-text="timings"></span>
                 </div>
             </div>
             <div class="flex items-center gap-6">
@@ -63,9 +63,9 @@
                 <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
                     href="tiffin.html">tiffin</a>
             </div>
-            <button
+            <a href="zomato.html"
                 class="px-6 py-2.5 rounded-lg font-headline text-xs tracking-widest uppercase active:scale-90 transition-transform hover:shadow-lg hover:shadow-primary/20 bg-secondary-fixed text-on-secondary-fixed font-bold scale-100">order
-                on zomato</button>
+                on zomato</a>
         </nav>
     </header>
     <main class="pt-20">
@@ -86,14 +86,10 @@
                             href="#" data-restaurant-link="phone">
                             <span class="material-symbols-outlined">call</span> Call Now
                         </a>
-                        <a class="bg-[#25D366] text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 hover:scale-105 transition-transform"
+                        <a class="bg-green-500 text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 hover:scale-105 transition-all duration-300"
                             href="#" data-restaurant-link="whatsapp">
-                            <span class="material-symbols-outlined">chat</span> Chat on WhatsApp
+                            <span class="material-symbols-outlined">chat</span> WhatsApp
                         </a>
-                        <button
-                            class="bg-surface-bright text-primary px-8 py-4 rounded-full font-label font-bold text-lg border border-outline-variant/30 hover:bg-surface-container-highest transition-colors">
-                            Get Catering Quote
-                        </button>
                     </div>
                 </div>
             </div>
@@ -627,14 +623,14 @@
                                     class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center">
                                     <span class="material-symbols-outlined text-primary">call</span>
                                 </div>
-                                <span class="text-2xl font-headline font-bold text-on-surface">+91 98903 56776</span>
+                                <span class="text-2xl font-headline font-bold text-on-surface" data-restaurant-text="phone"></span>
                             </div>
                             <div class="flex items-center gap-4">
                                 <div
                                     class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center">
                                     <span class="material-symbols-outlined text-primary">location_on</span>
                                 </div>
-                                <span class="text-xl text-on-surface-variant">Near Chocolate Circle, Surat</span>
+                                <span class="text-xl text-on-surface-variant" data-restaurant-text="location"></span>
                             </div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-4">
@@ -642,9 +638,9 @@
                                 href="#" data-restaurant-link="phone">
                                 Call Now
                             </a>
-                            <a class="bg-[#25D366] text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2"
+                            <a class="bg-green-500 text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 hover:scale-105 transition-all duration-300"
                                 href="#" data-restaurant-link="whatsapp">
-                                <span class="material-symbols-outlined">chat</span> Chat on WhatsApp
+                                <span class="material-symbols-outlined">chat</span> WhatsApp
                             </a>
                         </div>
                     </div>
@@ -679,7 +675,7 @@
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-secondary-fixed mt-1">location_on</span>
               <div>
-                <p class="text-on-surface-variant">Ground Floor, Near Chocolate Circle,<br/>Adajan, Surat, Gujarat 395009</p>
+                <p class="text-on-surface-variant" data-restaurant-text="address"></p>
                 <a class="inline-flex items-center gap-2 text-primary font-semibold uppercase tracking-[0.3em] text-xs hover:text-secondary-fixed transition-colors"
                   href="#" data-restaurant-link="maps" data-override-text="View Location">
                   View Location
@@ -692,7 +688,7 @@
             </div>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-secondary-fixed">schedule</span>
-              <span class="text-on-surface-variant">Daily: 5 PM – 2 AM</span>
+              <span class="text-on-surface-variant" data-restaurant-text="timings"></span>
             </div>
           </div>
         </div>

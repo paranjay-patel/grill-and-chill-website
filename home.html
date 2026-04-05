@@ -30,7 +30,7 @@
         </div>
         <div class="flex items-center gap-1.5">
           <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
-          <span>Open: 5 PM – 2 AM</span>
+          <span data-restaurant-text="timings"></span>
         </div>
       </div>
       <div class="flex items-center gap-6">
@@ -38,9 +38,9 @@
           <span class="material-symbols-outlined text-[14px] text-primary">call</span>
           <span>Call Now</span>
         </a>
-        <a class="flex items-center gap-1.5 hover:text-secondary-fixed transition-colors"
+        <a class="flex items-center gap-1.5 hover:text-green-400 transition-colors"
           href="#" data-restaurant-link="whatsapp" data-override-text="WhatsApp">
-          <span class="material-symbols-outlined text-[14px] text-primary">chat</span>
+          <span class="material-symbols-outlined text-[14px] text-green-500">chat</span>
           <span>WhatsApp</span>
         </a>
       </div>
@@ -58,9 +58,9 @@
         <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
           href="tiffin.html">tiffin</a>
       </div>
-      <button
+      <a href="zomato.html"
         class="px-6 py-2.5 rounded-lg font-headline text-xs tracking-widest uppercase active:scale-90 transition-transform hover:shadow-lg hover:shadow-primary/20 bg-secondary-fixed text-on-secondary-fixed font-bold scale-100">order
-        on zomato</button>
+        on zomato</a>
     </nav>
   </header>
   <main class="pt-20">
@@ -75,7 +75,7 @@
       <div class="relative z-10 max-w-4xl py-12">
         <span
           class="inline-block px-4 py-1 mb-4 border border-outline-variant text-secondary-fixed font-label text-xs tracking-[0.3em] uppercase rounded-full">EST.
-          2024</span>
+          2019</span>
         <h1
           class="font-headline text-6xl md:text-8xl text-on-surface leading-[0.9] tracking-tighter mb-6 uppercase italic">
           The Art of <br />
@@ -135,7 +135,7 @@
               <p class="font-body text-on-surface-variant mt-3 mb-6">Sizzling wok magic, fresh dim sum and bold sauces
                 shaped by balance, texture and speed.</p>
               <a href="menu.html#chinese"
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-primary text-primary font-bold tracking-widest uppercase hover:bg-primary/10 transition">Explore</a>
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-on-primary font-bold tracking-widest uppercase hover:bg-primary-fixed transition">Explore</a>
             </div>
           </article>
 
@@ -152,7 +152,7 @@
               <p class="font-body text-on-surface-variant mt-3 mb-6">Modern European plates with grilled proteins,
                 seasonal vegetables and elegant sauce pairings.</p>
               <a href="menu.html#chicken"
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-primary text-primary font-bold tracking-widest uppercase hover:bg-primary/10 transition">Explore</a>
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-on-primary font-bold tracking-widest uppercase hover:bg-primary-fixed transition">Explore</a>
             </div>
           </article>
         </div>
@@ -425,14 +425,14 @@
             </div>
             <div class="space-y-4">
               <a class="flex items-center gap-3 text-on-secondary-fixed-variant hover:text-on-secondary-fixed transition-colors"
-                href="tel:+">
+                href="#" data-restaurant-link="phone">
                 <span class="material-symbols-outlined text-xl">call</span>
-                <span class="font-headline text-sm tracking-wider">+91 98765 43210</span>
+                <span class="font-headline text-sm tracking-wider" data-restaurant-text="phone"></span>
               </a>
               <a class="flex items-center gap-3 text-on-secondary-fixed-variant hover:text-on-secondary-fixed transition-colors"
-                href="#">
+                href="#" data-restaurant-link="email">
                 <span class="material-symbols-outlined text-xl">mail</span>
-                <span class="font-headline text-sm tracking-wider">hello@grillnchill.com</span>
+                <span class="font-headline text-sm tracking-wider" data-restaurant-text="email"></span>
               </a>
               <button
                 class="w-full mt-4 bg-on-secondary-fixed text-secondary-fixed py-3 rounded-lg font-headline text-xs tracking-widest uppercase hover:opacity-90 transition-opacity">Book
@@ -464,7 +464,7 @@
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-secondary-fixed mt-1">location_on</span>
               <div>
-                <p class="text-on-surface-variant">Ground Floor, Near Chocolate Circle,<br/>Adajan, Surat, Gujarat 395009</p>
+                <p class="text-on-surface-variant" data-restaurant-text="address"></p>
                 <a class="inline-flex items-center gap-2 text-primary font-semibold uppercase tracking-[0.3em] text-xs hover:text-secondary-fixed transition-colors"
                   href="#" data-restaurant-link="maps" data-override-text="View Location">
                   View Location
@@ -477,7 +477,7 @@
             </div>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-secondary-fixed">schedule</span>
-              <span class="text-on-surface-variant">Daily: 5 PM – 2 AM</span>
+              <span class="text-on-surface-variant" data-restaurant-text="timings"></span>
             </div>
           </div>
         </div>

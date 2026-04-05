@@ -1,11 +1,14 @@
 const RESTAURANT = {
   name: "Grill & Chill",
-  phone: "918980356776",
+  phone: "+918980356776",
   displayPhone: "89803 56776",
   email: "grillandchill4321@gmail.com",
   instagram: "https://www.instagram.com/grill.and.chill_/",
   mapsLink: "https://www.google.com/maps/place/Grill+%26+Chill/@21.146208,72.759325",
-  timings: "11:00 AM – 11:00 PM (Everyday)",
+  location: "Surat",
+  address: "Besides dumas resort, near V R mall circle, new magdalla road, Magdalla, Surat, Gujarat 395007",
+  timings: "11 AM – 11 PM (Everyday)",
+  timingsDisplay: "Open: 11 AM – 11 PM",
   est: "EST. 2019",
   whatsappMessage: "Hi, I want to order from Grill & Chill"
 };
@@ -60,10 +63,16 @@ function applyRestaurantConfig() {
     }
   });
   document.querySelectorAll('[data-restaurant-text="timings"]').forEach(el => {
-    el.textContent = RESTAURANT.timings;
+    el.textContent = RESTAURANT.timingsDisplay;
   });
   document.querySelectorAll('[data-restaurant-text="est"]').forEach(el => {
     el.textContent = RESTAURANT.est;
+  });
+  document.querySelectorAll('[data-restaurant-text="location"]').forEach(el => {
+    el.textContent = RESTAURANT.location;
+  });
+  document.querySelectorAll('[data-restaurant-text="address"]').forEach(el => {
+    el.textContent = RESTAURANT.address;
   });
 }
 

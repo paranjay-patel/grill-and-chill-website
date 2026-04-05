@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Order on Zomato | GRILL & CHILL</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Manrope:wght@400;500;600&amp;family=Work+Sans:wght@500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="tailwind-config.js" id="tailwind-config"></script>
+  <script src="site-config.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+  <!-- TopAppBar -->
+  <header class="fixed top-0 w-full z-50 bg-[#310002]/70 backdrop-blur-xl shadow-2xl shadow-[#290003]/40">
+    <div
+      class="bg-[#200001] border-b border-primary/20 py-2 px-6 md:px-12 flex flex-wrap justify-between items-center text-[10px] md:text-xs font-label tracking-[0.2em] text-secondary-fixed/90 uppercase">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[14px] text-primary">location_on</span>
+          <span>Surat</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+          <span data-restaurant-text="timings"></span>
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <a class="flex items-center gap-1.5 hover:text-secondary-fixed transition-colors" href="#" data-restaurant-link="phone">
+          <span class="material-symbols-outlined text-[14px] text-primary">call</span>
+          <span>Call Now</span>
+        </a>
+        <a class="flex items-center gap-1.5 hover:text-green-400 transition-colors"
+          href="#" data-restaurant-link="whatsapp" data-override-text="WhatsApp">
+          <span class="material-symbols-outlined text-[14px] text-green-500">chat</span>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+    <nav class="flex justify-between items-center px-6 md:px-12 w-full max-w-none py-3">
+      <a href="home.html" class="text-2xl font-bold tracking-tighter text-[#FFB3AC] font-headline">GRILL &amp; CHILL</a>
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
+          href="home.html">Home</a>
+        <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
+          href="menu.html">menu</a>
+        <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
+          href="catering.html">catering</a>
+        <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
+          href="tiffin.html">tiffin</a>
+      </div>
+      <a href="zomato.html"
+        class="px-6 py-2.5 rounded-lg font-headline text-xs tracking-widest uppercase active:scale-90 transition-transform hover:shadow-lg hover:shadow-primary/20 bg-secondary-fixed text-on-secondary-fixed font-bold scale-100">order
+        on zomato</a>
+    </nav>
+  </header>
+
+  <main class="pt-20">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[870px] flex items-center justify-center overflow-hidden px-6">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Sizzling grilled meat" class="w-full h-full object-cover scale-105" data-alt="Close-up of premium marbled steak sizzling on a traditional charcoal grill with dramatic orange embers and soft smoke rising in a dark moody setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANcgtLXCL8fnVoKFga5TcEW4GhKCdG6hBG3F49wHEJiWSYZU4AGKJ27-bDF4QoYwFCvDC7cdYUfAn6prmjYstvzPhz9dkDTLD7GabPnZWfC75ZCrdl5f5cHyH6jLG5equq9r_vRxG0wzEjA8oGlWA97JkGF8YCmDTqHDLdkTQ9vxwlUf5KHtCtVzthWQt6GToWQOPZZia-VtGfOvRZ1FiOLsFb7tp8dNNOMDvlSAjGPA-1-nxp1KCMCOQrcDI4Gsx8K6q6A4IN440"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-surface/20"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-transparent to-surface"></div>
+</div>
+<!-- Content Container -->
+<div class="relative z-10 max-w-5xl w-full text-center space-y-12">
+<div class="inline-block px-6 py-2 rounded-full border border-secondary-fixed/20 bg-surface-container-low/50 backdrop-blur-md mb-4">
+<span class="text-secondary-fixed font-label text-sm tracking-[0.2em] uppercase">The Heritage of Fire</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-black font-headline text-on-surface leading-tight tracking-tighter">
+                    Coming Soon to <br/>
+<span class="text-secondary-fixed">Your Doorstep</span>
+</h1>
+<p class="max-w-2xl mx-auto text-lg md:text-xl text-on-surface-variant font-medium leading-relaxed">
+                    Grill &amp; Chill is firing up for Zomato and Swiggy. Get ready for the heritage of fire and spice, delivered directly to you.
+                </p>
+<!-- Platform Logos & Badges (Asymmetric Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto pt-8">
+<!-- Zomato Card -->
+<div class="bg-surface-container-high/40 backdrop-blur-xl p-8 rounded-xl flex flex-col items-center gap-4 transition-transform hover:scale-[1.02]">
+<div class="w-16 h-16 rounded-full bg-[#E23744] flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline text-xl text-white">Zomato</h3>
+<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold tracking-wider uppercase">Coming Soon</span>
+</div>
+</div>
+<!-- Swiggy Card -->
+<div class="bg-surface-container-high/40 backdrop-blur-xl p-8 rounded-xl flex flex-col items-center gap-4 transition-transform hover:scale-[1.02]">
+<div class="w-16 h-16 rounded-full bg-[#FC8019] flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">delivery_dining</span>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline text-xl text-white">Swiggy</h3>
+<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold tracking-wider uppercase">Coming Soon</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
