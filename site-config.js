@@ -13,8 +13,9 @@ const RESTAURANT = {
   whatsappMessage: "Hi, I want to order from Grill & Chill"
 };
 
-const RESTAURANT_WHATSAPP_LINK = `https://wa.me/${RESTAURANT.phone}?text=${encodeURIComponent(RESTAURANT.whatsappMessage)}`;
-const RESTAURANT_PHONE_LINK = `tel:+${RESTAURANT.phone}`;
+const RESTAURANT_PHONE_DIGITS = RESTAURANT.phone.replace(/\D/g, '');
+const RESTAURANT_WHATSAPP_LINK = `https://wa.me/${RESTAURANT_PHONE_DIGITS}?text=${encodeURIComponent(RESTAURANT.whatsappMessage)}`;
+const RESTAURANT_PHONE_LINK = `tel:${RESTAURANT.phone}`;
 
 function applyRestaurantConfig() {
   document.querySelectorAll('[data-restaurant-link="whatsapp"]').forEach(anchor => {

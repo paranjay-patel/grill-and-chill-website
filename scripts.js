@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const buttons = document.querySelectorAll('.sticky button');
+  const buttons = document.querySelectorAll('[data-category-tab]');
   const sections = document.querySelectorAll('section[data-category]');
+  const navButtons = document.querySelectorAll('[data-nav-target]');
+
+  navButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const target = this.dataset.navTarget;
+      if (target) {
+        window.location.href = target;
+      }
+    });
+  });
 
   if (buttons.length && sections.length) {
     // Check if there's a hash in the URL
@@ -14,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Highlight the correct button based on initial category
     buttons.forEach(btn => {
-      const btnCategory = btn.textContent.trim().toLowerCase().replace(/\s+/g, '');
+      const btnCategory = btn.dataset.categoryTab || btn.textContent.trim().toLowerCase().replace(/\s+/g, '');
       if (btnCategory === initialCategory) {
         btn.classList.remove('bg-surface-container-highest', 'text-on-surface', 'hover:bg-surface-bright');
         btn.classList.add('bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
@@ -26,25 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     buttons.forEach(button => {
       button.addEventListener('click', async function () {
-        const category = this.textContent.trim().toLowerCase().replace(/\s+/g, '');
-
-        if (category === 'panjabi') {
-          try {
-            const response = await fetch('panjabi.html');
-            if (response.ok) {
-              const html = await response.text();
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
-              const mainContent = doc.querySelector('main')?.innerHTML;
-              const panjabiSection = document.querySelector('section[data-category="panjabi"]');
-              if (mainContent && panjabiSection) {
-                panjabiSection.innerHTML = mainContent;
-              }
-            }
-          } catch (e) {
-            console.error('Failed to load dynamically, using static content', e);
-          }
-        }
+        const category = this.dataset.categoryTab || this.textContent.trim().toLowerCase().replace(/\s+/g, '');
 
         sections.forEach(section => {
           if (section.dataset.category === category) {
