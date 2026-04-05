@@ -1,0 +1,70 @@
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'surface-container': '#43090a',
+        surface: '#310002',
+        'secondary-fixed': '#ffe16d',
+        'on-secondary-fixed-variant': '#544600',
+        'secondary-container': '#ffdb3c',
+        'tertiary-fixed-dim': '#ffb778',
+        'on-primary': '#680008',
+        'on-secondary-fixed': '#221b00',
+        'surface-container-highest': '#601e1d',
+        'on-surface': '#ffdad7',
+        'surface-container-lowest': '#270002',
+        'on-tertiary-fixed': '#2e1500',
+        'tertiary-fixed': '#ffdcc1',
+        'secondary-fixed-dim': '#e9c400',
+        'on-surface-variant': '#dac1bf',
+        outline: '#a28c8a',
+        'primary-fixed-dim': '#ffb3ac',
+        'surface-container-high': '#511413',
+        'on-primary-fixed-variant': '#930010',
+        error: '#ffb4ab',
+        'on-primary-container': '#fa4c47',
+        'on-secondary': '#3a3000',
+        'tertiary-container': '#3b1d00',
+        'on-tertiary': '#4c2700',
+        'surface-variant': '#601e1d',
+        'inverse-on-surface': '#5a1a19',
+        'background': '#310002',
+        'outline-variant': '#544341',
+        'surface-bright': '#662320',
+        'surface-tint': '#ffb3ac',
+        'surface-dim': '#310002',
+        tertiary: '#ffb778',
+        'on-secondary-container': '#725f00',
+        primary: '#ffb3ac',
+        'on-tertiary-container': '#cf7500',
+        'error-container': '#93000a',
+        secondary: '#fff9ef',
+        'inverse-primary': '#ba1a20',
+        'on-background': '#ffdad7',
+        'surface-container-low': '#3d0506',
+        'inverse-surface': '#ffdad7',
+        'on-primary-fixed': '#410003',
+        'primary-container': '#520005',
+        'on-error-container': '#ffdad6',
+        'primary-fixed': '#ffdad6',
+        'on-tertiary-fixed-variant': '#6c3a00',
+        'brand-cream': '#FFF9EF',
+        'brand-gold': '#E9C400',
+        'brand-maroon-deep': '#2A0001'
+      },
+      fontFamily: {
+        headline: ['Epilogue', 'sans-serif'],
+        body: ['Manrope', 'sans-serif'],
+        label: ['Work Sans', 'sans-serif'],
+        display: ['Epilogue', 'serif']
+      },
+      borderRadius: {
+        DEFAULT: '0.75rem',
+        lg: '1rem',
+        xl: '1.5rem',
+        full: '9999px'
+      }
+    }
+  }
+};
