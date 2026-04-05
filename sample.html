@@ -3,222 +3,244 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Coming Soon | THE GRILL ROOM Delivery</title>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Manrope:wght@400;500;600;700&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Manrope:wght@400;500;600&amp;family=Work+Sans:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-secondary": "#3a3000",
-                      "surface": "#310002",
-                      "on-tertiary-container": "#cf7500",
-                      "on-primary-fixed-variant": "#930010",
-                      "error-container": "#93000a",
-                      "inverse-surface": "#ffdad7",
-                      "on-surface-variant": "#dac1bf",
-                      "surface-dim": "#310002",
-                      "surface-container-highest": "#601e1d",
-                      "on-tertiary": "#4c2700",
-                      "on-secondary-fixed-variant": "#544600",
-                      "on-error": "#690005",
-                      "surface-variant": "#601e1d",
-                      "secondary-fixed-dim": "#e9c400",
-                      "primary": "#ffb3ac",
-                      "on-primary-fixed": "#410003",
-                      "secondary": "#fff9ef",
-                      "on-background": "#ffdad7",
-                      "surface-container": "#43090a",
-                      "on-primary-container": "#fa4c47",
-                      "surface-bright": "#662320",
-                      "on-primary": "#680008",
-                      "on-error-container": "#ffdad6",
-                      "on-surface": "#ffdad7",
-                      "primary-container": "#520005",
-                      "outline-variant": "#544341",
-                      "surface-container-high": "#511413",
-                      "tertiary-fixed-dim": "#ffb778",
-                      "secondary-fixed": "#ffe16d",
-                      "error": "#ffb4ab",
-                      "surface-container-low": "#3d0506",
-                      "primary-fixed": "#ffdad6",
-                      "inverse-primary": "#ba1a20",
-                      "surface-container-lowest": "#270002",
-                      "background": "#310002",
-                      "inverse-on-surface": "#5a1a19",
-                      "secondary-container": "#ffdb3c",
-                      "surface-tint": "#ffb3ac",
-                      "on-secondary-container": "#725f00",
-                      "tertiary": "#ffb778",
-                      "on-tertiary-fixed-variant": "#6c3a00",
-                      "on-tertiary-fixed": "#2e1500",
-                      "tertiary-container": "#3b1d00",
-                      "primary-fixed-dim": "#ffb3ac",
-                      "outline": "#a28c8a",
-                      "tertiary-fixed": "#ffdcc1",
-                      "on-secondary-fixed": "#221b00"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.5rem",
-                      "lg": "1rem",
-                      "xl": "1.5rem",
-                      "full": "9999px"
-              },
-              "fontFamily": {
-                      "headline": ["Epilogue"],
-                      "body": ["Manrope"],
-                      "label": ["Work Sans"]
-              }
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#3b1d00",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#cf7500",
+                        "primary": "#ffb3ac",
+                        "inverse-on-surface": "#5a1a19",
+                        "surface-container-high": "#511413",
+                        "on-tertiary-fixed-variant": "#6c3a00",
+                        "on-primary-container": "#fa4c47",
+                        "tertiary-fixed-dim": "#ffb778",
+                        "on-tertiary": "#4c2700",
+                        "on-surface": "#ffdad7",
+                        "surface-dim": "#310002",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "inverse-surface": "#ffdad7",
+                        "surface-container": "#43090a",
+                        "on-secondary-fixed": "#221b00",
+                        "surface-variant": "#601e1d",
+                        "secondary-fixed": "#ffe16d",
+                        "on-surface-variant": "#dac1bf",
+                        "primary-container": "#520005",
+                        "on-background": "#ffdad7",
+                        "surface-container-highest": "#601e1d",
+                        "on-primary-fixed-variant": "#930010",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#3d0506",
+                        "surface": "#310002",
+                        "secondary-fixed-dim": "#e9c400",
+                        "outline": "#a28c8a",
+                        "on-primary-fixed": "#410003",
+                        "error": "#ffb4ab",
+                        "background": "#310002",
+                        "surface-container-lowest": "#270002",
+                        "secondary": "#fff9ef",
+                        "surface-bright": "#662320",
+                        "primary-fixed": "#ffdad6",
+                        "on-secondary": "#3a3000",
+                        "on-tertiary-fixed": "#2e1500",
+                        "tertiary": "#ffb778",
+                        "on-secondary-container": "#725f00",
+                        "on-secondary-fixed-variant": "#544600",
+                        "surface-tint": "#ffb3ac",
+                        "error-container": "#93000a",
+                        "secondary-container": "#ffdb3c",
+                        "inverse-primary": "#ba1a20",
+                        "outline-variant": "#544341",
+                        "tertiary-fixed": "#ffdcc1",
+                        "on-primary": "#680008"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Work Sans"]
+                    }
+                },
             },
-          }
         }
-      </script>
+    </script>
 <style>
-        body { font-family: 'Manrope', sans-serif; background-color: #310002; color: #ffdad7; }
-        .font-headline { font-family: 'Epilogue', sans-serif; }
-        .font-label { font-family: 'Work Sans', sans-serif; }
-        .glass-effect { background: rgba(49, 0, 2, 0.7); backdrop-filter: blur(24px); }
-        .gradient-primary { background: linear-gradient(45deg, #ffb3ac 0%, #520005 100%); }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-      </style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .signature-gradient {
+            background: radial-gradient(circle at 45% 45%, #ffb3ac 0%, #520005 100%);
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px rgba(41, 0, 3, 0.4);
+        }
+    </style>
 </head>
-<body class="flex flex-col min-h-screen selection:bg-primary selection:text-on-primary">
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 bg-[#310002]/70 backdrop-blur-xl shadow-[0_20px_40px_rgba(41,0,3,0.4)]">
-<nav class="flex justify-between items-center w-full px-6 py-4 mx-auto max-w-7xl">
-<div class="text-2xl font-bold tracking-tight text-[#FFB3AC] uppercase font-headline">
-                THE GRILL ROOM
-            </div>
-<div class="flex items-center gap-8">
-<a class="text-[#FFB3AC]/60 font-medium hover:text-[#FFB3AC] hover:opacity-80 transition-all duration-300 flex items-center gap-2 group" href="#">
-<span class="material-symbols-outlined text-sm">arrow_back</span>
-                    Back to Home
-                </a>
-<span class="material-symbols-outlined text-[#FFB3AC]">account_circle</span>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#310002]/70 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-2xl font-black tracking-tighter text-[#FFB3AC] font-headline">GRILL &amp; CHILL</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#FFB3AC] font-bold border-b-2 border-[#FFB3AC] pb-1 font-body" href="#">Menu</a>
+<a class="text-white/80 hover:text-[#FFB3AC] transition-colors font-body" href="#">Story</a>
+<a class="text-white/80 hover:text-[#FFB3AC] transition-colors font-body" href="#">Contact</a>
+<a class="text-white/80 hover:text-[#FFB3AC] transition-colors font-body" href="#">Catering</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-white/80 hover:text-[#FFB3AC] transition-transform active:scale-90" data-icon="shopping_bag">shopping_bag</button>
+<button class="signature-gradient text-on-primary font-bold px-6 py-2 rounded-full scale-95 active:scale-90 transition-transform font-label">Order Now</button>
 </div>
 </nav>
-</header>
-<!-- Main Content Canvas -->
-<main class="flex-grow pt-24">
-<!-- Hero Section -->
-<section class="relative w-full min-h-[870px] flex items-center justify-center overflow-hidden px-6">
-<!-- Background Image with Overlay -->
-<div class="absolute inset-0 z-0">
-<img alt="Sizzling grilled meat" class="w-full h-full object-cover scale-105" data-alt="Close-up of premium marbled steak sizzling on a traditional charcoal grill with dramatic orange embers and soft smoke rising in a dark moody setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANcgtLXCL8fnVoKFga5TcEW4GhKCdG6hBG3F49wHEJiWSYZU4AGKJ27-bDF4QoYwFCvDC7cdYUfAn6prmjYstvzPhz9dkDTLD7GabPnZWfC75ZCrdl5f5cHyH6jLG5equq9r_vRxG0wzEjA8oGlWA97JkGF8YCmDTqHDLdkTQ9vxwlUf5KHtCtVzthWQt6GToWQOPZZia-VtGfOvRZ1FiOLsFb7tp8dNNOMDvlSAjGPA-1-nxp1KCMCOQrcDI4Gsx8K6q6A4IN440"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-surface/20"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-surface via-transparent to-surface"></div>
+<main class="pt-24 min-h-screen">
+<!-- Signature Promo Section -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden rounded-[48px] bg-surface-container-low shadow-2xl">
+<!-- Left: Artistic Storytelling -->
+<div class="p-12 md:p-16 flex flex-col justify-center relative">
+<div class="mb-6 inline-flex items-center gap-2 px-4 py-1 rounded-full bg-surface-container-highest border border-outline-variant/20">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest font-label">Signature Heritage</span>
 </div>
-<!-- Content Container -->
-<div class="relative z-10 max-w-5xl w-full text-center space-y-12">
-<div class="inline-block px-6 py-2 rounded-full border border-secondary-fixed/20 bg-surface-container-low/50 backdrop-blur-md mb-4">
-<span class="text-secondary-fixed font-label text-sm tracking-[0.2em] uppercase">The Heritage of Fire</span>
-</div>
-<h1 class="text-6xl md:text-8xl font-black font-headline text-on-surface leading-tight tracking-tighter">
-                    Coming Soon to <br/>
-<span class="text-secondary-fixed">Your Doorstep</span>
+<h1 class="text-5xl md:text-6xl font-black font-headline text-on-background leading-tight mb-6">
+                        Chicken Biryani <br/>
+<span class="text-secondary-fixed">The Soul of Awadh</span>
 </h1>
-<p class="max-w-2xl mx-auto text-lg md:text-xl text-on-surface-variant font-medium leading-relaxed">
-                    Grill &amp; Chill is firing up for Zomato and Swiggy. Get ready for the heritage of fire and spice, delivered directly to you.
-                </p>
-<!-- Platform Logos & Badges (Asymmetric Bento Style) -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto pt-8">
-<!-- Zomato Card -->
-<div class="bg-surface-container-high/40 backdrop-blur-xl p-8 rounded-xl flex flex-col items-center gap-4 transition-transform hover:scale-[1.02]">
-<div class="w-16 h-16 rounded-full bg-[#E23744] flex items-center justify-center shadow-xl">
-<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-8 font-body max-w-md">
+                        A recipe whispered through generations. Our Dum-cooked Biryani is an aromatic love letter to the Nawabi kitchens of old, where every grain tells a story of patience and precision.
+                    </p>
+<!-- Ingredients Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="grains">grain</span>
+<h4 class="text-sm font-bold text-on-surface font-headline">Aged Basmati</h4>
+<p class="text-xs text-on-surface-variant/70">Extra-long grain, aged 2 years for fragrance.</p>
 </div>
-<div class="space-y-2">
-<h3 class="font-headline text-xl text-white">Zomato</h3>
-<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold tracking-wider uppercase">Coming Soon</span>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="local_fire_department">local_fire_department</span>
+<h4 class="text-sm font-bold text-on-surface font-headline">Wood-Fired</h4>
+<p class="text-xs text-on-surface-variant/70">Slow-simmered over glowing charcoal embers.</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="mystery">mystery</span>
+<h4 class="text-sm font-bold text-on-surface font-headline">Secret Spice</h4>
+<p class="text-xs text-on-surface-variant/70">Hand-ground blend of 32 exotic botanicals.</p>
 </div>
 </div>
-<!-- Swiggy Card -->
-<div class="bg-surface-container-high/40 backdrop-blur-xl p-8 rounded-xl flex flex-col items-center gap-4 transition-transform hover:scale-[1.02]">
-<div class="w-16 h-16 rounded-full bg-[#FC8019] flex items-center justify-center shadow-xl">
-<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">delivery_dining</span>
+<!-- Actions & Price -->
+<div class="flex flex-wrap items-center gap-6">
+<button class="signature-gradient text-on-primary px-10 py-4 rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all editorial-shadow font-label">
+                            Order Now
+                        </button>
+<button class="bg-surface-container-highest text-on-surface border border-outline-variant/30 px-8 py-4 rounded-full font-bold text-lg hover:bg-surface-bright transition-all flex items-center gap-2 font-label">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                            WhatsApp
+                        </button>
 </div>
-<div class="space-y-2">
-<h3 class="font-headline text-xl text-white">Swiggy</h3>
-<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold tracking-wider uppercase">Coming Soon</span>
+</div>
+<!-- Right: Visual Masterpiece -->
+<div class="relative min-h-[500px] md:min-h-full">
+<img alt="Chicken Biryani" class="absolute inset-0 w-full h-full object-cover" data-alt="Macro close-up of steaming chicken biryani in a traditional clay pot, aromatic long-grain rice, fried onions, and fresh mint with warm dramatic side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtkNeHyzWfjXzxFIPimqDlXzo7a4t0cST2-mCq7NOdW76wGrnvFoqh6wyI0hYZSbvC8sPHK4K41_z7PUz1wMg-wgLgqgzeja0vR6n1kaf2YVzbMevYxki2YPe8qGNWhFQ0gK065zYqukSVNCTZtuL3rbFXv_a0tN-BZu8YlXjdzSpYV15_GK7biGV9vCBM0hLBGTLQe6QURbl3YEml6UJVijnF9XjPqCyCNw9jxcpDBKDYimuY0BJnlryI81AR0mYrPY38k_pV9Wk"/>
+<!-- Gradient Overlay for depth -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-transparent to-transparent"></div>
+<!-- Price Seal -->
+<div class="absolute top-8 right-8 md:top-12 md:right-12">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<div class="absolute inset-0 bg-secondary-fixed rounded-full animate-pulse opacity-20"></div>
+<div class="absolute inset-2 border-2 border-dashed border-secondary-fixed rounded-full"></div>
+<div class="bg-secondary-fixed text-on-secondary-fixed w-24 h-24 rounded-full flex flex-col items-center justify-center shadow-2xl transform hover:rotate-12 transition-transform cursor-default">
+<span class="text-xs font-bold uppercase tracking-tighter font-label">Heritage</span>
+<span class="text-2xl font-black font-headline">₹150</span>
+<span class="text-[10px] font-medium font-body">Limited Daily</span>
+</div>
+</div>
+</div>
+<!-- Dietary Badge -->
+<div class="absolute bottom-8 right-8">
+<div class="bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary ring-4 ring-primary/20"></span>
+<span class="text-white text-xs font-bold font-label uppercase tracking-widest">Premium Non-Veg</span>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- CTA & Info Section (Tonal Shift) -->
-<section class="bg-surface-container-low py-24 px-6">
-<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-<!-- Image Breakdown -->
-<div class="relative">
-<div class="aspect-square rounded-full overflow-hidden border-4 border-surface-container-highest shadow-2xl scale-95 md:scale-100">
-<img alt="Interior of Grill &amp; Chill" class="w-full h-full object-cover" data-alt="Interior view of a luxurious candlelit restaurant with dark wood textures, warm amber lighting, and an open fire grill in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXOZMXXFSiN5jdfcuBpLTCVCz_ZU27Cy626BB_-XHVp-Ra6TZ6gVmkN7HAOoF9dRiZK7JhO5a2UW-CEdw4F_Ilsp3ygmbRNcM1Sm7k_ZWHcs9sy9ObTUc57gz2SLOgTus4N1K0Tt8ReHMJOaFAQxOAvEbI2WnWr64jiC2ppf6MX0f9gc1sbnenORw11rPPFhtNt-C1Xh0YuETUuzLYyGaMwwgqU70klwOx97ATtviGS0H0T_yIrU80Ci7CRmKgTo7v_hBlzjax5bg"/>
-</div>
-<div class="absolute -bottom-6 -right-6 w-48 h-48 rounded-full border-8 border-surface overflow-hidden hidden md:block">
-<img alt="Plated dish" class="w-full h-full object-cover" data-alt="Elegant plating of grilled tandoori lamb chops with fresh garnish on a dark artisanal ceramic plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyfjr3xJHvYuhs8lgikWgIdu7w6T1gm5xXQ9ChN3SnC7MYJIAwCKNcZ-twlf8trTDSQ9HI73XIrITimXbqbZxn2fX8XycxjGn_oDcUHcs0kHtNYXh3arE4v_1OWZ7-jBY_qhZBonQlG-4QDrrSHN6YL31j2gCUA3Bnhywo-fOKUkOb7OGBZveIOKV595jmKj7nwX9b-jxC8eZwgdKiCe88NJ8h6nHTx3uPaRsMIFD4nhUtPV3N63Dpo92uPxFqGMMcOASxTCENsZY"/>
+<!-- Secondary Heritage Grid Section -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="col-span-1 md:col-span-2 bg-surface-container-high rounded-[32px] p-10 flex flex-col justify-end min-h-[400px] relative overflow-hidden">
+<img alt="Tandoor Fire" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" data-alt="Intense orange and red glow of burning charcoal inside a traditional clay tandoor oven, sparks flying in a dark kitchen environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvIpMJ-p0bX7Ox6GbfJCFvSzz0WFNFr4yIfSodj4mK_D_u6692d7QqIt4QV7apkL4gdUkCqWB9Q7j6yOKDsIgHdm1ShoYH_tgprJl1hJPzsOwkq7HFmhipTQWleE9CJ1Q8ywe0Z67FcF3aNV2c9-SR6SpvybS5AHUH-Ts9-2aVk6ssn0Jh99M4ViSgKCDIV3qpRXrHZfNAEy0ZqGk0gGyqkurenWxsQgwZ5lkbE7PnIH5cLmhkikWUiHzSzHJIfgxq8gbwgaSha9I"/>
+<div class="relative z-10">
+<h3 class="text-3xl font-black font-headline mb-4">The Tandoor Promise</h3>
+<p class="text-on-surface-variant max-w-md font-body">Every chicken leg in our Biryani is first char-grilled in our clay pits to lock in the smoky essence of the hearth.</p>
 </div>
 </div>
-<!-- Text Content -->
-<div class="space-y-8">
-<h2 class="text-4xl font-headline text-secondary-fixed leading-tight">Can't wait for delivery?<br/>Join us at the Hearth.</h2>
-<div class="space-y-6">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
-<div>
-<p class="text-on-surface font-headline font-bold text-lg">Visit us at Chocolate Circle</p>
-<p class="text-on-surface-variant">Central Plaza, Ground Floor, Chocolate Circle, New Delhi</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary text-3xl">call</span>
-<div>
-<p class="text-on-surface font-headline font-bold text-lg">Direct Takeaway</p>
-<p class="text-on-surface-variant">Call +91 98903 56776 for instant orders.</p>
-</div>
-</div>
-</div>
-<div class="pt-4 flex gap-4">
-<a class="gradient-primary text-on-primary font-bold px-8 py-4 rounded-full text-center transition-all hover:scale-105 active:scale-95 shadow-lg" href="#" data-restaurant-link="maps">
-                            Get Directions
-                        </a>
-<a class="border border-outline-variant/30 text-on-surface hover:bg-surface-bright transition-colors font-bold px-8 py-4 rounded-full text-center active:scale-95" href="tel:+919890356776">
-                            Order Now
-                        </a>
-</div>
+<div class="bg-tertiary-container rounded-[32px] p-10 flex flex-col items-center text-center justify-center border border-on-tertiary-container/10">
+<span class="material-symbols-outlined text-6xl text-tertiary mb-6" data-icon="history_edu">history_edu</span>
+<h3 class="text-2xl font-bold font-headline text-tertiary mb-2">Heritage Grains</h3>
+<p class="text-on-tertiary-container/80 text-sm font-body">Sourced from the fertile belts of the Terai, our rice is selected grain by grain for its pearly white finish and intoxicating musk.</p>
 </div>
 </div>
 </section>
 </main>
+<!-- Side Navigation Shell (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 z-40 bg-[#3D0506] h-full w-72 rounded-r-3xl shadow-xl transition-transform -translate-x-full hover:translate-x-0 group">
+<div class="p-8 pt-24">
+<div class="flex items-center gap-3 mb-12">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">G</div>
+<div>
+<h4 class="text-xl font-bold text-[#FFB3AC] font-headline">Grill &amp; Chill</h4>
+<p class="text-xs text-white/40 font-body">Modern Heritage Kitchen</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="bg-[#601E1D] text-[#FFB3AC] rounded-full px-4 py-3 flex items-center gap-3 transition-colors font-body" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span> Home
+                </a>
+<a class="text-white/60 px-4 py-3 flex items-center gap-3 hover:bg-[#601E1D]/50 transition-colors rounded-full font-body" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span> Menu
+                </a>
+<a class="text-white/60 px-4 py-3 flex items-center gap-3 hover:bg-[#601E1D]/50 transition-colors rounded-full font-body" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span> Story
+                </a>
+<a class="text-white/60 px-4 py-3 flex items-center gap-3 hover:bg-[#601E1D]/50 transition-colors rounded-full font-body" href="#">
+<span class="material-symbols-outlined" data-icon="business_center">business_center</span> Catering
+                </a>
+<a class="text-white/60 px-4 py-3 flex items-center gap-3 hover:bg-[#601E1D]/50 transition-colors rounded-full font-body" href="#">
+<span class="material-symbols-outlined" data-icon="call">call</span> Contact
+                </a>
+</nav>
+</div>
+</aside>
 <!-- Footer -->
-<footer class="w-full py-12 mt-auto bg-[#310002] flex flex-col items-center justify-center space-y-6 px-8 text-center">
-<div class="text-[#FFB3AC] font-black text-2xl font-headline tracking-tighter">
-            THE GRILL ROOM
-        </div>
-<div class="space-y-2">
-<p class="text-on-surface font-bold">5 PM - 2 AM | EVERY DAY</p>
-<p class="text-on-surface-variant max-w-xs">Experience the fire, the spice, and the heritage.</p>
+<footer class="w-full bg-[#310002] rounded-t-[48px] py-12 px-8 flex flex-col md:flex-row justify-between items-center">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-bold text-[#FFB3AC] font-headline mb-2">GRILL &amp; CHILL</div>
+<p class="text-white/40 text-sm font-body">© 2024 Grill &amp; Chill. Modern Heritage.</p>
 </div>
-<div class="flex gap-6 py-4">
-<a class="text-[#FFB3AC]/50 hover:text-white transition-colors" href="#">
-<span class="material-symbols-outlined">brand_family</span>
-</a>
-<a class="text-[#FFB3AC]/50 hover:text-white transition-colors" href="#">
-<span class="material-symbols-outlined">linked_camera</span>
-</a>
-<a class="text-[#FFB3AC]/50 hover:text-white transition-colors" href="#">
-<span class="material-symbols-outlined">mail</span>
-</a>
+<div class="flex gap-8">
+<a class="text-white/40 hover:text-[#FFB3AC] transition-colors text-sm font-label" href="#">Privacy Policy</a>
+<a class="text-white/40 hover:text-[#FFB3AC] transition-colors text-sm font-label" href="#">Terms of Service</a>
+<a class="text-white/40 hover:text-[#FFB3AC] transition-colors text-sm font-label" href="#">Location</a>
+<a class="text-white/40 hover:text-[#FFB3AC] transition-colors text-sm font-label" href="#">Careers</a>
 </div>
-<div class="flex flex-wrap justify-center gap-6 text-[12px] font-medium tracking-wider uppercase font-epilogue text-[#FFB3AC]/50">
-<a class="hover:text-white transition-colors" href="#">Contact Us</a>
-<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
-</div>
-<div class="pt-4 text-[10px] font-medium tracking-[0.2em] text-[#FFB3AC]/30 uppercase font-label">
-            © 2024 THE GRILL ROOM. ALL RIGHTS RESERVED.
-        </div>
 </footer>
 </body></html>

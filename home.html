@@ -95,72 +95,150 @@
       </div>
       <!-- Floating Hero Image -->
     </section>
-    <!-- Culinary Categories (Elegant Modern Redesign) -->
-    <section class="py-20 px-6 md:px-12 bg-surface-container-low">
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-12 text-center">
-          <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase">Cuisines</h2>
-          <p class="font-body text-on-surface-variant max-w-2xl mx-auto mt-4 text-lg md:text-xl leading-relaxed">A
-            refined culinary experience that blends heritage flavors with contemporary presentation. Discover our most
-            popular cuisine styles and curated chef specials.</p>
+    <!-- Culinary Categories -->
+    <section class="cuisine-section py-24 md:py-28 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondary-fixed/20 bg-surface-container-high/70 text-secondary-fixed font-label text-xs tracking-[0.35em] uppercase">
+            Signature selections
+          </span>
+          <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase mt-6">Cuisines</h2>
+          <div class="editorial-line w-24 mx-auto my-6"></div>
+          <p class="font-body text-on-surface-variant max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+            A more refined way to explore the menu, with each cuisine presented like a signature dish. Rich, layered,
+            and designed to feel as inviting as the food itself.
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <article
-            class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_20px_45px_rgba(0,0,0,0.25)] overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
-            <div class="h-56 overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          <article class="cuisine-card group">
+            <div class="cuisine-card-media">
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDn2K4rueHS-LK2dE7WbhNI1bpURfsXyY4T9bwc_Osw4-Q1YTYu6ZKDZhFqOTWdsMn387S-1JNwPFdmKnmoauWdyye1whNmhtDtL2jzlYenlpar-UmCKBlai4TldrWOQEkEo-gwBoIzPdnl86i2wWc5GbOpQCZI2YOKmO-rc4wQ0kH0pn-I3Kp-5HF_icc7cr87PlUPmIPG9tpzTUT-6xy2y5AxcB6WLXQ99s2BjW7CTtLMfEh76s_8xa_zJYtOCuPqwPHhPYMqI8"
                 alt="Punjabi cuisine"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                class="cuisine-card-image" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+              <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary/20 to-transparent"></div>
+              <div class="absolute top-5 left-5 flex items-center gap-3">
+                <span class="cuisine-badge">01</span>
+                <span class="cuisine-chip">Heritage</span>
+              </div>
+              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+                <div>
+                  <p class="text-[0.72rem] uppercase tracking-[0.35em] text-secondary-fixed/90 font-label mb-2">Smoky
+                    indulgence</p>
+                  <h3 class="font-headline text-3xl md:text-4xl text-white uppercase leading-none">Punjabi</h3>
+                </div>
+                <div class="text-right">
+                  <p class="text-[0.68rem] uppercase tracking-[0.3em] text-white/70 font-label">Signature</p>
+                  <p class="text-sm text-white/90 font-body mt-1">Paneer Angara</p>
+                </div>
+              </div>
             </div>
-            <div class="p-8">
-              <h3 class="font-headline text-2xl text-on-surface uppercase">Panjabi</h3>
-              <p class="font-body text-on-surface-variant mt-3 mb-6">Hearty, smoky tandoori and rich curries served with
-                freshly baked breads and aromatic spice blends.</p>
-              <a href="menu.html#punjabi"
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-on-primary font-bold tracking-widest uppercase hover:bg-primary-fixed transition">Explore</a>
+            <div class="p-7 md:p-8">
+              <p class="font-body text-on-surface-variant leading-relaxed">
+                Hearty tandoori dishes, rich curries, and freshly baked breads brought together with a deep,
+                comforting spice profile.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-6 mb-7">
+                <span class="cuisine-tag">Tandoori</span>
+                <span class="cuisine-tag">Fresh breads</span>
+                <span class="cuisine-tag">Bold gravies</span>
+              </div>
+              <a href="menu.html#punjabi" class="cuisine-link">
+                Explore menu
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
             </div>
           </article>
 
-          <article
-            class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_20px_45px_rgba(0,0,0,0.25)] overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
-            <div class="h-56 overflow-hidden">
+          <article class="cuisine-card group">
+            <div class="cuisine-card-media">
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4sDMmFxe_CA2sUcgbymzArzMIGLlsKmCaUgyeVnTieKYB4-_qNlbJrSL2kNY8re-6oOrfuyzeQ5fYg7GNxD7MdgU0NBDQq1LCCHjlcEMNwiPe5U-BvpIN314HdD7jwCLkgmgZCgzkvuvAtF-PoBfqfjfTFq88tXp9-GbZDvPsS7WtMlHkvwUX5GZvt5DqcdQQ-BeWyjD4p9C1BYii-pn_GS41HD_5VqcnRyLGuvGAYem0Xt-Rz8VBlaVVPSegOpo2B346sN7fHQM"
-                alt="Chinese cuisine" class="w-full h-full object-cover" />
+                alt="Chinese cuisine"
+                class="cuisine-card-image" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+              <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-secondary-fixed/15 to-transparent"></div>
+              <div class="absolute top-5 left-5 flex items-center gap-3">
+                <span class="cuisine-badge">02</span>
+                <span class="cuisine-chip">Wok-fired</span>
+              </div>
+              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+                <div>
+                  <p class="text-[0.72rem] uppercase tracking-[0.35em] text-secondary-fixed/90 font-label mb-2">Fast,
+                    fresh, fragrant</p>
+                  <h3 class="font-headline text-3xl md:text-4xl text-white uppercase leading-none">Chinese</h3>
+                </div>
+                <div class="text-right">
+                  <p class="text-[0.68rem] uppercase tracking-[0.3em] text-white/70 font-label">Signature</p>
+                  <p class="text-sm text-white/90 font-body mt-1">Manchurian</p>
+                </div>
+              </div>
             </div>
-            <div class="p-8">
-              <h3 class="font-headline text-2xl text-on-surface uppercase">Chinese</h3>
-              <p class="font-body text-on-surface-variant mt-3 mb-6">Sizzling wok magic, fresh dim sum and bold sauces
-                shaped by balance, texture and speed.</p>
-              <a href="menu.html#chinese"
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-on-primary font-bold tracking-widest uppercase hover:bg-primary-fixed transition">Explore</a>
+            <div class="p-7 md:p-8">
+              <p class="font-body text-on-surface-variant leading-relaxed">
+                Crisp vegetables, bold sauces, and wok-fresh stir fries with the kind of balance that keeps every bite
+                lively and memorable.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-6 mb-7">
+                <span class="cuisine-tag">Stir fry</span>
+                <span class="cuisine-tag">Dim sum</span>
+                <span class="cuisine-tag">Saucy classics</span>
+              </div>
+              <a href="menu.html#chinese" class="cuisine-link">
+                Explore menu
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
             </div>
           </article>
 
-          <article
-            class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_20px_45px_rgba(0,0,0,0.25)] overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,0,0,0.35)]">
-            <div class="h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=1200&h=800&fit=crop"
-              
-
-                alt="Chicken cuisine" class="w-full h-full object-cover" />
+          <article class="cuisine-card group">
+            <div class="cuisine-card-media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtkNeHyzWfjXzxFIPimqDlXzo7a4t0cST2-mCq7NOdW76wGrnvFoqh6wyI0hYZSbvC8sPHK4K41_z7PUz1wMg-wgLgqgzeja0vR6n1kaf2YVzbMevYxki2YPe8qGNWhFQ0gK065zYqukSVNCTZtuL3rbFXv_a0tN-BZu8YlXjdzSpYV15_GK7biGV9vCBM0hLBGTLQe6QURbl3YEml6UJVijnF9XjPqCyCNw9jxcpDBKDYimuY0BJnlryI81AR0mYrPY38k_pV9Wk"
+                alt="Chicken cuisine" class="cuisine-card-image" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+              <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-tertiary-fixed/15 to-transparent"></div>
+              <div class="absolute top-5 left-5 flex items-center gap-3">
+                <span class="cuisine-badge">03</span>
+                <span class="cuisine-chip">Chef special</span>
+              </div>
+              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+                <div>
+                  <p class="text-[0.72rem] uppercase tracking-[0.35em] text-secondary-fixed/90 font-label mb-2">Grilled
+                    comfort</p>
+                  <h3 class="font-headline text-3xl md:text-4xl text-white uppercase leading-none">Chicken</h3>
+                </div>
+                <div class="text-right">
+                  <p class="text-[0.68rem] uppercase tracking-[0.3em] text-white/70 font-label">Signature</p>
+                  <p class="text-sm text-white/90 font-body mt-1">Chicken Biryani</p>
+                </div>
+              </div>
             </div>
-            <div class="p-8">
-              <h3 class="font-headline text-2xl text-on-surface uppercase">Chicken</h3>
-              <p class="font-body text-on-surface-variant mt-3 mb-6">Modern European plates with grilled proteins,
-                seasonal vegetables and elegant sauce pairings.</p>
-              <a href="menu.html#chicken"
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-on-primary font-bold tracking-widest uppercase hover:bg-primary-fixed transition">Explore</a>
+            <div class="p-7 md:p-8">
+              <p class="font-body text-on-surface-variant leading-relaxed">
+                Char-grilled chicken dishes with balanced marinades, slow-cooked depth, and modern plating that feels
+                elevated without losing warmth.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-6 mb-7">
+                <span class="cuisine-tag">Grilled</span>
+                <span class="cuisine-tag">Marinated</span>
+                <span class="cuisine-tag">Comfort food</span>
+              </div>
+              <a href="menu.html#chicken" class="cuisine-link">
+                Explore menu
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
             </div>
           </article>
         </div>
 
-        <div class="mt-12 text-center">
+        <div class="mt-14 text-center">
           <a href="menu.html"
-            class="inline-block px-14 py-4 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold tracking-widest uppercase shadow-lg hover:bg-secondary-container transition">View
-            Full Menu</a>
+            class="inline-flex items-center gap-3 px-10 md:px-14 py-4 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold tracking-widest uppercase shadow-lg shadow-black/15 hover:bg-secondary-container hover:shadow-black/20 transition-all">
+            View Full Menu
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
         </div>
       </div>
     </section>
