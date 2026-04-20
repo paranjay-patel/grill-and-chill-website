@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>GRILL &amp; CHILL | Editorial Culinary Experience</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Manrope:wght@400;500;600&amp;family=Work+Sans:wght@500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="assets/js/tailwind-config.js" id="tailwind-config"></script>
+  <script src="assets/js/site-config.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+  <!-- TopAppBar -->
+  <header class="fixed top-0 w-full z-50 bg-[#310002]/70 backdrop-blur-xl shadow-2xl shadow-[#290003]/40">
+    <div
+      class="bg-[#200001] border-b border-primary/20 py-2 px-6 md:px-12 flex flex-wrap justify-between items-center text-[10px] md:text-xs font-label tracking-[0.2em] text-secondary-fixed/90 uppercase">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[14px] text-primary">location_on</span>
+          <span>Surat</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+          <span data-restaurant-text="timings"></span>
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <a class="flex items-center gap-1.5 hover:text-secondary-fixed transition-colors" href="tel:+918980356776" data-restaurant-link="phone">
+          <span class="material-symbols-outlined text-[14px] text-primary">call</span>
+          <span>Call Now</span>
+        </a>
+        <a class="flex items-center gap-1.5 hover:text-green-400 transition-colors"
+          href="https://wa.me/918980356776?text=Hi%2C%20I%20want%20to%20order%20from%20Grill%20%26%20Chill" data-restaurant-link="whatsapp" data-override-text="WhatsApp">
+          <span class="material-symbols-outlined text-[14px] text-green-500">chat</span>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+    <nav class="flex justify-between items-center px-6 md:px-12 w-full max-w-none py-3">
+      <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#FFB3AC] font-headline">GRILL &amp; CHILL</a>
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
+          href="index.html">Home</a>
+        <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
+          href="menu.html">menu</a>
+        <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
+          href="catering.html">catering</a>
+        <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
+          href="tiffin.html">tiffin</a>
+      </div>
+      <a href="zomato.html"
+        class="px-6 py-2.5 rounded-lg font-headline text-xs tracking-widest uppercase active:scale-90 transition-transform hover:shadow-lg hover:shadow-primary/20 bg-secondary-fixed text-on-secondary-fixed font-bold scale-100">order
+        on zomato</a>
+    </nav>
+  </header>
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative flex items-center px-6 md:px-12 overflow-hidden h-[90vh] min-h-[80vh]">
+      <div class="absolute inset-0 z-0">
+        <img alt="High-end grill restaurant interior with warm lighting"
+          class="w-full h-full object-cover opacity-100 mix-blend-luminosity object-center" src="assets/images/herosection.png" />
+        <div class="absolute inset-0 bg-gradient-to-r from-background/100 via-background/30 to-transparent"></div>
+
+      </div>
+      <div class="relative z-10 max-w-4xl py-12">
+        <span
+          class="inline-block px-4 py-1 mb-4 border border-outline-variant text-secondary-fixed font-label text-xs tracking-[0.3em] uppercase rounded-full">EST.
+          2019</span>
+        <h1
+          class="font-headline text-6xl md:text-8xl text-on-surface leading-[0.9] tracking-tighter mb-6 uppercase italic">
+          The Art of <br />
+          <span class="text-primary text-glow">Fire &amp; Spice</span>
+        </h1>
+        <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+          A curated journey through heritage recipes, where the flame meets the finest ingredients in a dance of smoky
+          perfection.
+        </p>
+        <div class="flex flex-wrap gap-6">
+          <button type="button" data-nav-target="menu.html"
+            class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline tracking-widest uppercase hover:bg-primary-fixed transition-colors">
+            EXPLORE THE MENU
+          </button>
+        </div>
+      </div>
+      <!-- Floating Hero Image -->
+    </section>
+    <!-- Culinary Categories -->
+    <section class="cuisine-section py-24 md:py-28 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondary-fixed/20 bg-surface-container-high/70 text-secondary-fixed font-label text-xs tracking-[0.35em] uppercase">
+            Signature selections
+          </span>
+          <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase mt-6">Cuisines</h2>
+          <div class="editorial-line w-24 mx-auto my-6"></div>
+          <p class="font-body text-on-surface-variant max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+            A more refined way to explore the menu, with each cuisine presented like a signature dish. Rich, layered,
+            and designed to feel as inviting as the food itself.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          <article class="cuisine-card group">
+            <div class="cuisine-card-media">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDn2K4rueHS-LK2dE7WbhNI1bpURfsXyY4T9bwc_Osw4-Q1YTYu6ZKDZhFqOTWdsMn387S-1JNwPFdmKnmoauWdyye1whNmhtDtL2jzlYenlpar-UmCKBlai4TldrWOQEkEo-gwBoIzPdnl86i2wWc5GbOpQCZI2YOKmO-rc4wQ0kH0pn-I3Kp-5HF_icc7cr87PlUPmIPG9tpzTUT-6xy2y5AxcB6WLXQ99s2BjW7CTtLMfEh76s_8xa_zJYtOCuPqwPHhPYMqI8"
+                alt="Punjabi cuisine"
+                class="cuisine-card-image" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+              <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary/20 to-transparent"></div>
+              <div class="absolute top-5 left-5 flex items-center gap-3">
+                <span class="cuisine-badge">01</span>
+                <span class="cuisine-chip">Heritage</span>
+              </div>
+              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+                <div>
+                  <p class="text-[0.72rem] uppercase tracking-[0.35em] text-secondary-fixed/90 font-label mb-2">Smoky
+                    indulgence</p>
+                  <h3 class="font-headline text-3xl md:text-4xl text-white uppercase leading-none">Punjabi</h3>
+                </div>
+                <div class="text-right">
+                  <p class="text-[0.68rem] uppercase tracking-[0.3em] text-white/70 font-label">Signature</p>
+                  <p class="text-sm text-white/90 font-body mt-1">Paneer Angara</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-7 md:p-8">
+              <p class="font-body text-on-surface-variant leading-relaxed">
+                Hearty tandoori dishes, rich curries, and freshly baked breads brought together with a deep,
+                comforting spice profile.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-6 mb-7">
+                <span class="cuisine-tag">Tandoori</span>
+                <span class="cuisine-tag">Fresh breads</span>
+                <span class="cuisine-tag">Bold gravies</span>
+              </div>
+              <a href="menu.html#punjabi" class="cuisine-link">
+                Explore menu
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="cuisine-card group">
+            <div class="cuisine-card-media">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4sDMmFxe_CA2sUcgbymzArzMIGLlsKmCaUgyeVnTieKYB4-_qNlbJrSL2kNY8re-6oOrfuyzeQ5fYg7GNxD7MdgU0NBDQq1LCCHjlcEMNwiPe5U-BvpIN314HdD7jwCLkgmgZCgzkvuvAtF-PoBfqfjfTFq88tXp9-GbZDvPsS7WtMlHkvwUX5GZvt5DqcdQQ-BeWyjD4p9C1BYii-pn_GS41HD_5VqcnRyLGuvGAYem0Xt-Rz8VBlaVVPSegOpo2B346sN7fHQM"
+                alt="Chinese cuisine"
+                class="cuisine-card-image" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+              <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-secondary-fixed/15 to-transparent"></div>
+              <div class="absolute top-5 left-5 flex items-center gap-3">
+                <span class="cuisine-badge">02</span>
+                <span class="cuisine-chip">Wok-fired</span>
+              </div>
+              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+                <div>
+                  <p class="text-[0.72rem] uppercase tracking-[0.35em] text-secondary-fixed/90 font-label mb-2">Fast,
+                    fresh, fragrant</p>
+                  <h3 class="font-headline text-3xl md:text-4xl text-white uppercase leading-none">Chinese</h3>
+                </div>
+                <div class="text-right">
+                  <p class="text-[0.68rem] uppercase tracking-[0.3em] text-white/70 font-label">Signature</p>
+                  <p class="text-sm text-white/90 font-body mt-1">Manchurian</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-7 md:p-8">
+              <p class="font-body text-on-surface-variant leading-relaxed">
+                Crisp vegetables, bold sauces, and wok-fresh stir fries with the kind of balance that keeps every bite
+                lively and memorable.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-6 mb-7">
+                <span class="cuisine-tag">Stir fry</span>
+                <span class="cuisine-tag">Dim sum</span>
+                <span class="cuisine-tag">Saucy classics</span>
+              </div>
+              <a href="menu.html#chinese" class="cuisine-link">
+                Explore menu
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="cuisine-card group">
+            <div class="cuisine-card-media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtkNeHyzWfjXzxFIPimqDlXzo7a4t0cST2-mCq7NOdW76wGrnvFoqh6wyI0hYZSbvC8sPHK4K41_z7PUz1wMg-wgLgqgzeja0vR6n1kaf2YVzbMevYxki2YPe8qGNWhFQ0gK065zYqukSVNCTZtuL3rbFXv_a0tN-BZu8YlXjdzSpYV15_GK7biGV9vCBM0hLBGTLQe6QURbl3YEml6UJVijnF9XjPqCyCNw9jxcpDBKDYimuY0BJnlryI81AR0mYrPY38k_pV9Wk"
+                alt="Chicken cuisine" class="cuisine-card-image" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+              <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-tertiary-fixed/15 to-transparent"></div>
+              <div class="absolute top-5 left-5 flex items-center gap-3">
+                <span class="cuisine-badge">03</span>
+                <span class="cuisine-chip">Chef special</span>
+              </div>
+              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+                <div>
+                  <p class="text-[0.72rem] uppercase tracking-[0.35em] text-secondary-fixed/90 font-label mb-2">Grilled
+                    comfort</p>
+                  <h3 class="font-headline text-3xl md:text-4xl text-white uppercase leading-none">Chicken</h3>
+                </div>
+                <div class="text-right">
+                  <p class="text-[0.68rem] uppercase tracking-[0.3em] text-white/70 font-label">Signature</p>
+                  <p class="text-sm text-white/90 font-body mt-1">Chicken Biryani</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-7 md:p-8">
+              <p class="font-body text-on-surface-variant leading-relaxed">
+                Char-grilled chicken dishes with balanced marinades, slow-cooked depth, and modern plating that feels
+                elevated without losing warmth.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-6 mb-7">
+                <span class="cuisine-tag">Grilled</span>
+                <span class="cuisine-tag">Marinated</span>
+                <span class="cuisine-tag">Comfort food</span>
+              </div>
+              <a href="menu.html#chicken" class="cuisine-link">
+                Explore menu
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-14 text-center">
+          <a href="menu.html"
+            class="inline-flex items-center gap-3 px-10 md:px-14 py-4 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold tracking-widest uppercase shadow-lg shadow-black/15 hover:bg-secondary-container hover:shadow-black/20 transition-all">
+            View Full Menu
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Why Choose Us Section -->
+    <section class="py-32 px-6 md:px-12 bg-surface border-y border-outline-variant/10">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-20 text-center">
+          <span class="text-primary font-label tracking-[0.4em] uppercase text-xs mb-4 block">Our Commitment</span>
+          <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase">WHY CHOOSE US</h2>
+          <div class="w-24 h-1 bg-primary mx-auto mt-6 opacity-30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Point 1 -->
+          <div
+            class="bg-surface-container-high p-8 rounded-xl border border-outline-variant/10 hover:border-secondary-fixed/40 transition-all duration-300 group">
+            <div
+              class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-secondary-fixed text-3xl">restaurant</span>
+            </div>
+            <h3 class="font-headline text-on-surface uppercase text-lg mb-4 tracking-wider">Freshly Cooked, Not Pre-made
+            </h3>
+            <p class="font-body text-on-surface-variant text-sm leading-relaxed">
+              Every dish is prepared from scratch when you order, ensuring the highest quality and taste.
+            </p>
+          </div>
+          <!-- Point 2 -->
+          <div
+            class="bg-surface-container-high p-8 rounded-xl border border-outline-variant/10 hover:border-secondary-fixed/40 transition-all duration-300 group">
+            <div
+              class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-secondary-fixed text-3xl">set_meal</span>
+            </div>
+            <h3 class="font-headline text-on-surface uppercase text-lg mb-4 tracking-wider">Affordable Combos &amp;
+              Thalis</h3>
+            <p class="font-body text-on-surface-variant text-sm leading-relaxed">
+              Experience a full range of flavors with our thoughtfully curated and budget-friendly meal sets.
+            </p>
+          </div>
+          <!-- Point 3 -->
+          <div
+            class="bg-surface-container-high p-8 rounded-xl border border-outline-variant/10 hover:border-secondary-fixed/40 transition-all duration-300 group">
+            <div
+              class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-secondary-fixed text-3xl">speed</span>
+            </div>
+            <h3 class="font-headline text-on-surface uppercase text-lg mb-4 tracking-wider">Quick Service &amp; Takeaway
+              Friendly</h3>
+            <p class="font-body text-on-surface-variant text-sm leading-relaxed">
+              Whether you're dining in or on the go, we ensure your food is ready fast without compromising on quality.
+            </p>
+          </div>
+          <!-- Point 4 -->
+          <div
+            class="bg-surface-container-high p-8 rounded-xl border border-outline-variant/10 hover:border-secondary-fixed/40 transition-all duration-300 group">
+            <div
+              class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-secondary-fixed text-3xl">local_shipping</span>
+            </div>
+            <h3 class="font-headline text-on-surface uppercase text-lg mb-4 tracking-wider">Free Delivery Nearby</h3>
+            <p class="font-body text-on-surface-variant text-sm leading-relaxed">
+              Enjoy your favorite meals delivered straight to your door at no extra cost within a 1km radius.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Daily Tiffin Service (Modern Elegant Design) -->
+    <section class="relative py-32 px-6 md:px-12 bg-gradient-to-br from-surface via-surface-container-low to-surface overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-fixed rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+            <span class="material-symbols-outlined text-primary text-sm">restaurant_menu</span>
+            <span class="text-primary font-label tracking-[0.3em] uppercase text-xs">Corporate Catering</span>
+          </div>
+          <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase mb-4 leading-tight">
+            Daily Tiffin <span class="text-primary">Service</span>
+          </h2>
+          <p class="font-body text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
+            Elevate your corporate dining experience with our chef-curated tiffin service. Fresh, nutritious meals delivered daily to your workplace.
+          </p>
+        </div>
+
+        <!-- Main Content Card -->
+        <div class="relative">
+          <!-- Decorative Elements -->
+          <div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/20 rounded-full blur-xl"></div>
+          <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary-fixed/20 rounded-full blur-xl"></div>
+
+          <div class="bg-surface-container-highest/80 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+              <!-- Image Section -->
+              <div class="relative group overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary-fixed/20 z-10"></div>
+                <img alt="Premium corporate tiffin service with gourmet meal boxes"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGr2r-rmCSiTsYoLW6vSTvJPhQqpaWUp7konQxTbdrYWOB5izkSIOBXWLMJvCEBBYe7Dv8o9HDaMbs74fbPonHSUy7p4OWYqNkZwoHJc6muNcYVJPL00ezfLevZLLbARAD_RhOiJZMhPxIqSSaEWFL2HjV1NHcPm93Rv13EpZUHC5jBIyTpnynOtaoYUu4uSFCSCjBQAOaXI9dm67-LWF_uCK1MrR5KLyQyh7HwAjcwaTGoEmRGaqtu0qiwkyIoeAuVKwHmK49y8E" />
+
+                <!-- Floating Badge -->
+                <div class="absolute top-8 right-8 z-20">
+                  <div class="bg-secondary-fixed text-on-secondary-fixed px-4 py-2 rounded-full shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
+                    <span class="font-headline text-sm uppercase tracking-wider">Free Delivery</span>
+                  </div>
+                </div>
+
+                <!-- Quality Badge -->
+                <div class="absolute bottom-8 left-8 z-20">
+                  <div class="bg-primary text-on-primary px-4 py-2 rounded-full shadow-lg">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-sm" data-weight="fill">verified</span>
+                      <span class="font-headline text-sm uppercase tracking-wider">Premium Quality</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content Section -->
+              <div class="p-12 md:p-16 flex flex-col justify-center relative">
+                <!-- Decorative Icon -->
+                <div class="absolute top-8 right-8 opacity-10">
+                  <span class="material-symbols-outlined text-secondary-fixed text-8xl">lunch_dining</span>
+                </div>
+
+                <div class="relative z-10">
+                  <h3 class="font-headline text-3xl md:text-4xl text-on-surface uppercase mb-6 leading-tight">
+                    Chef-Curated <br />
+                    <span class="text-primary">Office Meals</span>
+                  </h3>
+
+                  <p class="font-body text-on-surface-variant text-lg mb-10 leading-relaxed">
+                    Transform your workday with our rotating menu of 30+ gourmet dishes. Each tiffin is freshly prepared with premium ingredients, balanced nutrition, and culinary excellence.
+                  </p>
+
+                  <!-- Feature Grid -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+                    <div class="group">
+                      <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container/50 border border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          <span class="material-symbols-outlined text-primary text-xl">restaurant</span>
+                        </div>
+                        <div>
+                          <h4 class="font-headline text-on-surface uppercase text-sm mb-2 tracking-wider">Diverse Menu</h4>
+                          <p class="font-body text-on-surface-variant text-sm">30+ rotating dishes weekly</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="group">
+                      <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container/50 border border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          <span class="material-symbols-outlined text-primary text-xl">schedule</span>
+                        </div>
+                        <div>
+                          <h4 class="font-headline text-on-surface uppercase text-sm mb-2 tracking-wider">Fresh Daily</h4>
+                          <p class="font-body text-on-surface-variant text-sm">Prepared fresh every morning</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="group">
+                      <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container/50 border border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          <span class="material-symbols-outlined text-primary text-xl">local_shipping</span>
+                        </div>
+                        <div>
+                          <h4 class="font-headline text-on-surface uppercase text-sm mb-2 tracking-wider">Free Delivery</h4>
+                          <p class="font-body text-on-surface-variant text-sm">Within 1km radius</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="group">
+                      <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container/50 border border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          <span class="material-symbols-outlined text-primary text-xl">payments</span>
+                        </div>
+                        <div>
+                          <h4 class="font-headline text-on-surface uppercase text-sm mb-2 tracking-wider">Value Pricing</h4>
+                          <p class="font-body text-on-surface-variant text-sm">Corporate plans available</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CTA Section -->
+                  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-8 border-t border-white/10">
+                    <a href="tiffin.html" class="group bg-primary text-on-primary px-8 py-4 rounded-xl font-headline tracking-widest text-sm uppercase hover:bg-primary-fixed transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 transform hover:-translate-y-1 inline-block">
+                      <span class="flex items-center gap-2">
+                        View Subscription Plans
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      </span>
+                    </a>
+
+                    <div class="flex items-center gap-3 px-4 py-2 rounded-full bg-secondary-fixed/10 border border-secondary-fixed/20">
+                      <span class="material-symbols-outlined text-secondary-fixed" data-weight="fill">workspace_premium</span>
+                      <span class="font-label text-secondary-fixed text-sm uppercase tracking-wider">Trusted by 50+ Companies</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-32 px-6 md:px-12 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-20 text-center">
+          <span class="text-primary font-label tracking-[0.4em] uppercase text-xs mb-4 block">Guest Experiences</span>
+          <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase">What Customers Say</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Review 1 -->
+          <div
+            class="bg-surface-container-highest p-10 rounded-xl border border-outline-variant/10 flex flex-col justify-between group hover:border-secondary-fixed/30 transition-colors">
+            <div>
+              <div class="flex gap-1 mb-6 text-secondary-fixed">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+              </div>
+              <p class="font-headline text-xl text-on-surface mb-8 italic leading-relaxed">"Best grilled food in Surat,
+                must try!"</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center font-headline text-primary text-xs border border-primary/20">
+                AK</div>
+              <div class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Arjun K.</div>
+            </div>
+          </div>
+          <!-- Review 2 -->
+          <div
+            class="bg-surface-container-highest p-10 rounded-xl border border-outline-variant/10 flex flex-col justify-between group hover:border-secondary-fixed/30 transition-colors">
+            <div>
+              <div class="flex gap-1 mb-6 text-secondary-fixed">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+              </div>
+              <p class="font-headline text-xl text-on-surface mb-8 italic leading-relaxed">"Affordable and tasty,
+                perfect for late night."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center font-headline text-primary text-xs border border-primary/20">
+                SP</div>
+              <div class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Siddharth P.</div>
+            </div>
+          </div>
+          <!-- Review 3 -->
+          <div
+            class="bg-surface-container-highest p-10 rounded-xl border border-outline-variant/10 flex flex-col justify-between group hover:border-secondary-fixed/30 transition-colors">
+            <div>
+              <div class="flex gap-1 mb-6 text-secondary-fixed">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+              </div>
+              <p class="font-headline text-xl text-on-surface mb-8 italic leading-relaxed">"The Tiffin service is a
+                lifesaver for our office - variety and quality are unmatched."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center font-headline text-primary text-xs border border-primary/20">
+                RL</div>
+              <div class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Riya L.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Visit Us Section -->
+    <section id="contact" class="relative w-full h-[700px] overflow-hidden">
+      <!-- Full Width Map -->
+      <div class="absolute inset-0 bg-surface-container-low">
+        <iframe allowfullscreen="" class="w-full h-full grayscale-[0.8] invert-[0.1] contrast-[1.2] opacity-50"
+          loading="lazy"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.000000000000!2d72.8!3d21.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzAwLjAiTiA3MsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin">
+        </iframe>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+      </div>
+      <div class="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center">
+        <div class="mb-12">
+          <span
+            class="inline-block px-4 py-1 mb-4 border border-primary/30 text-primary font-label text-xs tracking-[0.3em] uppercase rounded-full bg-background/60 backdrop-blur-md">Location</span>
+          <h2 class="font-display text-5xl md:text-7xl text-on-surface uppercase italic leading-tight">Visit The
+            <br /><span class="text-secondary-fixed text-glow">Hearth</span>
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Address Card -->
+          <div
+            class="bg-surface-container/80 backdrop-blur-xl p-8 rounded-xl border border-outline-variant/20 shadow-2xl transform hover:-translate-y-2 transition-transform duration-500">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary">pin_drop</span>
+              </div>
+              <h4 class="font-headline text-lg text-secondary-fixed uppercase tracking-widest">Find Us</h4>
+            </div>
+            <p class="font-body text-on-surface-variant leading-relaxed mb-4 text-lg" data-restaurant-text="address">
+            </p>
+            <a class="inline-flex items-center gap-2 text-primary font-label tracking-widest text-xs uppercase hover:gap-4 transition-all"
+              href="https://www.google.com/maps/place/Grill+%26+Chill/@21.146208,72.759325,14z/data=!4m6!3m5!1s0x3be0527f87e48501:0xcce1104d05e07735!8m2!3d21.146208!4d72.759325!16s%2Fg%2F11c6t0k6d4?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D" data-restaurant-link="maps">Get Directions <span class="material-symbols-outlined text-sm">open_in_new</span></a>
+          </div>
+          <!-- Hours Card -->
+          <div
+            class="bg-surface-container/80 backdrop-blur-xl p-8 rounded-xl border border-outline-variant/20 shadow-2xl transform hover:-translate-y-2 transition-transform duration-500 delay-75">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary">schedule</span>
+              </div>
+              <h4 class="font-headline text-lg text-secondary-fixed uppercase tracking-widest">Service Hours</h4>
+            </div>
+            <div class="space-y-3 font-body text-on-surface-variant">
+              <div class="flex justify-between border-b border-outline-variant/10 pb-2">
+                <span>Mon - Sun</span>
+                <span class="text-on-surface" data-restaurant-text="timings"></span>
+              </div>
+              <div class="pt-2 italic text-sm">Fresh flavors, every hour of the day.</div>
+            </div>
+          </div>
+          <!-- Contact Card -->
+          <div
+            class="bg-secondary-fixed p-8 rounded-xl border border-secondary-container shadow-2xl transform hover:-translate-y-2 transition-transform duration-500 delay-150">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-on-secondary-fixed/10 flex items-center justify-center">
+                <span class="material-symbols-outlined text-on-secondary-fixed">hub</span>
+              </div>
+              <h4 class="font-headline text-lg text-on-secondary-fixed uppercase tracking-widest">Inquiries</h4>
+            </div>
+            <div class="space-y-4">
+              <a class="flex items-center gap-3 text-on-secondary-fixed-variant hover:text-on-secondary-fixed transition-colors"
+                href="tel:+918980356776" data-restaurant-link="phone">
+                <span class="material-symbols-outlined text-xl">call</span>
+                <span class="font-headline text-sm tracking-wider" data-restaurant-text="phone"></span>
+              </a>
+              <a class="flex items-center gap-3 text-on-secondary-fixed-variant hover:text-on-secondary-fixed transition-colors"
+                href="mailto:grillandchill4321@gmail.com" data-restaurant-link="email">
+                <span class="material-symbols-outlined text-xl">mail</span>
+                <span class="font-headline text-sm tracking-wider" data-restaurant-text="email"></span>
+              </a>
+              <button
+                class="w-full mt-4 bg-on-secondary-fixed text-secondary-fixed py-3 rounded-lg font-headline text-xs tracking-widest uppercase hover:opacity-90 transition-opacity">Book
+                Table</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer: Editorial Heritage Redesign -->
+  <footer class="bg-[#2a0506] pt-24 pb-12 px-6 md:px-12 font-body overflow-hidden relative">
+    <!-- Subtle decorative element -->
+    <div class="absolute top-0 right-0 opacity-5 pointer-events-none translate-x-1/4 -translate-y-1/4">
+      <span class="material-symbols-outlined text-[400px]">restaurant_menu</span>
+    </div>
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 pb-16">
+        <!-- Column 1: About & Contact -->
+        <div class="md:col-span-5 space-y-8">
+          <div class="inline-block">
+            <div class="text-4xl font-extrabold text-secondary-fixed font-headline tracking-tighter uppercase mb-2">GRILL &amp; CHILL</div>
+            <div class="h-1 w-full bg-secondary-fixed/30 rounded-full"></div>
+          </div>
+          <p class="text-on-surface-variant text-lg leading-relaxed max-w-md italic">
+            An editorial culinary journey born from fire. We honor heritage recipes with a modern edge, serving late-night cravings in the heart of Adajan.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed mt-1">location_on</span>
+              <div>
+                <p class="text-on-surface-variant" data-restaurant-text="address"></p>
+                <a class="inline-flex items-center gap-2 text-primary font-semibold uppercase tracking-[0.3em] text-xs hover:text-secondary-fixed transition-colors"
+                  href="https://www.google.com/maps/place/Grill+%26+Chill/@21.146208,72.759325,14z/data=!4m6!3m5!1s0x3be0527f87e48501:0xcce1104d05e07735!8m2!3d21.146208!4d72.759325!16s%2Fg%2F11c6t0k6d4?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D" data-restaurant-link="maps" data-override-text="View Location">
+                  View Location
+                </a>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed">call</span>
+              <a class="text-on-surface hover:text-secondary-fixed transition-colors font-semibold" href="tel:+918980356776" data-restaurant-link="phone" data-restaurant-text="phone"></a>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed">schedule</span>
+              <span class="text-on-surface-variant" data-restaurant-text="timings"></span>
+            </div>
+          </div>
+        </div>
+        <!-- Column 2: Quick Links -->
+        <div class="md:col-span-3 md:pl-12">
+          <h4 class="font-headline text-secondary-fixed font-bold uppercase tracking-[0.2em] text-sm mb-8 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-secondary-fixed">Sitemap</h4>
+          <ul class="space-y-4">
+            <li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors uppercase text-xs tracking-widest font-label" href="index.html">Home</a></li>
+            <li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors uppercase text-xs tracking-widest font-label" href="menu.html">The Menu</a></li>
+            <li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors uppercase text-xs tracking-widest font-label" href="catering.html">Catering</a></li>
+            <li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors uppercase text-xs tracking-widest font-label" href="tiffin.html">Tiffin Service</a></li>
+            <li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors uppercase text-xs tracking-widest font-label" href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <!-- Column 3: Social & Heritage -->
+        <div class="md:col-span-4 md:pl-12">
+          <h4 class="font-headline text-secondary-fixed font-bold uppercase tracking-[0.2em] text-sm mb-8 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-secondary-fixed">Follow The Flame</h4>
+          <div class="flex flex-col gap-6">
+            <div class="flex gap-4">
+              <a class="w-12 h-12 rounded-full border border-secondary-fixed/20 flex items-center justify-center text-secondary-fixed hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-all duration-300" href="https://www.instagram.com/grill.and.chill_/" data-restaurant-link="instagram">
+                <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c.796 0 1.441.645 1.441 1.44s-.645 1.44-1.441 1.44c-.795 0-1.439-.645-1.439-1.44s.644-1.44 1.439-1.44z"></path></svg>
+                <span class="sr-only">Instagram</span>
+              </a>
+              <span class="w-12 h-12 rounded-full border border-secondary-fixed/20 flex items-center justify-center text-secondary-fixed opacity-40 cursor-not-allowed" aria-disabled="true" title="Coming soon">
+                <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                <span class="sr-only">Coming soon</span>
+              </span>
+            </div>
+            <div class="p-6 bg-[#310002] border border-secondary-fixed/10 rounded-lg">
+              <p class="text-secondary-fixed text-xs font-headline uppercase tracking-[0.25em] mb-2">Heritage Promise</p>
+              <p class="text-on-surface-variant text-sm italic">"Where fire meets heritage, excellence is born."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright Line -->
+      <div class="border-t border-secondary-fixed/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+        <p class="text-on-surface-variant/60 text-sm font-label tracking-widest uppercase">
+          © 2026 Grill &amp; Chill. All rights reserved.
+        </p>
+        <div class="flex gap-8 text-[10px] tracking-[0.3em] uppercase text-on-surface-variant/40">
+          <span class="hover:text-secondary-fixed transition-colors opacity-40 cursor-not-allowed" aria-disabled="true">Privacy</span>
+          <span class="hover:text-secondary-fixed transition-colors opacity-40 cursor-not-allowed" aria-disabled="true">Terms</span>
+          <span class="hover:text-secondary-fixed transition-colors opacity-40 cursor-not-allowed" aria-disabled="true">Safety</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

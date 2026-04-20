@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('nav a[href]');
     if (!navLinks.length) return;
 
-    const currentPage = location.pathname.split('/').pop() || 'home.html';
-    const normalizedPage = currentPage === '' ? 'home.html' : currentPage;
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    const normalizedPage = currentPage === '' ? 'index.html' : currentPage;
 
     navLinks.forEach(link => {
       const href = link.getAttribute('href')?.split('#')[0] || '';
