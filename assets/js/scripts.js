@@ -60,22 +60,32 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function highlightActiveNavbarLink() {
-    const navLinks = document.querySelectorAll('nav a[href]');
+    const navLinks = document.querySelectorAll('nav a[href], #mobile-menu-overlay a[href]');
     if (!navLinks.length) return;
 
-    const currentPage = location.pathname.split('/').pop() || 'index.html';
-    const normalizedPage = currentPage === '' ? 'index.html' : currentPage;
+    let currentPath = location.pathname.toLowerCase();
+    if (currentPath === '/' || currentPath === '') {
+      currentPath = '/index';
+    }
+    if (currentPath.endsWith('.html')) {
+      currentPath = currentPath.slice(0, -5);
+    }
+    if (currentPath.endsWith('/')) {
+      currentPath = currentPath.slice(0, -1);
+    }
 
     navLinks.forEach(link => {
-      const href = link.getAttribute('href')?.split('#')[0] || '';
-      const linkPage = href.split('/').pop() || '';
+      let href = link.getAttribute('href')?.split('#')[0].toLowerCase() || '';
+      if (href.endsWith('.html')) {
+        href = href.slice(0, -5);
+      }
+      const cleanHref = href.replace(/^(\.\/|\/)/, '');
+      const cleanPath = currentPath.replace(/^\//, '');
 
-      if (linkPage === normalizedPage) {
-        // Active state: full opacity and darker color
+      if (cleanHref === cleanPath) {
         link.classList.remove('text-[#FFB3AC]/80');
         link.classList.add('active-nav-link');
       } else {
-        // Inactive state: reduced opacity
         link.classList.remove('active-nav-link');
         link.classList.add('text-[#FFB3AC]/80');
       }
