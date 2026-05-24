@@ -476,4 +476,206 @@ Please confirm availability. Thanks!`;
   }
 
   setupBookingModal();
+
+  // --- NEW FEATURE 4: LIVE STATUS INDICATOR ---
+  function setupLiveStatusIndicator() {
+    const timingSpans = document.querySelectorAll('[data-restaurant-text="timings"]');
+    if (!timingSpans.length) return;
+
+    const openHour = 11;
+    const closeHour = 23;
+
+    function checkStatus() {
+      let now;
+      try {
+        const istString = new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
+        now = new Date(istString);
+      } catch (e) {
+        now = new Date();
+      }
+
+      const currentHour = now.getHours();
+      const isOpen = currentHour >= openHour && currentHour < closeHour;
+
+      timingSpans.forEach(span => {
+        let indicator = span.nextElementSibling;
+        if (!indicator || !indicator.classList.contains('live-status')) {
+          indicator = document.createElement('span');
+          indicator.className = 'live-status';
+          span.parentNode.insertBefore(indicator, span.nextSibling);
+        }
+
+        if (isOpen) {
+          indicator.className = 'live-status inline-flex items-center gap-1.5 ml-2 font-headline text-[9px] md:text-[10px] tracking-wider font-extrabold uppercase text-green-400 align-middle';
+          indicator.innerHTML = `
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            Open Now
+          `;
+        } else {
+          indicator.className = 'live-status inline-flex items-center gap-1.5 ml-2 font-headline text-[9px] md:text-[10px] tracking-wider font-extrabold uppercase text-on-surface-variant/60 align-middle';
+          indicator.innerHTML = `
+            <span class="relative flex h-2 w-2">
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-neutral-500"></span>
+            </span>
+            Closed
+          `;
+        }
+      });
+    }
+
+    checkStatus();
+    setInterval(checkStatus, 30000);
+  }
+
+  setupLiveStatusIndicator();
+
+  // --- NEW FEATURE 5: GOOGLE REVIEW & WHATSAPP FEEDBACK DIALOG ---
+  function setupFeedbackModal() {
+    const triggerBtn = document.getElementById('feedback-trigger-btn');
+    if (!triggerBtn) return;
+
+    const initialContent = `
+      <div class="bg-[#2a0506] border border-primary/20 p-8 rounded-2xl max-w-md w-full mx-4 shadow-2xl relative transform scale-95 transition-all duration-300">
+        <button id="close-feedback-modal" class="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors" aria-label="Close">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+        
+        <h3 class="font-headline text-2xl font-black text-secondary-fixed uppercase tracking-tight mb-2">Share Your Experience</h3>
+        <p class="text-xs text-on-surface-variant font-label uppercase tracking-widest mb-6">Your feedback shapes our hearth</p>
+        
+        <div class="space-y-4">
+          <!-- Option 1: Public Google Review -->
+          <a href="https://www.google.com/maps/place/Grill+%26+Chill/@21.146208,72.759325,14z/data=!4m6!3m5!1s0x3be0527f87e48501:0xcce1104d05e07735!8m2!3d21.146208!4d72.759325!16s%2Fg%2F11c6t0k6d4?entry=ttu" 
+             target="_blank" rel="noopener noreferrer" id="google-review-link"
+             class="flex items-center gap-4 p-5 bg-[#310002] border border-primary/20 rounded-xl hover:border-brand-gold/40 hover:bg-[#420003] transition-all group">
+            <div class="w-12 h-12 rounded-full bg-secondary-fixed/10 flex items-center justify-center text-secondary-fixed group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-2xl">star_rate</span>
+            </div>
+            <div class="flex-grow">
+              <h4 class="font-headline text-sm font-bold text-white uppercase tracking-wider mb-1">Review on Google</h4>
+              <p class="text-xs text-on-surface-variant font-body">Help others discover our Punjabi & Chinese flavors.</p>
+            </div>
+            <span class="material-symbols-outlined text-brand-gold/60 group-hover:text-brand-gold transition-colors">arrow_forward</span>
+          </a>
+
+          <!-- Option 2: Private WhatsApp Feedback -->
+          <button id="whatsapp-feedback-trigger"
+             class="w-full flex items-center text-left gap-4 p-5 bg-[#310002] border border-primary/20 rounded-xl hover:border-green-500/40 hover:bg-[#420003] transition-all group">
+            <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-2xl">chat</span>
+            </div>
+            <div class="flex-grow">
+              <h4 class="font-headline text-sm font-bold text-white uppercase tracking-wider mb-1">Private Feedback</h4>
+              <p class="text-xs text-on-surface-variant font-body">Share suggestions or issues directly with our team.</p>
+            </div>
+            <span class="material-symbols-outlined text-green-500/60 group-hover:text-green-500 transition-colors">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    `;
+
+    // Create Modal Element
+    const modalDiv = document.createElement('div');
+    modalDiv.id = 'feedback-modal';
+    modalDiv.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300';
+    modalDiv.innerHTML = initialContent;
+    document.body.appendChild(modalDiv);
+
+    const modal = document.getElementById('feedback-modal');
+    const modalContent = modal.querySelector('div');
+    
+    function openModal() {
+      modal.innerHTML = initialContent;
+      attachInitialListeners();
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-95');
+      modalContent.classList.add('scale-100');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function attachInitialListeners() {
+      const closeBtn = modal.querySelector('#close-feedback-modal');
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+      const googleLink = modal.querySelector('#google-review-link');
+      if (googleLink) googleLink.addEventListener('click', closeModal);
+
+      const waTrigger = modal.querySelector('#whatsapp-feedback-trigger');
+      if (waTrigger) {
+        waTrigger.addEventListener('click', () => {
+          modal.innerHTML = `
+            <div class="bg-[#2a0506] border border-primary/20 p-8 rounded-2xl max-w-md w-full mx-4 shadow-2xl relative transform scale-100 transition-all duration-300">
+              <button id="back-feedback-modal" class="absolute top-4 left-4 text-on-surface-variant hover:text-white transition-colors" aria-label="Back">
+                <span class="material-symbols-outlined text-2xl">arrow_back</span>
+              </button>
+              <button id="close-feedback-modal" class="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors" aria-label="Close">
+                <span class="material-symbols-outlined text-2xl">close</span>
+              </button>
+              
+              <h3 class="font-headline text-2xl font-black text-secondary-fixed uppercase tracking-tight mb-2">Private Feedback</h3>
+              <p class="text-xs text-on-surface-variant font-label uppercase tracking-widest mb-6">Send your thoughts directly to us</p>
+              
+              <form id="private-feedback-form" class="space-y-4">
+                <div>
+                  <label class="block text-xs font-label uppercase tracking-wider text-on-surface-variant mb-1.5">Your Name</label>
+                  <input type="text" id="feedback-name" placeholder="e.g. Rahul Patel" 
+                    class="w-full px-4 py-2.5 bg-[#310002] border border-primary/20 rounded-lg text-white focus:outline-none focus:border-primary text-sm" required />
+                </div>
+                <div>
+                  <label class="block text-xs font-label uppercase tracking-wider text-on-surface-variant mb-1.5">Your Message</label>
+                  <textarea id="feedback-message" rows="4" placeholder="How was the food, service, or delivery? Let us know!" 
+                    class="w-full px-4 py-2.5 bg-[#310002] border border-primary/20 rounded-lg text-white focus:outline-none focus:border-primary text-sm resize-none" required></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 mt-4 bg-primary hover:bg-secondary-fixed text-on-primary hover:text-on-secondary-fixed font-headline font-extrabold uppercase tracking-widest text-sm rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-primary/25">
+                  <span class="material-symbols-outlined text-lg">send</span> Submit via WhatsApp
+                </button>
+              </form>
+            </div>
+          `;
+
+          const backBtn = modal.querySelector('#back-feedback-modal');
+          if (backBtn) backBtn.addEventListener('click', openModal);
+
+          const closeFormBtn = modal.querySelector('#close-feedback-modal');
+          if (closeFormBtn) closeFormBtn.addEventListener('click', closeModal);
+
+          const form = modal.querySelector('#private-feedback-form');
+          if (form) {
+            form.addEventListener('submit', (e) => {
+              e.preventDefault();
+              const name = modal.querySelector('#feedback-name').value;
+              const message = modal.querySelector('#feedback-message').value;
+
+              const msg = `Hi Grill & Chill, I'd like to share some private feedback:
+• Name: ${name}
+• Message: ${message}`;
+
+              const phoneDigits = (typeof RESTAURANT !== 'undefined' && RESTAURANT.phone) ? RESTAURANT.phone.replace(/\D/g, '') : '918980356776';
+              const waLink = `https://wa.me/${phoneDigits}?text=${encodeURIComponent(msg)}`;
+              
+              window.open(waLink, '_blank', 'noopener,noreferrer');
+              closeModal();
+            });
+          }
+        });
+      }
+    }
+
+    triggerBtn.addEventListener('click', openModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  setupFeedbackModal();
 });
