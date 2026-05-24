@@ -13,49 +13,58 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   if (buttons.length && sections.length) {
-    // Check if there's a hash in the URL
-    const hash = window.location.hash.slice(1); // Remove #
-    const initialCategory = hash || 'chinese';
+    function setActiveCategory(category) {
+      sections.forEach(section => {
+        section.style.display = section.dataset.category === category ? 'block' : 'none';
+      });
 
-    // Show/hide sections based on initial category or hash
-    sections.forEach(section => {
-      section.style.display = section.dataset.category === initialCategory ? 'block' : 'none';
-    });
+      buttons.forEach(btn => {
+        const btnCategory = btn.dataset.categoryTab || btn.textContent.trim().toLowerCase().replace(/\s+/g, ' ');
+        if (btnCategory === category) {
+          btn.classList.remove('bg-surface-container-highest', 'text-on-surface', 'hover:bg-surface-bright');
+          btn.classList.add('bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
+        } else {
+          btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
+          btn.classList.add('bg-surface-container-highest', 'text-on-surface', 'hover:bg-surface-bright');
+        }
+      });
+    }
 
-    // Highlight the correct button based on initial category
-    buttons.forEach(btn => {
-      const btnCategory = btn.dataset.categoryTab || btn.textContent.trim().toLowerCase().replace(/\s+/g, '');
-      if (btnCategory === initialCategory) {
-        btn.classList.remove('bg-surface-container-highest', 'text-on-surface', 'hover:bg-surface-bright');
-        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
-      } else {
-        btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
-        btn.classList.add('bg-surface-container-highest', 'text-on-surface', 'hover:bg-surface-bright');
-      }
-    });
+    // Set initial category from hash or default to 'chinese'
+    const initialHash = window.location.hash.slice(1);
+    const initialCategory = initialHash || 'chinese';
+    setActiveCategory(initialCategory);
 
     buttons.forEach(button => {
-      button.addEventListener('click', async function () {
-        const category = this.dataset.categoryTab || this.textContent.trim().toLowerCase().replace(/\s+/g, '');
-
-        sections.forEach(section => {
-          if (section.dataset.category === category) {
-            section.style.display = 'block';
-          } else {
-            section.style.display = 'none';
-          }
-        });
-
-        buttons.forEach(btn => {
-          if (btn === this) {
-            btn.classList.remove('bg-surface-container-highest', 'text-on-surface', 'hover:bg-surface-bright');
-            btn.classList.add('bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
-          } else {
-            btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
-            btn.classList.add('bg-surface-container-highest', 'text-on-surface', 'hover:bg-surface-bright');
-          }
-        });
+      button.addEventListener('click', function () {
+        const category = this.dataset.categoryTab || this.textContent.trim().toLowerCase().replace(/\s+/g, ' ');
+        window.location.hash = category;
       });
+    });
+
+    // Listen to hashchange for SPA routing and external link clicks
+    window.addEventListener('hashchange', function () {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        const hasMatch = Array.from(sections).some(section => section.dataset.category === hash);
+        if (hasMatch) {
+          // Clear search bar and reset items if a category tab is selected
+          const searchInput = document.getElementById('menu-search-input');
+          if (searchInput && searchInput.value !== '') {
+            searchInput.value = '';
+            // Reset categories / search visibility
+            sections.forEach(sec => {
+              sec.querySelectorAll('.group, li, .flex').forEach(item => item.style.display = '');
+              sec.querySelectorAll('section, .grid, .lg\\:col-span-1, .lg\\:col-span-2, .p-8').forEach(sub => sub.style.display = '');
+            });
+            document.querySelectorAll('[data-category-tab]').forEach(btn => {
+              btn.style.opacity = '1';
+              btn.style.pointerEvents = 'auto';
+            });
+          }
+          setActiveCategory(hash);
+        }
+      }
     });
   }
 
