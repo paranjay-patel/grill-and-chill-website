@@ -110,7 +110,10 @@
       </div>
     </div>
     <nav class="flex justify-between items-center px-4 md:px-12 w-full max-w-none py-3 gap-2">
-      <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#FFB3AC] font-headline flex-shrink-0">GRILL &amp; CHILL</a>
+      <a href="index.html" class="flex items-center gap-3 font-headline flex-shrink-0 group">
+        <img src="assets/images/favicon.png" alt="Grill &amp; Chill Logo" class="w-10 h-10 object-contain rounded-full border border-primary/20 group-hover:scale-105 transition-transform" />
+        <span class="text-xl md:text-2xl font-bold tracking-tighter text-[#FFB3AC]">GRILL &amp; CHILL</span>
+      </a>
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-8">
         <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
@@ -137,6 +140,10 @@
     <button id="mobile-menu-close-btn" class="absolute top-6 right-6 text-[#FFB3AC] hover:text-white focus:outline-none" aria-label="Close Menu">
       <span class="material-symbols-outlined text-3xl">close</span>
     </button>
+    <div class="flex flex-col items-center gap-2 mb-4">
+      <img src="assets/images/favicon.png" alt="Grill &amp; Chill Logo" class="w-24 h-24 object-contain rounded-full border-2 border-primary/30 shadow-xl" />
+      <span class="text-2xl font-black text-[#FFB3AC] tracking-widest font-headline">GRILL &amp; CHILL</span>
+    </div>
     <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="index.html">Home</a>
     <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="menu.html">Menu</a>
     <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="catering.html">Catering</a>
@@ -681,9 +688,12 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 pb-16">
         <!-- Column 1: About & Contact -->
         <div class="md:col-span-5 space-y-8">
-          <div class="inline-block">
-            <div class="text-4xl font-extrabold text-secondary-fixed font-headline tracking-tighter uppercase mb-2">GRILL &amp; CHILL</div>
-            <div class="h-1 w-full bg-secondary-fixed/30 rounded-full"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <img src="assets/images/favicon.png" alt="Grill &amp; Chill Logo" class="w-16 h-16 object-contain rounded-full border border-secondary-fixed/20" />
+            <div>
+              <div class="text-3xl font-extrabold text-secondary-fixed font-headline tracking-tighter uppercase leading-none">GRILL &amp; CHILL</div>
+              <div class="text-[10px] text-primary tracking-[0.25em] uppercase font-label mt-1">Est. 2019</div>
+            </div>
           </div>
           <p class="text-on-surface-variant text-lg leading-relaxed max-w-md italic">
             An editorial culinary journey born from fire. We honor heritage recipes with a modern edge, serving late-night cravings in the heart of Adajan.
