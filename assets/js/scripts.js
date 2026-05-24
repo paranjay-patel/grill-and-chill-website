@@ -13,11 +13,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   if (buttons.length && sections.length) {
-    function setActiveCategory(category) {
-      sections.forEach(section => {
-        section.style.display = section.dataset.category === category ? 'block' : 'none';
-      });
+    // Add transition classes initially to all sections
+    sections.forEach(section => {
+      section.classList.add('transition-all', 'duration-300', 'ease-in-out', 'transform');
+    });
 
+    let isTransitioning = false;
+
+    function setActiveCategory(category) {
+      if (isTransitioning) return;
+      
+      const activeSection = Array.from(sections).find(s => s.style.display === 'block');
+      const targetSection = Array.from(sections).find(s => s.dataset.category === category);
+      
+      // Update button styling immediately
       buttons.forEach(btn => {
         const btnCategory = btn.dataset.categoryTab || btn.textContent.trim().toLowerCase().replace(/\s+/g, ' ');
         if (btnCategory === category) {
@@ -28,6 +37,43 @@ document.addEventListener('DOMContentLoaded', function () {
           btn.classList.add('bg-surface-container-highest', 'text-on-surface', 'hover:bg-surface-bright');
         }
       });
+
+      if (activeSection && activeSection !== targetSection) {
+        isTransitioning = true;
+        // Fade out currently active section
+        activeSection.classList.remove('opacity-100', 'scale-100', 'translate-y-0');
+        activeSection.classList.add('opacity-0', 'scale-95', 'translate-y-2');
+        
+        setTimeout(() => {
+          activeSection.style.display = 'none';
+          
+          if (targetSection) {
+            targetSection.style.display = 'block';
+            targetSection.classList.remove('opacity-100', 'scale-100', 'translate-y-0');
+            targetSection.classList.add('opacity-0', 'scale-95', 'translate-y-2');
+            
+            // Force browser reflow to register new styles before transition starts
+            targetSection.offsetHeight;
+            
+            targetSection.classList.remove('opacity-0', 'scale-95', 'translate-y-2');
+            targetSection.classList.add('opacity-100', 'scale-100', 'translate-y-0');
+          }
+          isTransitioning = false;
+        }, 150); // wait for fade-out half duration
+      } else {
+        // Initial setup on page load
+        sections.forEach(sec => {
+          if (sec === targetSection) {
+            sec.style.display = 'block';
+            sec.classList.remove('opacity-0', 'scale-95', 'translate-y-2');
+            sec.classList.add('opacity-100', 'scale-100', 'translate-y-0');
+          } else {
+            sec.style.display = 'none';
+            sec.classList.remove('opacity-100', 'scale-100', 'translate-y-0');
+            sec.classList.add('opacity-0', 'scale-95', 'translate-y-2');
+          }
+        });
+      }
     }
 
     // Set initial category from hash or default to 'chinese'
@@ -37,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     buttons.forEach(button => {
       button.addEventListener('click', function () {
+        if (isTransitioning) return;
         const category = this.dataset.categoryTab || this.textContent.trim().toLowerCase().replace(/\s+/g, ' ');
         window.location.hash = category;
       });
@@ -103,35 +150,99 @@ document.addEventListener('DOMContentLoaded', function () {
 
   highlightActiveNavbarLink();
 
-  // Mobile navigation drawer toggle
+  // Mobile navigation drawer toggle with full accessibility (a11y)
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
   const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
 
   if (mobileMenuBtn && mobileMenuOverlay) {
-    mobileMenuBtn.addEventListener('click', () => {
+    // Dynamic initialization of ARIA attributes for cleaner markup and portability
+    mobileMenuBtn.setAttribute('aria-haspopup', 'dialog');
+    mobileMenuBtn.setAttribute('aria-controls', 'mobile-menu-overlay');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+
+    mobileMenuOverlay.setAttribute('role', 'dialog');
+    mobileMenuOverlay.setAttribute('aria-modal', 'true');
+    mobileMenuOverlay.setAttribute('aria-label', 'Mobile Navigation');
+    mobileMenuOverlay.setAttribute('aria-hidden', 'true');
+
+    // Keep track of the active element before menu was opened to restore focus later
+    let previousActiveElement;
+
+    function openMobileMenu() {
+      previousActiveElement = document.activeElement;
       mobileMenuOverlay.classList.remove('translate-x-full');
       mobileMenuOverlay.classList.add('translate-x-0');
       document.body.classList.add('overflow-hidden');
-    });
-  }
 
-  if (mobileMenuCloseBtn && mobileMenuOverlay) {
-    mobileMenuCloseBtn.addEventListener('click', () => {
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      mobileMenuOverlay.setAttribute('aria-hidden', 'false');
+
+      // Shift focus inside the drawer after it transitions in
+      setTimeout(() => {
+        if (mobileMenuCloseBtn) {
+          mobileMenuCloseBtn.focus();
+        }
+      }, 100);
+    }
+
+    function closeMobileMenu() {
       mobileMenuOverlay.classList.remove('translate-x-0');
       mobileMenuOverlay.classList.add('translate-x-full');
       document.body.classList.remove('overflow-hidden');
-    });
-  }
 
-  if (mobileMenuOverlay) {
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      mobileMenuOverlay.setAttribute('aria-hidden', 'true');
+
+      // Restore focus
+      if (previousActiveElement) {
+        previousActiveElement.focus();
+      } else {
+        mobileMenuBtn.focus();
+      }
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+
+    if (mobileMenuCloseBtn) {
+      mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close on link clicks
     const overlayLinks = mobileMenuOverlay.querySelectorAll('a');
     overlayLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuOverlay.classList.remove('translate-x-0');
-        mobileMenuOverlay.classList.add('translate-x-full');
-        document.body.classList.remove('overflow-hidden');
-      });
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Keyboard navigation: Escape key to close & focus trapping (keyboard trap)
+    mobileMenuOverlay.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      } else if (e.key === 'Tab') {
+        const focusables = mobileMenuOverlay.querySelectorAll('a, button');
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey) { // Shift + Tab
+          if (document.activeElement === first) {
+            last.focus();
+            e.preventDefault();
+          }
+        } else { // Tab
+          if (document.activeElement === last) {
+            first.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    });
+
+    // Clicking outside the drawer content closes the menu
+    mobileMenuOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileMenuOverlay) {
+        closeMobileMenu();
+      }
     });
   }
 
@@ -204,7 +315,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const activeCategory = activeTab ? activeTab.dataset.categoryTab : 'chinese';
         
         sections.forEach(section => {
-          section.style.display = section.dataset.category === activeCategory ? 'block' : 'none';
+          if (section.dataset.category === activeCategory) {
+            section.style.display = 'block';
+            section.classList.remove('opacity-0', 'scale-95', 'translate-y-2');
+            section.classList.add('opacity-100', 'scale-100', 'translate-y-0');
+          } else {
+            section.style.display = 'none';
+            section.classList.remove('opacity-100', 'scale-100', 'translate-y-0');
+            section.classList.add('opacity-0', 'scale-95', 'translate-y-2');
+          }
           
           // Show all items & containers
           section.querySelectorAll('.group, li, .flex').forEach(item => {
@@ -270,6 +389,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (sectionHasMatches) {
           section.style.setProperty('display', 'block', '');
+          section.classList.remove('opacity-0', 'scale-95', 'translate-y-2');
+          section.classList.add('opacity-100', 'scale-100', 'translate-y-0');
         } else {
           section.style.setProperty('display', 'none', 'important');
         }
@@ -289,6 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modalDiv = document.createElement('div');
     modalDiv.id = 'booking-modal';
     modalDiv.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300';
+    modalDiv.style.display = 'none'; // Prevent flash of unstyled content before Tailwind CDN loads
     modalDiv.innerHTML = `
       <div class="bg-[#2a0506] border border-primary/20 p-8 rounded-2xl max-w-md w-full mx-4 shadow-2xl relative transform scale-95 transition-all duration-300">
         <button id="close-booking-modal" class="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors" aria-label="Close">
@@ -396,6 +518,10 @@ document.addEventListener('DOMContentLoaded', function () {
         durationGroup.style.display = 'none';
       }
 
+      modal.style.display = 'flex';
+      // Force layout reflow
+      modal.offsetHeight;
+
       modal.classList.remove('opacity-0', 'pointer-events-none');
       modalContent.classList.remove('scale-95');
       modalContent.classList.add('scale-100');
@@ -407,6 +533,12 @@ document.addEventListener('DOMContentLoaded', function () {
       modalContent.classList.remove('scale-100');
       modalContent.classList.add('scale-95');
       document.body.classList.remove('overflow-hidden');
+
+      setTimeout(() => {
+        if (modal.classList.contains('opacity-0')) {
+          modal.style.display = 'none';
+        }
+      }, 300);
     }
 
     closeBtn.addEventListener('click', closeModal);
@@ -590,6 +722,7 @@ Please confirm availability. Thanks!`;
     const modalDiv = document.createElement('div');
     modalDiv.id = 'feedback-modal';
     modalDiv.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300';
+    modalDiv.style.display = 'none'; // Prevent flash of unstyled content before Tailwind CDN loads
     modalDiv.innerHTML = initialContent;
     document.body.appendChild(modalDiv);
 
@@ -599,17 +732,34 @@ Please confirm availability. Thanks!`;
     function openModal() {
       modal.innerHTML = initialContent;
       attachInitialListeners();
+
+      modal.style.display = 'flex';
+      // Force layout reflow
+      modal.offsetHeight;
+
       modal.classList.remove('opacity-0', 'pointer-events-none');
-      modalContent.classList.remove('scale-95');
-      modalContent.classList.add('scale-100');
+      const currentModalContent = modal.querySelector('div');
+      if (currentModalContent) {
+        currentModalContent.classList.remove('scale-95');
+        currentModalContent.classList.add('scale-100');
+      }
       document.body.classList.add('overflow-hidden');
     }
 
     function closeModal() {
       modal.classList.add('opacity-0', 'pointer-events-none');
-      modalContent.classList.remove('scale-100');
-      modalContent.classList.add('scale-95');
+      const currentModalContent = modal.querySelector('div');
+      if (currentModalContent) {
+        currentModalContent.classList.remove('scale-100');
+        currentModalContent.classList.add('scale-95');
+      }
       document.body.classList.remove('overflow-hidden');
+
+      setTimeout(() => {
+        if (modal.classList.contains('opacity-0')) {
+          modal.style.display = 'none';
+        }
+      }, 300);
     }
 
     function attachInitialListeners() {
@@ -691,7 +841,7 @@ Please confirm availability. Thanks!`;
   // --- NEW FEATURE 6: FLOATING BACK TO TOP BUTTON WITH SCROLL PROGRESS RING ---
   function setupBackToTopButton() {
     const btnHtml = `
-      <button id="back-to-top" class="fixed right-6 bottom-6 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-[#2a0506]/95 border border-primary/10 text-primary shadow-2xl backdrop-blur-md opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:scale-110 hover:text-white group" aria-label="Back to top">
+      <button id="back-to-top" style="display: none;" class="fixed right-6 bottom-6 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-[#2a0506]/95 border border-primary/10 text-primary shadow-2xl backdrop-blur-md opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:scale-110 hover:text-white group" aria-label="Back to top">
         <!-- Circular Progress Ring -->
         <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 48 48">
           <circle class="text-primary/10" stroke="currentColor" stroke-width="3" fill="transparent" r="21" cx="24" cy="24"></circle>
@@ -723,11 +873,21 @@ Please confirm availability. Thanks!`;
 
       // Show/hide button based on scroll position
       if (scrollTop > 300) {
+        if (btn.style.display === 'none') {
+          btn.style.display = 'flex';
+          // Force layout reflow
+          btn.offsetHeight;
+        }
         btn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
         btn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
       } else {
         btn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
         btn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        setTimeout(() => {
+          if (btn.classList.contains('opacity-0')) {
+            btn.style.display = 'none';
+          }
+        }, 300);
       }
     }
 
@@ -754,7 +914,7 @@ Please confirm availability. Thanks!`;
     const widgetHtml = `
       <div id="whatsapp-widget" class="fixed left-6 bottom-6 z-50 font-body">
         <!-- Popup Chat Window -->
-        <div id="whatsapp-chat-popup" class="absolute bottom-16 left-0 w-80 max-w-[calc(100vw-3rem)] bg-[#2a0506] border border-primary/20 rounded-2xl shadow-2xl overflow-hidden transform scale-95 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-left">
+        <div id="whatsapp-chat-popup" style="display: none;" class="absolute bottom-16 left-0 w-80 max-w-[calc(100vw-3rem)] bg-[#2a0506] border border-primary/20 rounded-2xl shadow-2xl overflow-hidden transform scale-95 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-left">
           <!-- Header -->
           <div class="bg-[#310002] border-b border-primary/10 p-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -816,6 +976,10 @@ Please confirm availability. Thanks!`;
 
     function openChat() {
       isOpen = true;
+      popup.style.display = 'block';
+      // Force layout reflow
+      popup.offsetHeight;
+
       popup.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
       popup.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
       if (badge) {
@@ -827,6 +991,12 @@ Please confirm availability. Thanks!`;
       isOpen = false;
       popup.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
       popup.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+
+      setTimeout(() => {
+        if (!isOpen && popup.classList.contains('opacity-0')) {
+          popup.style.display = 'none';
+        }
+      }, 300);
     }
 
     trigger.addEventListener('click', (e) => {
