@@ -408,14 +408,14 @@ document.addEventListener('DOMContentLoaded', function () {
     let buttons = [];
     if (isCateringPage) {
       buttons = Array.from(document.querySelectorAll('button')).filter(btn => {
-        const text = btn.textContent.trim().toLowerCase();
+        const text = btn.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
         return text.includes('select basic') || text.includes('book standard') || text.includes('select premium');
       });
 
       buttons.forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
-          const text = btn.textContent.trim();
+          const text = btn.textContent.replace(/\s+/g, ' ').trim();
           let pkg = "Catering: Standard Package";
           if (text.toLowerCase().includes('basic')) pkg = "Catering: Basic Package";
           if (text.toLowerCase().includes('premium')) pkg = "Catering: Premium Package";
@@ -424,14 +424,14 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     } else if (isTiffinPage) {
       buttons = Array.from(document.querySelectorAll('button')).filter(btn => {
-        const text = btn.textContent.trim().toLowerCase();
+        const text = btn.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
         return text.includes('start trial') || text.includes('subscribe now') || text.includes('contact sales') || text.includes('order now');
       });
 
       buttons.forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
-          const text = btn.textContent.trim();
+          const text = btn.textContent.replace(/\s+/g, ' ').trim();
           let pkg = "Tiffin: Monthly Subscription";
           if (text.toLowerCase().includes('trial') || text.toLowerCase().includes('week')) pkg = "Tiffin: Weekly Trial";
           if (text.toLowerCase().includes('sales') || text.toLowerCase().includes('corporate')) pkg = "Tiffin: Corporate Plan";
