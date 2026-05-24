@@ -83,4 +83,36 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   highlightActiveNavbarLink();
+
+  // Mobile navigation drawer toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+  const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
+
+  if (mobileMenuBtn && mobileMenuOverlay) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuOverlay.classList.remove('translate-x-full');
+      mobileMenuOverlay.classList.add('translate-x-0');
+      document.body.classList.add('overflow-hidden');
+    });
+  }
+
+  if (mobileMenuCloseBtn && mobileMenuOverlay) {
+    mobileMenuCloseBtn.addEventListener('click', () => {
+      mobileMenuOverlay.classList.remove('translate-x-0');
+      mobileMenuOverlay.classList.add('translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    });
+  }
+
+  if (mobileMenuOverlay) {
+    const overlayLinks = mobileMenuOverlay.querySelectorAll('a');
+    overlayLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuOverlay.classList.remove('translate-x-0');
+        mobileMenuOverlay.classList.add('translate-x-full');
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+  }
 });

@@ -26,8 +26,8 @@
   <!-- TopAppBar -->
   <header class="fixed top-0 w-full z-50 bg-[#310002]/70 backdrop-blur-xl shadow-2xl shadow-[#290003]/40">
     <div
-      class="bg-[#200001] border-b border-primary/20 py-2 px-6 md:px-12 flex flex-wrap justify-between items-center text-[10px] md:text-xs font-label tracking-[0.2em] text-secondary-fixed/90 uppercase">
-      <div class="flex items-center gap-6">
+      class="bg-[#200001] border-b border-primary/20 py-2 px-4 md:px-12 flex justify-between items-center text-[10px] md:text-xs font-label tracking-[0.2em] text-secondary-fixed/90 uppercase overflow-x-auto no-scrollbar gap-4">
+      <div class="flex items-center gap-4 md:gap-6 flex-shrink-0">
         <div class="flex items-center gap-1.5">
           <span class="material-symbols-outlined text-[14px] text-primary">location_on</span>
           <span>Surat</span>
@@ -37,10 +37,10 @@
           <span data-restaurant-text="timings"></span>
         </div>
       </div>
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-4 md:gap-6 flex-shrink-0">
         <a class="flex items-center gap-1.5 hover:text-secondary-fixed transition-colors" href="tel:+918980356776" data-restaurant-link="phone">
           <span class="material-symbols-outlined text-[14px] text-primary">call</span>
-          <span>Call Now</span>
+          <span>Call</span>
         </a>
         <a class="flex items-center gap-1.5 hover:text-green-400 transition-colors"
           href="https://wa.me/918980356776?text=Hi%2C%20I%20want%20to%20order%20from%20Grill%20%26%20Chill" data-restaurant-link="whatsapp" data-override-text="WhatsApp">
@@ -49,8 +49,8 @@
         </a>
       </div>
     </div>
-    <nav class="flex justify-between items-center px-6 md:px-12 w-full max-w-none py-3">
-      <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#FFB3AC] font-headline">GRILL &amp; CHILL</a>
+    <nav class="flex justify-between items-center px-4 md:px-12 w-full max-w-none py-3 gap-2">
+      <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#FFB3AC] font-headline flex-shrink-0">GRILL &amp; CHILL</a>
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-8">
         <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
@@ -62,15 +62,31 @@
         <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
           href="tiffin.html">tiffin</a>
       </div>
-      <a href="zomato.html"
-        class="px-6 py-2.5 rounded-lg font-headline text-xs tracking-widest uppercase active:scale-90 transition-transform hover:shadow-lg hover:shadow-primary/20 bg-secondary-fixed text-on-secondary-fixed font-bold scale-100">order
-        on zomato</a>
+      <div class="flex items-center gap-3">
+        <a href="zomato.html"
+          class="px-3 py-1.5 md:px-6 md:py-2.5 rounded-lg font-headline text-[10px] md:text-xs tracking-widest uppercase active:scale-90 transition-transform hover:shadow-lg hover:shadow-primary/20 bg-secondary-fixed text-on-secondary-fixed font-bold scale-100 whitespace-nowrap">order
+          on zomato</a>
+        <button id="mobile-menu-btn" class="md:hidden text-[#FFB3AC] hover:text-white transition-colors focus:outline-none flex items-center justify-center animate-fade-in" aria-label="Toggle Menu">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
     </nav>
   </header>
-  <main class="pt-20 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-50 bg-[#200001]/95 backdrop-blur-2xl flex flex-col justify-center items-center gap-8 transition-all duration-300 transform translate-x-full md:hidden">
+    <button id="mobile-menu-close-btn" class="absolute top-6 right-6 text-[#FFB3AC] hover:text-white focus:outline-none" aria-label="Close Menu">
+      <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="index.html">Home</a>
+    <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="menu.html">Menu</a>
+    <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="catering.html">Catering</a>
+    <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="tiffin.html">Tiffin</a>
+    <a href="zomato.html" class="mt-4 px-8 py-3 rounded-lg font-headline text-sm tracking-widest uppercase bg-secondary-fixed text-on-secondary-fixed font-bold">Order on Zomato</a>
+  </div>
+  <main class="pt-24 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
     <!-- Hero Section -->
     <header class="mb-20 text-center pt-16">
-      <h1 class="font-headline font-black text-6xl md:text-8xl text-secondary-fixed uppercase tracking-tighter mb-4">The
+      <h1 class="font-headline font-black text-4xl sm:text-6xl md:text-8xl text-secondary-fixed uppercase tracking-tighter mb-4">The
         Culinary Archive</h1>
       <div class="editorial-line w-full max-w-2xl mx-auto mb-8"></div>
       <p class="font-body text-xl text-on-surface-variant max-w-xl mx-auto italic">Crafted flavors from the hearth to
@@ -95,7 +111,7 @@
           <div class="md:col-span-7 z-10">
             <span class="font-label text-secondary-fixed font-bold tracking-[0.3em] uppercase mb-4 block">Signature
               Series</span>
-            <h2 class="text-6xl md:text-8xl font-black font-headline text-on-surface leading-none mb-6">
+            <h2 class="text-4xl sm:text-6xl md:text-8xl font-black font-headline text-on-surface leading-none mb-6">
               CHINESE<br /><span class="text-secondary-fixed">CULINARY</span></h2>
             <p class="text-lg md:text-xl text-on-surface-variant max-w-md leading-relaxed font-body">
               A masterful fusion of traditional wok-fired techniques and the bold, smoky essence of our signature grill.
@@ -207,7 +223,7 @@
         <!-- Category: Rice (Detailed List with Image Break) -->
         <div class="lg:col-span-2 space-y-8">
           <div class="flex items-center gap-4">
-            <h3 class="font-headline font-black text-6xl editorial-text-mask tracking-tighter">WOK RICE</h3>
+            <h3 class="font-headline font-black text-4xl sm:text-6xl editorial-text-mask tracking-tighter">WOK RICE</h3>
             <div class="h-1 flex-grow bg-gradient-to-r from-secondary-fixed/50 to-transparent"></div>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
@@ -359,7 +375,7 @@
             <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
             <span class="font-label text-xs font-semibold tracking-widest uppercase">Chef's Signature</span>
           </div>
-          <h1 class="font-headline text-6xl md:text-8xl font-black text-secondary-fixed tracking-tighter leading-none">
+          <h1 class="font-headline text-4xl sm:text-6xl md:text-8xl font-black text-secondary-fixed tracking-tighter leading-none">
             PANEER<br />ANGARA</h1>
           <p class="text-on-surface-variant text-lg max-w-xl leading-relaxed">
             Smoky, charcoal-infused succulent cottage cheese cubes simmered in a rich, spicy tomato-onion gravy. The
@@ -476,7 +492,7 @@
               <span class="font-label text-xs font-semibold tracking-widest uppercase">Plant Based</span>
             </div>
             <h2
-              class="font-headline text-5xl md:text-6xl uppercase font-black text-secondary-fixed tracking-tighter mb-4">
+              class="font-headline text-3xl sm:text-5xl md:text-6xl uppercase font-black text-secondary-fixed tracking-tighter mb-4">
               Vegetable <span class="text-primary italic">Garden</span></h2>
             <p class="font-body text-lg text-on-surface-variant max-w-2xl mx-auto">Farm-fresh vegetables kissed by fire
               and simmered in ancestral spices.</p>
@@ -846,7 +862,7 @@
     <section class="mb-32" data-category="chicken">
       <div class="text-center mb-16">
         <span class="font-label text-secondary-fixed text-xs uppercase tracking-[0.3em] font-bold">Category 03</span>
-        <h2 class="font-headline font-black text-6xl text-on-surface tracking-tighter uppercase mb-4">Grill &amp; Fire
+        <h2 class="font-headline font-black text-4xl sm:text-6xl text-on-surface tracking-tighter uppercase mb-4">Grill &amp; Fire
           <span class="text-primary">/ Chicken</span>
         </h2>
         <div class="editorial-line w-32 mx-auto"></div>

@@ -21,8 +21,8 @@
 <body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
   <header class="fixed top-0 w-full z-50 bg-[#310002]/70 backdrop-blur-xl shadow-2xl shadow-[#290003]/40">
     <div
-      class="bg-[#200001] border-b border-primary/20 py-2 px-6 md:px-12 flex flex-wrap justify-between items-center text-[10px] md:text-xs font-label tracking-[0.2em] text-secondary-fixed/90 uppercase">
-      <div class="flex items-center gap-6">
+      class="bg-[#200001] border-b border-primary/20 py-2 px-4 md:px-12 flex justify-between items-center text-[10px] md:text-xs font-label tracking-[0.2em] text-secondary-fixed/90 uppercase overflow-x-auto no-scrollbar gap-4">
+      <div class="flex items-center gap-4 md:gap-6 flex-shrink-0">
         <div class="flex items-center gap-1.5">
           <span class="material-symbols-outlined text-[14px] text-primary">location_on</span>
           <span>Surat</span>
@@ -32,19 +32,21 @@
           <span data-restaurant-text="timings"></span>
         </div>
       </div>
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-4 md:gap-6 flex-shrink-0">
         <a class="flex items-center gap-1.5 hover:text-secondary-fixed transition-colors" href="tel:+918980356776" data-restaurant-link="phone">
           <span class="material-symbols-outlined text-[14px] text-primary">call</span>
-          <span>Call Now</span>
+          <span>Call</span>
         </a>
-                    <a class="flex items-center gap-1.5 hover:text-green-400 transition-colors" href="https://wa.me/918980356776?text=Hi%2C%20I%20want%20to%20order%20from%20Grill%20%26%20Chill" data-restaurant-link="whatsapp" data-override-text="WhatsApp">
-                        <span class="material-symbols-outlined text-[14px] text-green-500">chat</span>
-                        <span>WhatsApp</span>
-                    </a>
+        <a class="flex items-center gap-1.5 hover:text-green-400 transition-colors"
+          href="https://wa.me/918980356776?text=Hi%2C%20I%20want%20to%20order%20from%20Grill%20%26%20Chill" data-restaurant-link="whatsapp" data-override-text="WhatsApp">
+          <span class="material-symbols-outlined text-[14px] text-green-500">chat</span>
+          <span>WhatsApp</span>
+        </a>
       </div>
     </div>
-    <nav class="flex justify-between items-center px-6 md:px-12 w-full max-w-none py-3">
-      <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#FFB3AC] font-headline">GRILL &amp; CHILL</a>
+    <nav class="flex justify-between items-center px-4 md:px-12 w-full max-w-none py-3 gap-2">
+      <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-[#FFB3AC] font-headline flex-shrink-0">GRILL &amp; CHILL</a>
+      <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-8">
         <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
           href="index.html">Home</a>
@@ -55,22 +57,37 @@
         <a class="text-[#FFB3AC]/80 hover:text-[#FFB3AC] transition-colors font-headline font-bold text-sm tracking-widest uppercase"
           href="tiffin.html">tiffin</a>
       </div>
-      <a href="zomato.html"
-        class="px-6 py-2.5 rounded-lg font-headline text-xs tracking-widest uppercase active:scale-90 transition-transform hover:shadow-lg hover:shadow-primary/20 bg-secondary-fixed text-on-secondary-fixed font-bold scale-100">
-        order on zomato
-      </a>
+      <div class="flex items-center gap-3">
+        <a href="zomato.html"
+          class="px-3 py-1.5 md:px-6 md:py-2.5 rounded-lg font-headline text-[10px] md:text-xs tracking-widest uppercase active:scale-90 transition-transform hover:shadow-lg hover:shadow-primary/20 bg-secondary-fixed text-on-secondary-fixed font-bold scale-100 whitespace-nowrap">order
+          on zomato</a>
+        <button id="mobile-menu-btn" class="md:hidden text-[#FFB3AC] hover:text-white transition-colors focus:outline-none flex items-center justify-center animate-fade-in" aria-label="Toggle Menu">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
     </nav>
   </header>
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-50 bg-[#200001]/95 backdrop-blur-2xl flex flex-col justify-center items-center gap-8 transition-all duration-300 transform translate-x-full md:hidden">
+    <button id="mobile-menu-close-btn" class="absolute top-6 right-6 text-[#FFB3AC] hover:text-white focus:outline-none" aria-label="Close Menu">
+      <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="index.html">Home</a>
+    <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="menu.html">Menu</a>
+    <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="catering.html">Catering</a>
+    <a class="text-[#FFB3AC] hover:text-white transition-colors font-headline font-bold text-2xl tracking-widest uppercase" href="tiffin.html">Tiffin</a>
+    <a href="zomato.html" class="mt-4 px-8 py-3 rounded-lg font-headline text-sm tracking-widest uppercase bg-secondary-fixed text-on-secondary-fixed font-bold">Order on Zomato</a>
+  </div>
 
 <!-- Hero Section -->
-<header class="relative pt-32 pb-20 px-8 overflow-hidden min-h-screen flex items-center">
+<header class="relative pt-40 md:pt-32 pb-20 px-4 md:px-8 overflow-hidden min-h-screen flex items-center">
 <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
 <div class="space-y-8">
 <div class="inline-flex items-center gap-2 bg-surface-container-highest px-4 py-2 rounded-full border border-outline-variant/20">
 <span class="w-2 h-2 rounded-full bg-secondary"></span>
 <span class="text-secondary font-label font-medium uppercase tracking-widest text-xs">Premium Tiffin Experience</span>
 </div>
-<h1 class="text-6xl md:text-8xl font-headline font-black text-on-background leading-[0.9] tracking-tighter">
+<h1 class="text-4xl sm:text-6xl md:text-8xl font-headline font-black text-on-background leading-[0.9] tracking-tighter">
                     Daily Tiffin <br/> Service in <span class="text-primary">Surat</span>
 </h1>
 <p class="text-lg text-on-surface-variant max-w-lg font-body leading-relaxed">
@@ -156,7 +173,7 @@
 <section class="py-24 px-8 bg-surface">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-16">
-<h2 class="text-5xl font-headline font-black text-on-background mb-4">Pricing Plans</h2>
+<h2 class="text-3xl sm:text-5xl font-headline font-black text-on-background mb-4">Pricing Plans</h2>
 <p class="text-on-surface-variant font-body max-w-2xl mx-auto">Choose the commitment that fits your lifestyle. Flexible pausing and cancellation included with all plans.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
