@@ -687,4 +687,62 @@ Please confirm availability. Thanks!`;
   }
 
   setupFeedbackModal();
+
+  // --- NEW FEATURE 6: FLOATING BACK TO TOP BUTTON WITH SCROLL PROGRESS RING ---
+  function setupBackToTopButton() {
+    const btnHtml = `
+      <button id="back-to-top" class="fixed right-6 bottom-6 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-[#2a0506]/95 border border-primary/10 text-primary shadow-2xl backdrop-blur-md opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:scale-110 hover:text-white group" aria-label="Back to top">
+        <!-- Circular Progress Ring -->
+        <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 48 48">
+          <circle class="text-primary/10" stroke="currentColor" stroke-width="3" fill="transparent" r="21" cx="24" cy="24"></circle>
+          <circle id="scroll-progress-ring" class="text-primary transition-all duration-75" stroke="currentColor" stroke-width="3" stroke-dasharray="132" stroke-dashoffset="132" stroke-linecap="round" fill="transparent" r="21" cx="24" cy="24"></circle>
+        </svg>
+        <!-- Icon -->
+        <span class="material-symbols-outlined text-xl relative z-10 transition-transform group-hover:-translate-y-0.5">arrow_upward</span>
+      </button>
+    `;
+
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = btnHtml;
+    const btn = tempDiv.firstElementChild;
+    document.body.appendChild(btn);
+
+    const progressRing = btn.querySelector('#scroll-progress-ring');
+    const circumference = 132; // 2 * PI * r (21)
+
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      
+      // Calculate scroll ratio (0 to 1)
+      const scrollRatio = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+      
+      // Calculate stroke-dashoffset
+      const offset = circumference - (scrollRatio * circumference);
+      progressRing.style.strokeDashoffset = offset;
+
+      // Show/hide button based on scroll position
+      if (scrollTop > 300) {
+        btn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+        btn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      } else {
+        btn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        btn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+      }
+    }
+
+    // Scroll to top on click
+    btn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', updateScrollProgress);
+    // Initial call
+    updateScrollProgress();
+  }
+
+  setupBackToTopButton();
 });
