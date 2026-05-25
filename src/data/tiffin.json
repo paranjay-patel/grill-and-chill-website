@@ -1,0 +1,42 @@
+[
+  {
+    "id": "weekly",
+    "name": "Weekly Trial",
+    "price": "₹899",
+    "period": "/week",
+    "isPopular": false,
+    "features": [
+      "6 Days (Mon - Sat)",
+      "Choice of Veg / Non-Veg",
+      "Free Delivery"
+    ],
+    "buttonText": "Start Trial"
+  },
+  {
+    "id": "monthly",
+    "name": "Monthly Saver",
+    "price": "₹3299",
+    "period": "/month",
+    "isPopular": true,
+    "features": [
+      "26 Days (Full Month)",
+      "Priority Delivery Slots",
+      "Complimentary Weekend Dessert",
+      "Flexible Pause Feature"
+    ],
+    "buttonText": "Subscribe Now"
+  },
+  {
+    "id": "corporate",
+    "name": "Corporate Bulk",
+    "price": "₹Custom",
+    "period": "",
+    "isPopular": false,
+    "features": [
+      "10+ Orders Daily",
+      "Dedicated Relationship Manager",
+      "GST Invoicing"
+    ],
+    "buttonText": "Contact Sales"
+  }
+]

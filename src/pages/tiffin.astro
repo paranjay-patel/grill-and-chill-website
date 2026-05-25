@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { RESTAURANT, RESTAURANT_WHATSAPP_LINK } from '../data/site-config';
+import tiffinPlans from '../data/tiffin.json';
+---
+
+<Layout title="Premium Daily Tiffin Services in Surat | Grill & Chill" activeTab="tiffin" description="Enjoy premium, hygienic, home-style lunch and dinner tiffin services delivered straight to your office or home in Surat. Freshly prepared daily.">
+  <!-- Hero Section -->
+  <header class="relative pt-40 md:pt-32 pb-20 px-4 md:px-8 overflow-hidden min-h-screen flex items-center bg-surface">
+    <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+      <div class="space-y-8 animate-fade-in">
+        <div class="inline-flex items-center gap-2 bg-surface-container-highest px-4 py-2 rounded-full border border-outline-variant/20">
+          <span class="w-2 h-2 rounded-full bg-secondary"></span>
+          <span class="text-secondary font-label font-medium uppercase tracking-widest text-xs">Premium Tiffin Experience</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl md:text-8xl font-headline font-black text-on-background leading-[0.9] tracking-tighter uppercase">
+          Daily Tiffin <br/> Service in <span class="text-primary">Surat</span>
+        </h1>
+        <p class="text-lg text-on-surface-variant max-w-lg font-body leading-relaxed">
+          Elevating your daily lunch with chef-prepared meals delivered straight to your desk or home. Fresh, authentic, and consistently delicious.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-extrabold uppercase tracking-tight flex items-center gap-2 hover:scale-105 transition-transform" id="tiffin-hero-subscribe-btn">
+            Subscribe Now
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+          <a class="bg-green-500 text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 hover:scale-105 transition-all duration-300" href={RESTAURANT_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined">chat</span>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="relative flex justify-center items-center">
+        <div class="aspect-square rounded-full overflow-hidden border-[12px] border-surface-container-high shadow-2xl relative max-w-md w-full">
+          <img alt="Premium Punjabi Tiffin" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDokvRTlmiXdfrRjbmztZ6uDxnDugsLj53b-71zBdhbb243DVWmywYOptoVyk8bbBFH0bgvr0tWpL2s1Zg1QZx17J9lxPCpxBfjQ9JWSzJ-Ka2HKTLg_C7QqKp-iKS77Im0DggDMXgD0MVlEkCXhrMCeRa0iZPo1-BynFKPPOnw4CCFUmXEgvCvYHrt-0hzVpOAKUFwJj8YOsw4lgVjRnVtjuZ2t-3WMLVmV-062RDDcHpkekGR9B4QWitxa9I65d0Zm1SHVtj9k6Y"/>
+        </div>
+        <!-- Floating Badge -->
+        <div class="absolute -bottom-6 -left-6 bg-secondary text-on-secondary-fixed p-6 rounded-2xl shadow-xl transform -rotate-3">
+          <span class="block font-headline font-black text-3xl">500+</span>
+          <span class="block font-label text-xs uppercase font-bold tracking-tighter opacity-80">Daily Subscribers</span>
+        </div>
+      </div>
+    </div>
+    <!-- Abstract Background Texture -->
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-surface-container-low -z-0 skew-x-12 transform translate-x-1/2"></div>
+  </header>
+
+  <!-- Target Audience Bento Grid -->
+  <section class="py-24 px-8 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-16">
+        <h2 class="text-4xl font-headline font-black text-secondary tracking-tight uppercase">Who We Serve</h2>
+        <div class="h-1 w-24 bg-primary mt-4"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Professionals -->
+        <div class="bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between group hover:bg-surface-bright transition-colors border border-primary/5 hover:border-primary/20">
+          <div>
+            <span class="material-symbols-outlined text-4xl text-primary mb-6 block">business_center</span>
+            <h3 class="text-2xl font-headline font-bold text-on-background mb-3 uppercase tracking-tight">Professionals</h3>
+            <p class="text-on-surface-variant font-body">Fuel your productivity with balanced nutrition, delivered directly to your office hub.</p>
+          </div>
+          <div class="mt-8">
+            <span class="text-primary font-label font-bold text-xs uppercase tracking-widest">Office Ready</span>
+          </div>
+        </div>
+        <!-- Students -->
+        <div class="bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between group hover:bg-surface-bright transition-colors border border-primary/5 hover:border-primary/20">
+          <div>
+            <span class="material-symbols-outlined text-4xl text-primary mb-6 block">school</span>
+            <h3 class="text-2xl font-headline font-bold text-on-background mb-3 uppercase tracking-tight">Students</h3>
+            <p class="text-on-surface-variant font-body">Home-style taste for those staying away from home. Affordable and hygienic.</p>
+          </div>
+          <div class="mt-8">
+            <span class="text-primary font-label font-bold text-xs uppercase tracking-widest">Budget Friendly</span>
+          </div>
+        </div>
+        <!-- Families -->
+        <div class="bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between group hover:bg-surface-bright transition-colors border border-primary/5 hover:border-primary/20">
+          <div>
+            <span class="material-symbols-outlined text-4xl text-primary mb-6 block">family_restroom</span>
+            <h3 class="text-2xl font-headline font-bold text-on-background mb-3 uppercase tracking-tight">Busy Families</h3>
+            <p class="text-on-surface-variant font-body">Take the night off from cooking. Wholesome dinner solutions for the whole house.</p>
+          </div>
+          <div class="mt-8">
+            <span class="text-primary font-label font-bold text-xs uppercase tracking-widest">Family Packs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="py-24 px-8 bg-surface" id="pricing-plans-section">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-5xl font-headline font-black text-on-background mb-4 uppercase tracking-tight">Pricing Plans</h2>
+        <p class="text-on-surface-variant font-body max-w-2xl mx-auto">Choose the commitment that fits your lifestyle. Flexible pausing and cancellation included with all plans.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {tiffinPlans.map(plan => (
+          <div class={`p-10 rounded-2xl flex flex-col h-full transition-all duration-300 relative ${
+            plan.isPopular 
+              ? 'bg-primary border-4 border-secondary/20 scale-105 shadow-2xl hover:shadow-primary/30' 
+              : 'bg-surface-container-low border border-outline-variant/10 hover:border-primary/30'
+          }`}>
+            {plan.isPopular && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-on-secondary-fixed px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">Most Popular</div>
+            )}
+            <div class="mb-8">
+              <h3 class={`font-headline font-bold text-xl mb-2 uppercase tracking-wide ${plan.isPopular ? 'text-on-primary' : 'text-secondary'}`}>{plan.name}</h3>
+              <div class="flex items-baseline gap-1">
+                <span class={`text-4xl font-headline font-black ${plan.isPopular ? 'text-on-primary' : 'text-on-background'}`}>{plan.price}</span>
+                <span class={`font-body text-sm ${plan.isPopular ? 'text-on-primary/70' : 'text-on-surface-variant'}`}>{plan.period}</span>
+              </div>
+            </div>
+            <ul class="space-y-4 mb-12 flex-grow font-body text-sm">
+              {plan.features.map(feat => (
+                <li class={`flex items-center gap-3 ${plan.isPopular ? 'text-on-primary' : 'text-on-surface-variant'}`}>
+                  <span class={`material-symbols-outlined text-sm ${plan.isPopular ? 'font-bold' : 'text-primary'}`}>check_circle</span> {feat}
+                </li>
+              ))}
+            </ul>
+            {plan.isPopular ? (
+              <button class="w-full py-4 rounded-full bg-on-primary text-primary font-headline font-extrabold uppercase tracking-tight hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-all">{plan.buttonText}</button>
+            ) : (
+              <button class={`w-full py-4 rounded-full font-headline font-extrabold uppercase tracking-tight transition-all border ${
+                plan.id === 'corporate' 
+                  ? 'border-outline text-on-background hover:bg-primary hover:text-on-primary hover:border-primary' 
+                  : 'border-primary text-primary hover:bg-primary hover:text-on-primary'
+              }`}>{plan.buttonText}</button>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery Areas -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-4 flex flex-col justify-center">
+          <h2 class="font-headline text-5xl font-black text-secondary-fixed mb-6 leading-tight tracking-tight uppercase">Serving the Heart of Surat</h2>
+          <p class="font-body text-on-surface-variant text-lg">Fast, consistent delivery across Surat's primary corporate and residential zones.</p>
+        </div>
+        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-surface-container-highest p-8 rounded-2xl flex flex-col items-center text-center border border-primary/5 shadow-lg">
+            <div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-primary">location_on</span>
+            </div>
+            <h4 class="font-headline font-bold text-xl text-secondary mb-2 uppercase tracking-wide">Vesu</h4>
+            <p class="font-body text-sm text-on-surface-variant">Residential Clusters &amp; Corporate Parks</p>
+          </div>
+          <div class="bg-surface-container-highest p-8 rounded-2xl flex flex-col items-center text-center border border-primary/5 shadow-lg">
+            <div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-primary">location_on</span>
+            </div>
+            <h4 class="font-headline font-bold text-xl text-secondary mb-2 uppercase tracking-wide">Piplod</h4>
+            <p class="font-body text-sm text-on-surface-variant">Luxury Housing &amp; Commercial Hubs</p>
+          </div>
+          <div class="bg-surface-container-highest p-8 rounded-2xl flex flex-col items-center text-center border border-primary/5 shadow-lg">
+            <div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-primary">location_on</span>
+            </div>
+            <h4 class="font-headline font-bold text-xl text-secondary mb-2 uppercase tracking-wide">Magdalla</h4>
+            <p class="font-body text-sm text-on-surface-variant">Tech Parks &amp; Industrial Offices</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client-side script to wire up the Subscribe button to the plans list -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroBtn = document.getElementById('tiffin-hero-subscribe-btn');
+      const pricingSection = document.getElementById('pricing-plans-section');
+      if (heroBtn && pricingSection) {
+        heroBtn.addEventListener('click', () => {
+          pricingSection.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+</Layout>

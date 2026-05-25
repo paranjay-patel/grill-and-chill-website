@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { RESTAURANT } from '../data/site-config';
+import menuItems from '../data/menu.json';
+
+// Grouping menu items by category and subcategory for structural rendering
+const categoriesList = [
+  { id: 'chinese', name: 'Chinese' },
+  { id: 'punjabi', name: 'Punjabi' },
+  { id: 'chicken', name: 'Chicken' },
+  { id: 'table-essentials', name: 'Table Essentials' }
+];
+
+// Helper to filter items for a category
+function getSubcategories(categoryId) {
+  const items = menuItems.filter(item => item.category === categoryId);
+  const subs = [...new Set(items.map(item => item.subcategory))];
+  return subs.map(sub => ({
+    name: sub,
+    items: items.filter(item => item.subcategory === sub)
+  }));
+}
+---
+
+<Layout title="Signature Menu | Grill & Chill Surat" activeTab="menu" description="Explore our extensive menu featuring premium Punjabi specialties, authentic Chinese delicacies, tandoor specials, and sizzling chicken grills in Surat.">
+  <!-- Hero Header -->
+  <header class="relative pt-40 pb-20 px-6 text-center bg-[#200001] overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByV2AkjRfEebHWexlXiOUcrgDogXMDnl5XA9qTh_28gTHN8KZJIVy5KMsL8I_pP6ycJqsPUYxON007Zx-FlZJj6x6tkILUPHJiqhpTD3wcU1wNt1iiC3aX9O17ZqMyF9npuhZErvRiScs3gy6q_pcqadpGgyZcjvzIi2KFSdN0y2X0d46TzkF9kHyb_JdWepDQoFQ17LLP36dDqSFrBclB55jOqgey4eO9r5Sp3K8vbDz_UINhA6frG3cDhdXxkIL9MEQlhkLHfZk');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-[#200001]/90"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto space-y-4">
+      <span class="inline-block px-4 py-1.5 border border-primary/20 rounded-full text-secondary-fixed text-xs font-label uppercase tracking-[0.3em]">
+        The Heritage of Fire &amp; Spice
+      </span>
+      <h1 class="text-4xl sm:text-6xl md:text-8xl font-black font-headline text-on-surface leading-none uppercase tracking-tighter">
+        Our <span class="text-primary italic font-normal">Signature</span> Menu
+      </h1>
+      <p class="font-body text-on-surface-variant max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+        Indulge in a curated collection of culinary masterpieces. From wok-fired Chinese noodles to traditional slow-cooked Punjabi curries.
+      </p>
+    </div>
+  </header>
+
+  <!-- Interactive Search and Filter Panel -->
+  <section class="sticky top-[72px] md:top-[80px] z-30 bg-surface/90 backdrop-blur-xl border-y border-outline-variant/10 py-4 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 items-center justify-between">
+      <!-- Search Input -->
+      <div class="relative w-full md:max-w-xs">
+        <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+        <input 
+          id="menu-search"
+          type="text" 
+          placeholder="Search menu..." 
+          class="w-full pl-10 pr-4 py-3 rounded-full bg-surface-container-high border border-outline-variant/10 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary/50 text-sm font-body transition-colors"
+        />
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar w-full md:w-auto pb-1 md:pb-0 px-2 justify-start md:justify-center">
+        <button 
+          class="tab-btn active px-5 py-2.5 rounded-full font-label font-bold text-xs uppercase tracking-widest whitespace-nowrap bg-primary text-on-primary shadow-lg shadow-primary/20 transition-all"
+          data-category="all"
+        >
+          All
+        </button>
+        {categoriesList.map(cat => (
+          <button 
+            class="tab-btn px-5 py-2.5 rounded-full font-label font-bold text-xs uppercase tracking-widest whitespace-nowrap bg-surface-container-high text-on-surface-variant border border-outline-variant/5 hover:bg-surface-container-highest transition-all"
+            data-category={cat.id}
+          >
+            {cat.name}
+          </button>
+        ))}
+      </div>
+
+      <!-- Veg Only Toggle -->
+      <div class="flex items-center gap-3 select-none flex-shrink-0">
+        <span class="text-xs font-label font-bold uppercase tracking-wider text-on-surface-variant">Veg Only</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="veg-only-toggle" class="sr-only peer" />
+          <div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Grid -->
+  <main class="py-16 px-4 md:px-8 max-w-7xl mx-auto min-h-screen">
+    <div id="menu-container" class="space-y-24">
+      {categoriesList.map(cat => {
+        const subcategories = getSubcategories(cat.id);
+        return (
+          <div class="category-group space-y-16" data-category={cat.id}>
+            <!-- Section Header -->
+            <div class="flex items-center gap-4 border-b border-outline-variant/10 pb-6">
+              <h2 class="text-3xl sm:text-5xl font-headline font-black text-secondary-fixed uppercase tracking-tighter">{cat.name}</h2>
+              <div class="h-1 flex-grow bg-gradient-to-r from-primary/20 to-transparent rounded-full"></div>
+            </div>
+
+            <!-- Subcategories bento-grid style layout -->
+            <div class="space-y-12">
+              {subcategories.map(sub => (
+                <div class="subcategory-group space-y-6" data-subcategory={sub.name}>
+                  <h3 class="text-xl sm:text-2xl font-headline font-bold text-primary uppercase tracking-wide border-l-4 border-primary pl-4">{sub.name}</h3>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {sub.items.map(item => (
+                      <div 
+                        class="menu-card category-item bg-surface-container-low p-6 rounded-2xl border border-outline-variant/5 hover:border-primary/20 shadow-xl flex flex-col justify-between hover:-translate-y-1 duration-300"
+                        data-category={cat.id}
+                        data-name={item.name}
+                        data-description={item.description || ''}
+                        data-veg={item.isVeg ? 'true' : 'false'}
+                      >
+                        <div>
+                          <!-- Card Header -->
+                          <div class="flex justify-between items-start gap-4 mb-3">
+                            <div class="flex items-center gap-2">
+                              {/* Veg / Non-Veg Indicator Dot */}
+                              <span class={`w-3 h-3 rounded-full flex-shrink-0 border ${
+                                item.isVeg 
+                                  ? 'bg-green-500 border-green-300' 
+                                  : 'bg-red-500 border-red-300'
+                              }`} title={item.isVeg ? 'Vegetarian' : 'Non-Vegetarian'}></span>
+                              <h4 class="font-headline font-bold text-lg sm:text-xl text-on-surface leading-tight">{item.name}</h4>
+                            </div>
+                            <span class="font-headline font-bold text-primary whitespace-nowrap">₹{item.price}/-</span>
+                          </div>
+
+                          {/* Description */}
+                          {item.description && (
+                            <p class="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed mb-4">{item.description}</p>
+                          )}
+                        </div>
+
+                        {/* Badges / Labels */}
+                        <div class="flex flex-wrap gap-2 mt-4">
+                          {item.isChefSpecial && (
+                            <span class="px-2.5 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wider rounded-full border border-primary/20">Chef Special</span>
+                          )}
+                          {item.isPopular && (
+                            <span class="px-2.5 py-1 bg-secondary-fixed/15 text-secondary-fixed text-[10px] font-label font-bold uppercase tracking-wider rounded-full border border-secondary-fixed/20">Popular</span>
+                          )}
+                          {item.label && (
+                            <span class="px-2.5 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-label font-semibold tracking-wide rounded-full border border-outline-variant/10">{item.label}</span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Empty Search State -->
+    <div id="empty-state" class="hidden text-center py-20">
+      <span class="material-symbols-outlined text-6xl text-on-surface-variant/30 mb-4 block">restaurant_menu</span>
+      <h3 class="text-2xl font-headline font-bold text-on-surface uppercase tracking-wider">No dishes found</h3>
+      <p class="text-on-surface-variant font-body mt-2">Try adjusting your search keywords or category filters.</p>
+    </div>
+  </main>
+
+  <!-- Client-side filter, search and tab switching logic -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('menu-search');
+      const vegToggle = document.getElementById('veg-only-toggle');
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const cards = document.querySelectorAll('.menu-card');
+      const subcategories = document.querySelectorAll('.subcategory-group');
+      const categories = document.querySelectorAll('.category-group');
+      const emptyState = document.getElementById('empty-state');
+
+      let activeCategory = 'all';
+
+      // Function to execute the filtering logic
+      function filterMenu() {
+        const query = searchInput.value.toLowerCase().trim();
+        const vegOnly = vegToggle.checked;
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const category = card.dataset.category;
+          const name = card.dataset.name.toLowerCase();
+          const desc = card.dataset.description.toLowerCase();
+          const isVeg = card.dataset.veg === 'true';
+
+          const matchesCategory = activeCategory === 'all' || category === activeCategory;
+          const matchesSearch = name.includes(query) || desc.includes(query);
+          const matchesVeg = !vegOnly || isVeg;
+
+          if (matchesCategory && matchesSearch && matchesVeg) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        // Hide empty subcategories
+        subcategories.forEach(sub => {
+          const visibleCards = sub.querySelectorAll('.menu-card:not(.hidden)');
+          if (visibleCards.length > 0) {
+            sub.classList.remove('hidden');
+          } else {
+            sub.classList.add('hidden');
+          }
+        });
+
+        // Hide empty categories
+        categories.forEach(cat => {
+          const visibleSubs = cat.querySelectorAll('.subcategory-group:not(.hidden)');
+          if (visibleSubs.length > 0) {
+            cat.classList.remove('hidden');
+          } else {
+            cat.classList.add('hidden');
+          }
+        });
+
+        // Toggle Empty State
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+        }
+      }
+
+      // Tab switcher click listener
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabButtons.forEach(b => {
+            b.classList.remove('active', 'bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
+            b.classList.add('bg-surface-container-high', 'text-on-surface-variant', 'border', 'border-outline-variant/5');
+          });
+
+          btn.classList.add('active', 'bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
+          btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant', 'border', 'border-outline-variant/5');
+
+          activeCategory = btn.dataset.category;
+          filterMenu();
+        });
+      });
+
+      // Search & Toggle listeners
+      searchInput.addEventListener('input', filterMenu);
+      vegToggle.addEventListener('change', filterMenu);
+    });
+  </script>
+</Layout>
