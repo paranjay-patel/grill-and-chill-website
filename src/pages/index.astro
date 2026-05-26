@@ -31,45 +31,45 @@ import heroImage from '../assets/herosection.png';
     </div>
   </section>
 
-  <!-- Culinary Categories (Bento Grid with 3D Tilt & Glass spotlight) -->
-  <section class="cuisine-section py-24 md:py-28 px-6 md:px-12 relative overflow-hidden">
+  <!-- Culinary Categories (Symmetric Grid with Solid Premium Cards) -->
+  <section class="cuisine-section py-24 md:py-28 px-6 md:px-12 relative overflow-hidden bg-[#180001]">
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondary-fixed/20 bg-surface-container-high/70 text-secondary-fixed font-label text-xs tracking-[0.35em] uppercase">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#ffb3ac]/20 bg-surface-container-high/70 text-secondary-fixed font-label text-xs tracking-[0.35em] uppercase">
           Signature selections
         </span>
         <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase mt-6">Cuisines</h2>
         <div class="editorial-line w-24 mx-auto my-6"></div>
-        <p class="font-body text-on-surface-variant max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+        <p class="font-body text-[#dac1bf] max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
           A more refined way to explore the menu, with each cuisine presented like a signature dish. Rich, layered, and designed to feel as inviting as the food itself.
         </p>
       </div>
 
-      <div class="bento-grid gap-8">
-        <!-- Punjabi Cuisine Card (Bento Span 3, Glassmorphism, Parallax) -->
-        <article class="cuisine-card group bento-span-3 tilt-card glass-card-spotlight rounded-3xl overflow-hidden border border-white/5 bg-surface-container-high/50 backdrop-blur-xl">
-          <div class="tilt-inner h-full flex flex-col justify-between">
-            <div class="cuisine-card-media tilt-layer-media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDn2K4rueHS-LK2dE7WbhNI1bpURfsXyY4T9bwc_Osw4-Q1YTYu6ZKDZhFqOTWdsMn387S-1JNwPFdmKnmoauWdyye1whNmhtDtL2jzlYenlpar-UmCKBlai4TldrWOQEkEo-gwBoIzPdnl86i2wWc5GbOpQCZI2YOKmO-rc4wQ0kH0pn-I3Kp-5HF_icc7cr87PlUPmIPG9tpzTUT-6xy2y5AxcB6WLXQ99s2BjW7CTtLMfEh76s_8xa_zJYtOCuPqwPHhPYMqI8" alt="Punjabi cuisine" loading="lazy" class="cuisine-card-image"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Punjabi Cuisine Card -->
+        <article class="cuisine-card group rounded-3xl overflow-hidden border border-white/5 bg-[#2D0B0D] shadow-2xl flex flex-col justify-between">
+          <div class="h-full flex flex-col justify-between">
+            <div class="cuisine-card-media relative">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDn2K4rueHS-LK2dE7WbhNI1bpURfsXyY4T9bwc_Osw4-Q1YTYu6ZKDZhFqOTWdsMn387S-1JNwPFdmKnmoauWdyye1whNmhtDtL2jzlYenlpar-UmCKBlai4TldrWOQEkEo-gwBoIzPdnl86i2wWc5GbOpQCZI2YOKmO-rc4wQ0kH0pn-I3Kp-5HF_icc7cr87PlUPmIPG9tpzTUT-6xy2y5AxcB6WLXQ99s2BjW7CTtLMfEh76s_8xa_zJYtOCuPqwPHhPYMqI8" alt="Punjabi cuisine" loading="lazy" class="cuisine-card-image w-full h-full object-cover"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#1e0304]/90 via-[#1e0304]/30 to-transparent"></div>
               <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary/30 to-transparent"></div>
-              <div class="absolute top-5 left-5 flex items-center gap-3 tilt-layer-badge">
+              <div class="absolute top-4 left-4 flex items-center gap-2">
                 <span class="cuisine-badge">01</span>
                 <span class="cuisine-chip">Heritage</span>
               </div>
-              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 tilt-layer-text">
+              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
                 <div>
-                  <p class="text-[0.72rem] uppercase tracking-[0.35em] text-secondary-fixed/90 font-label mb-2">Smoky indulgence</p>
-                  <h3 class="font-headline text-3xl md:text-4xl text-white uppercase leading-none">Punjabi</h3>
+                  <p class="text-[0.72rem] uppercase tracking-[0.25em] text-[#ffe16d] font-label mb-1 font-extrabold">Smoky indulgence</p>
+                  <h3 class="font-headline text-3xl font-black text-white uppercase leading-none">Punjabi</h3>
                 </div>
                 <div class="text-right">
-                  <p class="text-[0.68rem] uppercase tracking-[0.3em] text-white/70 font-label">Signature</p>
-                  <p class="text-sm text-white/90 font-body mt-1">Paneer Angara</p>
+                  <p class="text-[0.68rem] uppercase tracking-[0.2em] text-white/50 font-label">Signature</p>
+                  <p class="text-sm text-white/95 font-body font-bold mt-0.5">Paneer Angara</p>
                 </div>
               </div>
             </div>
-            <div class="p-7 md:p-8 flex-grow flex flex-col justify-between tilt-layer-text">
-              <p class="font-body text-on-surface-variant leading-relaxed mb-6">
+            <div class="p-7 md:p-8 flex-grow flex flex-col justify-between">
+              <p class="font-body text-[#dac1bf] leading-relaxed mb-6">
                 Hearty tandoori dishes, rich curries, and freshly baked breads brought together with a deep, comforting spice profile.
               </p>
               <div>
@@ -87,30 +87,30 @@ import heroImage from '../assets/herosection.png';
           </div>
         </article>
 
-        <!-- Chinese Cuisine Card (Bento Span 3, Glassmorphism, Parallax) -->
-        <article class="cuisine-card group bento-span-3 tilt-card glass-card-spotlight rounded-3xl overflow-hidden border border-white/5 bg-surface-container-high/50 backdrop-blur-xl">
-          <div class="tilt-inner h-full flex flex-col justify-between">
-            <div class="cuisine-card-media tilt-layer-media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4sDMmFxe_CA2sUcgbymzArzMIGLlsKmCaUgyeVnTieKYB4-_qNlbJrSL2kNY8re-6oOrfuyzeQ5fYg7GNxD7MdgU0NBDQq1LCCHjlcEMNwiPe5U-BvpIN314HdD7jwCLkgmgZCgzkvuvAtF-PoBfqfjfTFq88tXp9-GbZDvPsS7WtMlHkvwUX5GZvt5DqcdQQ-BeWyjD4p9C1BYii-pn_GS41HD_5VqcnRyLGuvGAYem0Xt-Rz8VBlaVVPSegOpo2B346sN7fHQM" alt="Chinese cuisine" loading="lazy" class="cuisine-card-image"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
-              <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-secondary-fixed/25 to-transparent"></div>
-              <div class="absolute top-5 left-5 flex items-center gap-3 tilt-layer-badge">
+        <!-- Chinese Cuisine Card -->
+        <article class="cuisine-card group rounded-3xl overflow-hidden border border-white/5 bg-[#2D0B0D] shadow-2xl flex flex-col justify-between">
+          <div class="h-full flex flex-col justify-between">
+            <div class="cuisine-card-media relative">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4sDMmFxe_CA2sUcgbymzArzMIGLlsKmCaUgyeVnTieKYB4-_qNlbJrSL2kNY8re-6oOrfuyzeQ5fYg7GNxD7MdgU0NBDQq1LCCHjlcEMNwiPe5U-BvpIN314HdD7jwCLkgmgZCgzkvuvAtF-PoBfqfjfTFq88tXp9-GbZDvPsS7WtMlHkvwUX5GZvt5DqcdQQ-BeWyjD4p9C1BYii-pn_GS41HD_5VqcnRyLGuvGAYem0Xt-Rz8VBlaVVPSegOpo2B346sN7fHQM" alt="Chinese cuisine" loading="lazy" class="cuisine-card-image w-full h-full object-cover"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#1e0304]/90 via-[#1e0304]/30 to-transparent"></div>
+              <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary/30 to-transparent"></div>
+              <div class="absolute top-4 left-4 flex items-center gap-2">
                 <span class="cuisine-badge">02</span>
                 <span class="cuisine-chip">Wok-fired</span>
               </div>
-              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 tilt-layer-text">
+              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
                 <div>
-                  <p class="text-[0.72rem] uppercase tracking-[0.35em] text-secondary-fixed/90 font-label mb-2">Fast, fresh, fragrant</p>
-                  <h3 class="font-headline text-3xl md:text-4xl text-white uppercase leading-none">Chinese</h3>
+                  <p class="text-[0.72rem] uppercase tracking-[0.25em] text-[#ffe16d] font-label mb-1 font-extrabold">Fast, fresh, fragrant</p>
+                  <h3 class="font-headline text-3xl font-black text-white uppercase leading-none">Chinese</h3>
                 </div>
                 <div class="text-right">
-                  <p class="text-[0.68rem] uppercase tracking-[0.3em] text-white/70 font-label">Signature</p>
-                  <p class="text-sm text-white/90 font-body mt-1">Manchurian</p>
+                  <p class="text-[0.68rem] uppercase tracking-[0.2em] text-white/50 font-label">Signature</p>
+                  <p class="text-sm text-white/95 font-body font-bold mt-0.5">Manchurian</p>
                 </div>
               </div>
             </div>
-            <div class="p-7 md:p-8 flex-grow flex flex-col justify-between tilt-layer-text">
-              <p class="font-body text-on-surface-variant leading-relaxed mb-6">
+            <div class="p-7 md:p-8 flex-grow flex flex-col justify-between">
+              <p class="font-body text-[#dac1bf] leading-relaxed mb-6">
                 Crisp vegetables, bold sauces, and wok-fresh stir fries with the kind of balance that keeps every bite lively and memorable.
               </p>
               <div>
@@ -128,41 +128,42 @@ import heroImage from '../assets/herosection.png';
           </div>
         </article>
 
-        <!-- Chicken Specials Card (Bento Span 6 - Asymmetric row layout, Glassmorphism, Parallax) -->
-        <article class="cuisine-card group bento-span-6 tilt-card glass-card-spotlight rounded-3xl overflow-hidden border border-white/5 bg-surface-container-high/50 backdrop-blur-xl">
-          <div class="tilt-inner h-full md:flex md:flex-row">
-            <!-- Left Side Image on Desktop -->
-            <div class="cuisine-card-media md:w-1/2 md:h-full md:aspect-auto tilt-layer-media relative">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtkNeHyzWfjXzxFIPimqDlXzo7a4t0cST2-mCq7NOdW76wGrnvFoqh6wyI0hYZSbvC8sPHK4K41_z7PUz1wMg-wgLgqgzeja0vR6n1kaf2YVzbMevYxki2YPe8qGNWhFQ0gK065zYqukSVNCTZtuL3rbFXv_a0tN-BZu8YlXjdzSpYV15_GK7biGV9vCBM0hLBGTLQe6QURbl3YEml6UJVijnF9XjPqCyCNw9jxcpDBKDYimuY0BJnlryI81AR0mYrPY38k_pV9Wk" alt="Chicken cuisine" loading="lazy" class="w-full h-full object-cover cuisine-card-image"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/80 z-10"></div>
-              <div class="absolute top-5 left-5 flex items-center gap-3 z-20 tilt-layer-badge">
+        <!-- Chicken Cuisine Card -->
+        <article class="cuisine-card group rounded-3xl overflow-hidden border border-white/5 bg-[#2D0B0D] shadow-2xl flex flex-col justify-between">
+          <div class="h-full flex flex-col justify-between">
+            <div class="cuisine-card-media relative">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtkNeHyzWfjXzxFIPimqDlXzo7a4t0cST2-mCq7NOdW76wGrnvFoqh6wyI0hYZSbvC8sPHK4K41_z7PUz1wMg-wgLgqgzeja0vR6n1kaf2YVzbMevYxki2YPe8qGNWhFQ0gK065zYqukSVNCTZtuL3rbFXv_a0tN-BZu8YlXjdzSpYV15_GK7biGV9vCBM0hLBGTLQe6QURbl3YEml6UJVijnF9XjPqCyCNw9jxcpDBKDYimuY0BJnlryI81AR0mYrPY38k_pV9Wk" alt="Chicken cuisine" loading="lazy" class="cuisine-card-image w-full h-full object-cover"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#1e0304]/90 via-[#1e0304]/30 to-transparent"></div>
+              <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary/30 to-transparent"></div>
+              <div class="absolute top-4 left-4 flex items-center gap-2">
                 <span class="cuisine-badge">03</span>
-                <span class="cuisine-chip font-bold">Chef Special</span>
+                <span class="cuisine-chip">Chef Special</span>
+              </div>
+              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
+                <div>
+                  <p class="text-[0.72rem] uppercase tracking-[0.25em] text-[#ffe16d] font-label mb-1 font-extrabold">Grilled comfort</p>
+                  <h3 class="font-headline text-3xl font-black text-white uppercase leading-none">Chicken</h3>
+                </div>
+                <div class="text-right">
+                  <p class="text-[0.68rem] uppercase tracking-[0.2em] text-white/50 font-label">Signature</p>
+                  <p class="text-sm text-white/95 font-body font-bold mt-0.5">Chicken Biryani</p>
+                </div>
               </div>
             </div>
-            <!-- Right Side Content on Desktop -->
-            <div class="p-8 md:p-12 md:w-1/2 flex flex-col justify-between tilt-layer-text relative z-20">
+            <div class="p-7 md:p-8 flex-grow flex flex-col justify-between">
+              <p class="font-body text-[#dac1bf] leading-relaxed mb-6">
+                Char-grilled chicken dishes with balanced marinades, slow-cooked depth, and modern plating that feels elevated without losing warmth.
+              </p>
               <div>
-                <p class="text-[0.72rem] uppercase tracking-[0.35em] text-secondary-fixed/90 font-label mb-2">Grilled comfort</p>
-                <h3 class="font-headline text-3xl md:text-5xl text-white uppercase leading-none mb-6">Chicken Specials</h3>
-                <p class="font-body text-on-surface-variant leading-relaxed text-lg mb-6">
-                  Char-grilled chicken dishes with balanced marinades, slow-cooked depth, and modern plating that feels elevated without losing warmth.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-8">
+                <div class="flex flex-wrap gap-2 mb-7">
                   <span class="cuisine-tag">Grilled</span>
                   <span class="cuisine-tag">Marinated</span>
                   <span class="cuisine-tag">Comfort food</span>
                 </div>
-              </div>
-              <div class="flex items-center justify-between">
                 <a href="/menu#chicken" class="cuisine-link">
                   Explore menu
                   <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
-                <div class="text-right">
-                  <p class="text-[0.68rem] uppercase tracking-[0.3em] text-white/50 font-label">Signature</p>
-                  <p class="text-sm text-secondary-fixed font-body mt-1">Chicken Biryani</p>
-                </div>
               </div>
             </div>
           </div>
@@ -178,78 +179,81 @@ import heroImage from '../assets/herosection.png';
     </div>
   </section>
 
-  <!-- Why Choose Us Section (Asymmetric Bento Grid with glassmorphism spotlights) -->
-  <section class="py-32 px-6 md:px-12 bg-surface border-y border-outline-variant/10 relative overflow-hidden">
+  <!-- Why Choose Us Section (Dark Premium Theme with Rich Contrast) -->
+  <section class="py-32 px-6 md:px-12 bg-gradient-to-b from-[#180001] via-[#1c0102] to-[#210103] border-y border-white/5 relative overflow-hidden">
+    <!-- Subtle background glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="mb-20 text-center">
-        <span class="text-primary font-label tracking-[0.4em] uppercase text-xs mb-4 block">Our Commitment</span>
-        <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase">WHY CHOOSE US</h2>
+        <span class="text-primary font-label tracking-[0.4em] uppercase text-xs mb-4 block font-extrabold">Our Commitment</span>
+        <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase font-black">WHY CHOOSE US</h2>
         <div class="w-24 h-1 bg-primary mx-auto mt-6 opacity-30"></div>
       </div>
       <div class="bento-grid gap-6">
         <!-- Point 1 (Bento Span 4) -->
-        <div class="bento-card bento-span-4 glass-card-spotlight p-8 md:p-10 rounded-2xl flex flex-col justify-between group">
+        <div class="bento-card bento-span-4 bg-[#2D0B0D] p-8 md:p-10 rounded-2xl border border-white/5 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-secondary-fixed text-3xl">restaurant</span>
+            <div class="w-14 h-14 rounded-full bg-[#1e0304] border border-[#ffb3ac]/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
+              <span class="material-symbols-outlined text-3xl">restaurant</span>
             </div>
-            <h3 class="font-headline text-on-surface uppercase text-xl mb-4 tracking-wider">Freshly Cooked, Not Pre-made</h3>
-            <p class="font-body text-on-surface-variant text-base leading-relaxed">
+            <h3 class="font-headline text-[#ffe16d] uppercase text-xl mb-4 tracking-wider font-extrabold">Freshly Cooked, Not Pre-made</h3>
+            <p class="font-body text-[#dac1bf]/90 text-base leading-relaxed">
               Every dish is prepared from scratch when you order, ensuring the highest quality, rich authentic spices, and piping hot taste.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-xs font-label uppercase tracking-widest text-primary/80">
+          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-xs font-label uppercase tracking-widest text-primary font-extrabold">
             <span>Made on order</span>
             <span class="material-symbols-outlined text-sm">check_circle</span>
           </div>
         </div>
 
         <!-- Point 2 (Bento Span 2) -->
-        <div class="bento-card bento-span-2 glass-card-spotlight p-8 rounded-2xl flex flex-col justify-between group">
+        <div class="bento-card bento-span-2 bg-[#2D0B0D] p-8 rounded-2xl border border-white/5 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-secondary-fixed text-3xl">set_meal</span>
+            <div class="w-14 h-14 rounded-full bg-[#1e0304] border border-[#ffb3ac]/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
+              <span class="material-symbols-outlined text-3xl">set_meal</span>
             </div>
-            <h3 class="font-headline text-on-surface uppercase text-lg mb-4 tracking-wider">Combos & Thalis</h3>
-            <p class="font-body text-on-surface-variant text-sm leading-relaxed">
+            <h3 class="font-headline text-[#ffe16d] uppercase text-lg mb-4 tracking-wider font-extrabold">Combos & Thalis</h3>
+            <p class="font-body text-[#dac1bf]/90 text-sm leading-relaxed">
               Budget-friendly and complete meal sets showcasing diverse Punjabi & Chinese flavors.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-[10px] font-label uppercase tracking-widest text-primary/80">
+          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-[10px] font-label uppercase tracking-widest text-primary font-extrabold">
             <span>Great value</span>
             <span class="material-symbols-outlined text-sm">payments</span>
           </div>
         </div>
 
         <!-- Point 3 (Bento Span 2) -->
-        <div class="bento-card bento-span-2 glass-card-spotlight p-8 rounded-2xl flex flex-col justify-between group">
+        <div class="bento-card bento-span-2 bg-[#2D0B0D] p-8 rounded-2xl border border-white/5 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-secondary-fixed text-3xl">speed</span>
+            <div class="w-14 h-14 rounded-full bg-[#1e0304] border border-[#ffb3ac]/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
+              <span class="material-symbols-outlined text-3xl">speed</span>
             </div>
-            <h3 class="font-headline text-on-surface uppercase text-lg mb-4 tracking-wider">Quick Service</h3>
-            <p class="font-body text-on-surface-variant text-sm leading-relaxed">
+            <h3 class="font-headline text-[#ffe16d] uppercase text-lg mb-4 tracking-wider font-extrabold">Quick Service</h3>
+            <p class="font-body text-[#dac1bf]/90 text-sm leading-relaxed">
               Fresh takeaway or dine-in, structured for high speed without compromising absolute flavor.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-[10px] font-label uppercase tracking-widest text-primary/80">
+          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-[10px] font-label uppercase tracking-widest text-primary font-extrabold">
             <span>Fast turnaround</span>
             <span class="material-symbols-outlined text-sm">bolt</span>
           </div>
         </div>
 
         <!-- Point 4 (Bento Span 4) -->
-        <div class="bento-card bento-span-4 glass-card-spotlight p-8 md:p-10 rounded-2xl flex flex-col justify-between group">
+        <div class="bento-card bento-span-4 bg-[#2D0B0D] p-8 md:p-10 rounded-2xl border border-white/5 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-secondary-fixed text-3xl">local_shipping</span>
+            <div class="w-14 h-14 rounded-full bg-[#1e0304] border border-[#ffb3ac]/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
+              <span class="material-symbols-outlined text-3xl">local_shipping</span>
             </div>
-            <h3 class="font-headline text-on-surface uppercase text-xl mb-4 tracking-wider">Free Delivery Nearby</h3>
-            <p class="font-body text-on-surface-variant text-base leading-relaxed">
+            <h3 class="font-headline text-[#ffe16d] uppercase text-xl mb-4 tracking-wider font-extrabold">Free Delivery Nearby</h3>
+            <p class="font-body text-[#dac1bf]/90 text-base leading-relaxed">
               Order your tandoori items or daily curries and enjoy free shipping straight to your doorstep (within a 1km radius).
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-xs font-label uppercase tracking-widest text-primary/80">
+          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-xs font-label uppercase tracking-widest text-primary font-extrabold">
             <span>Surat Adajan & Magdalla</span>
             <span class="material-symbols-outlined text-sm">home</span>
           </div>
@@ -258,133 +262,351 @@ import heroImage from '../assets/herosection.png';
     </div>
   </section>
 
-  <!-- Daily Tiffin Service (Spotlight tilt card, magnetic CTAs) -->
-  <section class="relative py-32 px-6 md:px-12 bg-gradient-to-br from-surface via-surface-container-low to-surface overflow-hidden">
+  <!-- Daily Tiffin Service (Elegant, Modern, High Contrast & Interactive) -->
+  <section class="relative py-32 px-6 md:px-12 bg-gradient-to-b from-[#210103] via-[#150001] to-[#250103] overflow-hidden">
     <div class="absolute inset-0 opacity-5">
       <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
-      <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-fixed rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#ffe16d] rounded-full blur-3xl"></div>
     </div>
 
-    <div class="relative max-w-7xl mx-auto">
-      <div class="text-center mb-16">
+    <div class="relative max-w-7xl mx-auto z-10">
+      <div class="text-center mb-20">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
           <span class="material-symbols-outlined text-primary text-sm">restaurant_menu</span>
-          <span class="text-primary font-label tracking-[0.3em] uppercase text-xs">Corporate Catering</span>
+          <span class="text-primary font-label tracking-[0.3em] uppercase text-xs">Fresh Daily Catering</span>
         </div>
         <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase mb-4 leading-tight">
           Daily Tiffin Service
         </h2>
-        <p class="font-body text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
+        <p class="font-body text-[#dac1bf] max-w-2xl mx-auto text-lg leading-relaxed">
           Elevate your corporate dining experience with our chef-curated tiffin service. Fresh, nutritious meals delivered daily to your workplace.
         </p>
       </div>
 
-      <!-- Main Content Card (Spotlight & Tilt Card) -->
-      <div class="relative">
-        <div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/20 rounded-full blur-xl"></div>
-        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary-fixed/20 rounded-full blur-xl"></div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+        <!-- Left: Image & Timeline (Col-Span-5) -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-8">
+          <!-- Premium Image Card -->
+          <div class="relative rounded-3xl overflow-hidden aspect-[16/10] border border-white/15 shadow-2xl group">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#150001] via-transparent to-transparent z-10"></div>
+            <img alt="Premium corporate tiffin service with gourmet meal boxes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGr2r-rmCSiTsYoLW6vSTvJPhQqpaWUp7konQxTbdrYWOB5izkSIOBXWLMJvCEBBYe7Dv8o9HDaMbs74fbPonHSUy7p4OWYqNkZwoHJc6muNcYVJPL00ezfLevZLLbARAD_RhOiJZMhPxIqSSaEWFL2HjV1NHcPm93Rv13EpZUHC5jBIyTpnynOtaoYUu4uSFCSCjBQAOaXI9dm67-LWF_uCK1MrR5KLyQyh7HwAjcwaTGoEmRGaqtu0qiwkyIoeAuVKwHmK49y8E"/>
+            <div class="absolute top-4 right-4 z-20">
+              <span class="bg-[#ffe16d] text-[#310002] px-3.5 py-1.5 rounded-full shadow-lg font-headline text-[10px] uppercase tracking-wider font-black">Free Delivery</span>
+            </div>
+            <div class="absolute bottom-4 left-4 z-20">
+              <div class="bg-primary text-on-primary px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-xs" data-weight="fill">verified</span>
+                <span class="font-headline text-[10px] uppercase tracking-wider font-bold">Premium Quality</span>
+              </div>
+            </div>
+          </div>
 
-        <div class="glass-card-spotlight tilt-card rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
-          <div class="tilt-inner grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-            <!-- Image Section -->
-            <div class="relative group overflow-hidden h-72 sm:h-96 lg:h-auto tilt-layer-media">
-              <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary-fixed/20 z-10"></div>
-              <img alt="Premium corporate tiffin service with gourmet meal boxes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGr2r-rmCSiTsYoLW6vSTvJPhQqpaWUp7konQxTbdrYWOB5izkSIOBXWLMJvCEBBYe7Dv8o9HDaMbs74fbPonHSUy7p4OWYqNkZwoHJc6muNcYVJPL00ezfLevZLLbARAD_RhOiJZMhPxIqSSaEWFL2HjV1NHcPm93Rv13EpZUHC5jBIyTpnynOtaoYUu4uSFCSCjBQAOaXI9dm67-LWF_uCK1MrR5KLyQyh7HwAjcwaTGoEmRGaqtu0qiwkyIoeAuVKwHmK49y8E"/>
-              <div class="absolute top-8 right-8 z-20 tilt-layer-badge">
-                <div class="bg-secondary-fixed text-on-secondary-fixed px-4 py-2 rounded-full shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
-                  <span class="font-headline text-sm uppercase tracking-wider">Free Delivery</span>
+          <!-- Timeline Promise -->
+          <div class="bg-[#2D0B0D]/40 border border-white/5 rounded-3xl p-8 flex-grow">
+            <h3 class="font-headline text-lg text-[#ffe16d] uppercase tracking-widest mb-6 font-bold flex items-center gap-2">
+              <span class="material-symbols-outlined text-[#ffe16d]">electric_bolt</span>
+              The Tiffin Promise
+            </h3>
+            
+            <div class="relative pl-6 border-l border-primary/20 space-y-6">
+              <!-- Step 1 -->
+              <div class="relative">
+                <div class="absolute -left-[31px] top-0 w-4.5 h-4.5 rounded-full bg-[#150001] border-2 border-primary flex items-center justify-center">
+                  <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                </div>
+                <h4 class="font-headline text-xs text-white uppercase tracking-wider font-extrabold mb-1">09:00 AM — Fresh Sourcing</h4>
+                <p class="font-body text-[#dac1bf] text-xs leading-relaxed">Daily handpicked fresh vegetables and premium spices arrive at our kitchen.</p>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="relative">
+                <div class="absolute -left-[31px] top-0 w-4.5 h-4.5 rounded-full bg-[#150001] border-2 border-[#ffe16d] flex items-center justify-center">
+                  <div class="w-1.5 h-1.5 rounded-full bg-[#ffe16d]"></div>
+                </div>
+                <h4 class="font-headline text-xs text-white uppercase tracking-wider font-extrabold mb-1">11:00 AM — Slow Cooked & Sealed</h4>
+                <p class="font-body text-[#dac1bf] text-xs leading-relaxed">Prepared in small batches with low oil and packed into premium insulated hot-cases.</p>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="relative">
+                <div class="absolute -left-[31px] top-0 w-4.5 h-4.5 rounded-full bg-[#150001] border-2 border-primary flex items-center justify-center">
+                  <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                </div>
+                <h4 class="font-headline text-xs text-white uppercase tracking-wider font-extrabold mb-1">12:30 PM — Desk Delivery</h4>
+                <p class="font-body text-[#dac1bf] text-xs leading-relaxed">Dispatched instantly to guarantee hot and fresh lunch boxes at your office table.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Tiffin Menu Widget (Col-Span-7) -->
+        <div class="lg:col-span-7">
+          <div class="relative bg-[#2D0B0D] border border-primary/20 rounded-3xl p-8 md:p-10 shadow-2xl h-full flex flex-col justify-between overflow-hidden">
+            <!-- Glow effect -->
+            <div class="absolute -top-12 -right-12 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                <div>
+                  <h3 class="font-headline text-2xl text-white uppercase font-black tracking-wide">Weekly Menu Preview</h3>
+                  <p class="font-body text-[#dac1bf] text-sm mt-1">Select a day to see what's in our premium hot-case</p>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 self-start">
+                  <span class="material-symbols-outlined text-xs text-primary" data-weight="fill">verified</span>
+                  <span class="text-primary font-label text-[10px] tracking-wider uppercase font-bold">100% Pure Veg</span>
                 </div>
               </div>
-              <div class="absolute bottom-8 left-8 z-20 tilt-layer-badge">
-                <div class="bg-primary text-on-primary px-4 py-2 rounded-full shadow-lg">
-                  <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-sm" data-weight="fill">verified</span>
-                    <span class="font-headline text-sm uppercase tracking-wider">Premium Quality</span>
+
+              <!-- Tab selector -->
+              <div class="flex justify-between items-center gap-2 mb-8 p-1.5 bg-[#1e0304] rounded-xl border border-primary/10 overflow-x-auto no-scrollbar">
+                <button class="tiffin-tab-btn flex-grow text-center py-2.5 px-4 rounded-lg font-headline text-xs tracking-widest uppercase font-extrabold transition-all duration-300 bg-primary text-[#680008]" data-day="monday">Mon</button>
+                <button class="tiffin-tab-btn flex-grow text-center py-2.5 px-4 rounded-lg font-headline text-xs tracking-widest uppercase font-extrabold transition-all duration-300 text-primary/70 hover:text-white" data-day="tuesday">Tue</button>
+                <button class="tiffin-tab-btn flex-grow text-center py-2.5 px-4 rounded-lg font-headline text-xs tracking-widest uppercase font-extrabold transition-all duration-300 text-primary/70 hover:text-white" data-day="wednesday">Wed</button>
+                <button class="tiffin-tab-btn flex-grow text-center py-2.5 px-4 rounded-lg font-headline text-xs tracking-widest uppercase font-extrabold transition-all duration-300 text-primary/70 hover:text-white" data-day="thursday">Thu</button>
+                <button class="tiffin-tab-btn flex-grow text-center py-2.5 px-4 rounded-lg font-headline text-xs tracking-widest uppercase font-extrabold transition-all duration-300 text-primary/70 hover:text-white" data-day="friday">Fri</button>
+              </div>
+
+              <!-- Tab content viewports -->
+              <div class="relative min-h-[280px]">
+                <!-- Monday -->
+                <div id="tiffin-menu-monday" class="tiffin-menu-content transition-opacity duration-300 opacity-100 block space-y-6">
+                  <div>
+                    <span class="text-xs font-label uppercase tracking-[0.2em] text-[#ffe16d] font-bold">Monday Special</span>
+                    <h4 class="text-2xl font-headline font-black text-white uppercase tracking-tight mt-1">Paneer Butter Masala Combo</h4>
+                  </div>
+                  <p class="text-[#dac1bf] font-body text-base leading-relaxed">A creamy, rich tomato gravy with cottage cheese, slow-simmered and paired with freshly made traditional sides.</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>4 Butter Rotis</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Paneer Butter Masala</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Dal Fry</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Jeera Rice & Salad</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-4 pt-5 border-t border-white/10 text-[10px] text-[#dac1bf]/70 font-label uppercase tracking-widest font-semibold">
+                    <span>650 Kcal</span>
+                    <span>•</span>
+                    <span>100% Home Cooked</span>
+                    <span>•</span>
+                    <span>Low Oil</span>
+                  </div>
+                </div>
+
+                <!-- Tuesday -->
+                <div id="tiffin-menu-tuesday" class="tiffin-menu-content transition-opacity duration-300 opacity-0 hidden space-y-6">
+                  <div>
+                    <span class="text-xs font-label uppercase tracking-[0.2em] text-[#ffe16d] font-bold">Tuesday Special</span>
+                    <h4 class="text-2xl font-headline font-black text-white uppercase tracking-tight mt-1">Veg Kolhapuri Combo</h4>
+                  </div>
+                  <p class="text-[#dac1bf] font-body text-base leading-relaxed">A spicy and aromatic mixed vegetable dish cooked in traditional Kolhapuri gravy with hand-ground regional spices.</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>4 Soft Roti</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Veg Kolhapuri</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Dal Tadka</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Steamed Basmati & Pickle</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-4 pt-5 border-t border-white/10 text-[10px] text-[#dac1bf]/70 font-label uppercase tracking-widest font-semibold">
+                    <span>610 Kcal</span>
+                    <span>•</span>
+                    <span>Aromatic Gravies</span>
+                    <span>•</span>
+                    <span>High Fiber</span>
+                  </div>
+                </div>
+
+                <!-- Wednesday -->
+                <div id="tiffin-menu-wednesday" class="tiffin-menu-content transition-opacity duration-300 opacity-0 hidden space-y-6">
+                  <div>
+                    <span class="text-xs font-label uppercase tracking-[0.2em] text-[#ffe16d] font-bold">Wednesday Special</span>
+                    <h4 class="text-2xl font-headline font-black text-white uppercase tracking-tight mt-1">Aloo Gobi Adraki Combo</h4>
+                  </div>
+                  <p class="text-[#dac1bf] font-body text-base leading-relaxed">Fresh cauliflower florets and potatoes tossed with a generous amount of ginger, spices, and fresh coriander.</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>4 Soft Roti</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Aloo Gobi Adraki</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Mix Dal Cooked Slow</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Veg Pulav & Salad</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-4 pt-5 border-t border-white/10 text-[10px] text-[#dac1bf]/70 font-label uppercase tracking-widest font-semibold">
+                    <span>590 Kcal</span>
+                    <span>•</span>
+                    <span>100% Home Cooked</span>
+                    <span>•</span>
+                    <span>Nutrient Rich</span>
+                  </div>
+                </div>
+
+                <!-- Thursday -->
+                <div id="tiffin-menu-thursday" class="tiffin-menu-content transition-opacity duration-300 opacity-0 hidden space-y-6">
+                  <div>
+                    <span class="text-xs font-label uppercase tracking-[0.2em] text-[#ffe16d] font-bold">Thursday Special</span>
+                    <h4 class="text-2xl font-headline font-black text-white uppercase tracking-tight mt-1">Paneer Bhurji Combo</h4>
+                  </div>
+                  <p class="text-[#dac1bf] font-body text-base leading-relaxed">Crumbled fresh paneer sautéed with onions, tomatoes, green chillies, and aromatic mixed spices to absolute perfection.</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>4 Butter Rotis</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Paneer Bhurji</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Dal Makhani</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Jeera Rice & Pickle</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-4 pt-5 border-t border-white/10 text-[10px] text-[#dac1bf]/70 font-label uppercase tracking-widest font-semibold">
+                    <span>680 Kcal</span>
+                    <span>•</span>
+                    <span>Protein Heavy</span>
+                    <span>•</span>
+                    <span>Zero Preservatives</span>
+                  </div>
+                </div>
+
+                <!-- Friday -->
+                <div id="tiffin-menu-friday" class="tiffin-menu-content transition-opacity duration-300 opacity-0 hidden space-y-6">
+                  <div>
+                    <span class="text-xs font-label uppercase tracking-[0.2em] text-[#ffe16d] font-bold">Friday Special</span>
+                    <h4 class="text-2xl font-headline font-black text-white uppercase tracking-tight mt-1">Veg Kadai Feast</h4>
+                  </div>
+                  <p class="text-[#dac1bf] font-body text-base leading-relaxed">A delicious combo of bell peppers and fresh vegetables cooked with kadai masala in a rich gravy, plus a weekend sweet treat.</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>4 Soft Roti</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Veg Kadai</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                      <span>Dal Fry & Rice</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/90 font-body text-sm bg-white/5 px-4 py-2.5 rounded-lg border border-white/5">
+                      <span class="material-symbols-outlined text-sm text-[#ffe16d]">star</span>
+                      <span>Gulab Jamun (Sweet)</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-4 pt-5 border-t border-white/10 text-[10px] text-[#dac1bf]/70 font-label uppercase tracking-widest font-semibold">
+                    <span>720 Kcal</span>
+                    <span>•</span>
+                    <span>Weekend Special</span>
+                    <span>•</span>
+                    <span>Fresh & Nutritious</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Content Section -->
-            <div class="p-6 sm:p-12 md:p-16 flex flex-col justify-center relative tilt-layer-text">
-              <div class="absolute top-8 right-8 opacity-10">
-                <span class="material-symbols-outlined text-secondary-fixed text-8xl">lunch_dining</span>
-              </div>
-              <div class="relative z-10">
-                <h3 class="font-headline text-3xl md:text-4xl text-on-surface uppercase mb-6 leading-tight">
-                  Chef-Curated Office Meals
-                </h3>
-                <p class="font-body text-on-surface-variant text-lg mb-10 leading-relaxed">
-                  Transform your workday with our rotating menu of 30+ gourmet dishes. Each tiffin is freshly prepared with premium ingredients, balanced nutrition, and culinary excellence.
-                </p>
-
-                <!-- Feature Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
-                  <div class="group">
-                    <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container/50 border border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-                      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <span class="material-symbols-outlined text-primary text-xl">restaurant</span>
-                      </div>
-                      <div>
-                        <h4 class="font-headline text-on-surface uppercase text-sm mb-2 tracking-wider">Diverse Menu</h4>
-                        <p class="font-body text-on-surface-variant text-sm">30+ rotating dishes weekly</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="group">
-                    <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container/50 border border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-                      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <span class="material-symbols-outlined text-primary text-xl">schedule</span>
-                      </div>
-                      <div>
-                        <h4 class="font-headline text-on-surface uppercase text-sm mb-2 tracking-wider">Fresh Daily</h4>
-                        <p class="font-body text-on-surface-variant text-sm">Prepared fresh every morning</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="group">
-                    <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container/50 border border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-                      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <span class="material-symbols-outlined text-primary text-xl">local_shipping</span>
-                      </div>
-                      <div>
-                        <h4 class="font-headline text-on-surface uppercase text-sm mb-2 tracking-wider">Free Delivery</h4>
-                        <p class="font-body text-on-surface-variant text-sm">Within 1km radius</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="group">
-                    <div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container/50 border border-white/5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-                      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <span class="material-symbols-outlined text-primary text-xl">payments</span>
-                      </div>
-                      <div>
-                        <h4 class="font-headline text-on-surface uppercase text-sm mb-2 tracking-wider">Value Pricing</h4>
-                        <p class="font-body text-on-surface-variant text-sm">Corporate plans available</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- CTA Section -->
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-8 border-t border-white/10">
-                  <a href="/tiffin" class="group bg-primary text-on-primary px-8 py-4 rounded-xl font-headline tracking-widest text-sm uppercase hover:bg-primary-fixed transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 transform hover:-translate-y-1 inline-block btn-magnetic">
-                    <span class="flex items-center gap-2">
-                      View Subscription Plans
-                      <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </span>
-                  </a>
-                  <div class="flex items-center gap-3 px-4 py-2 rounded-full bg-secondary-fixed/10 border border-secondary-fixed/20">
-                    <span class="material-symbols-outlined text-secondary-fixed" data-weight="fill">workspace_premium</span>
-                    <span class="font-label text-secondary-fixed text-sm uppercase tracking-wider">Trusted by 50+ Companies</span>
-                  </div>
-                </div>
-              </div>
+            <!-- Footer subscription call -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 mt-8 border-t border-white/10">
+              <a href="/tiffin" class="w-full sm:w-auto group bg-primary text-on-primary px-8 py-4 rounded-xl font-headline tracking-widest text-xs uppercase hover:bg-primary-fixed transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 text-center inline-block btn-magnetic font-bold">
+                <span class="flex items-center justify-center gap-2">
+                  View Subscription Plans
+                  <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </span>
+              </a>
+              <span class="font-label text-[#ffe16d] text-xs uppercase tracking-wider font-extrabold">Trusted by 50+ Offices</span>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Client-side script for tab selector -->
+    <script is:inline>
+      function initTiffinTabs() {
+        const tabBtns = document.querySelectorAll('.tiffin-tab-btn');
+        const contents = document.querySelectorAll('.tiffin-menu-content');
+        
+        if (!tabBtns.length || !contents.length) return;
+        
+        tabBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const targetDay = btn.getAttribute('data-day');
+            
+            // Set buttons active/inactive
+            tabBtns.forEach(b => {
+              if (b === btn) {
+                b.classList.add('bg-primary', 'text-[#680008]');
+                b.classList.remove('text-primary/70');
+              } else {
+                b.classList.remove('bg-primary', 'text-[#680008]');
+                b.classList.add('text-primary/70');
+              }
+            });
+            
+            // Fade out current active content, then show the new one
+            contents.forEach(content => {
+              if (content.id === `tiffin-menu-${targetDay}`) {
+                content.classList.remove('hidden');
+                // Allow a small delay to trigger the transition
+                setTimeout(() => {
+                  content.classList.remove('opacity-0');
+                  content.classList.add('opacity-100');
+                }, 50);
+              } else {
+                content.classList.remove('opacity-100');
+                content.classList.add('opacity-0');
+                // Ensure it's display hidden after transition completes
+                setTimeout(() => {
+                  content.classList.add('hidden');
+                }, 300);
+              }
+            });
+          });
+        });
+      }
+      
+      // Initialize on DOM ready and after Astro page transitions
+      document.addEventListener('DOMContentLoaded', initTiffinTabs);
+      document.addEventListener('astro:after-swap', initTiffinTabs);
+      
+      // Run once immediately in case page is already loaded
+      initTiffinTabs();
+    </script>
   </section>
 
   <!-- Testimonials Section (Glassmorphism cards & Magnetic Share Button) -->
