@@ -97,41 +97,57 @@ import tiffinPlans from '../data/tiffin.json';
         <h2 class="text-3xl sm:text-5xl font-headline font-black text-on-background mb-4 uppercase tracking-tight">Pricing Plans</h2>
         <p class="text-on-surface-variant font-body max-w-2xl mx-auto">Choose the commitment that fits your lifestyle. Flexible pausing and cancellation included with all plans.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
         {tiffinPlans.map(plan => (
-          <div class={`p-10 rounded-3xl flex flex-col h-full transition-all duration-300 relative glass-card-spotlight ${
+          <div class={`group p-8 md:p-10 rounded-3xl flex flex-col justify-between transition-all duration-500 relative glass-card-spotlight !overflow-visible ${
             plan.isPopular 
-              ? 'border-2 border-[#ffe16d] transform md:scale-105 shadow-[0_20px_50px_rgba(255,225,109,0.05)] z-10' 
-              : 'border border-white/10 hover:border-primary/20 shadow-xl'
+              ? 'border-2 border-primary shadow-[0_25px_60px_rgba(255,225,109,0.12)] scale-105 z-10 bg-gradient-to-b from-[#2a0406] to-[#150203]' 
+              : 'border border-white/10 hover:border-primary/30 hover:-translate-y-1 shadow-2xl'
           }`}>
-            <div class="h-full flex flex-col justify-between">
-              {plan.isPopular && (
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#ffe16d] text-black px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest z-20">Most Popular</div>
-              )}
+            {plan.isPopular && (
+              <div class="absolute -top-[16px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-[#ffcb47] text-[#180001] text-[11px] font-black px-6 py-2 rounded-full uppercase tracking-[0.25em] shadow-[0_4px_25px_rgba(255,225,109,0.35)] z-20 whitespace-nowrap">
+                Most Popular
+              </div>
+            )}
+            <div>
               <div class="mb-8">
-                <h3 class={`font-headline font-bold text-xl mb-2 uppercase tracking-wide ${plan.isPopular ? 'text-[#ffe16d]' : 'text-white'}`}>{plan.name}</h3>
-                <div class="flex items-baseline gap-1">
-                  <span class="text-4xl font-headline font-black text-[#ffe16d]">{plan.price}</span>
-                  <span class="font-body text-sm text-[#dac1bf]">{plan.period}</span>
+                <h3 class="text-3xl font-headline font-black text-white uppercase tracking-tighter">{plan.name}</h3>
+              </div>
+              <div class="mb-8">
+                <div class="flex items-baseline">
+                  {plan.price.startsWith('₹') && !plan.price.includes('Custom') && (
+                    <span class="text-3xl font-headline font-bold text-primary mr-0.5">₹</span>
+                  )}
+                  <span class="text-5xl sm:text-6xl font-headline font-black text-white leading-none tracking-tighter">
+                    {plan.price.startsWith('₹') && !plan.price.includes('Custom') 
+                      ? plan.price.replace('₹', '') 
+                      : plan.price}
+                  </span>
+                  <span class="font-body text-xs text-[#dac1bf]/60 ml-2 uppercase tracking-widest">{plan.period}</span>
                 </div>
               </div>
-              <ul class="space-y-4 mb-12 flex-grow font-body text-sm text-[#dac1bf]">
+              <ul class="space-y-4 mb-12 text-[#dac1bf] font-body">
                 {plan.features.map(feat => (
                   <li class="flex items-center gap-3">
-                    <span class="material-symbols-outlined text-sm text-primary">check_circle</span> {feat}
+                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                    <span class="text-sm font-semibold">{feat}</span>
                   </li>
                 ))}
               </ul>
-              {plan.isPopular ? (
-                <button class="w-full py-4 rounded-full bg-[#ffe16d] text-black font-headline font-extrabold uppercase tracking-tight hover:bg-[#ffe16d]/90 transition-all">{plan.buttonText}</button>
-              ) : (
-                <button class={`w-full py-4 rounded-full font-headline font-extrabold uppercase tracking-tight transition-all border ${
-                  plan.id === 'corporate' 
-                    ? 'border-white/20 text-white hover:bg-primary hover:text-black hover:border-primary' 
-                    : 'border-primary text-primary hover:bg-primary hover:text-black'
-                }`}>{plan.buttonText}</button>
-              )}
             </div>
+            {plan.isPopular ? (
+              <button class="w-full py-4 sm:py-5 text-center rounded-full bg-gradient-to-r from-primary to-[#ffcb47] hover:brightness-110 text-black font-extrabold font-label shadow-xl transition-all duration-300 transform hover:scale-[1.02] uppercase tracking-wider text-sm block">
+                {plan.buttonText}
+              </button>
+            ) : (
+              <button class={`w-full py-4 sm:py-5 text-center rounded-full border font-bold font-label transition-all duration-300 transform hover:scale-[1.02] shadow-lg text-sm uppercase tracking-wider block ${
+                plan.id === 'corporate'
+                  ? 'border-white/20 text-white bg-white/5 hover:bg-primary hover:text-black hover:border-transparent'
+                  : 'border-primary/30 text-primary bg-primary/5 hover:bg-primary hover:text-black hover:border-transparent'
+              }`}>
+                {plan.buttonText}
+              </button>
+            )}
           </div>
         ))}
       </div>
