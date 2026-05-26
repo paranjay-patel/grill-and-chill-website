@@ -106,7 +106,7 @@ function getSubcategories(categoryId) {
                   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {sub.items.map(item => (
                       <div 
-                        class="menu-card category-item bg-[#2D0B0D] p-6 rounded-2xl border border-white/5 hover:border-primary/20 shadow-xl flex flex-col justify-between hover:-translate-y-1 duration-300 relative overflow-hidden"
+                        class="menu-card category-item glass-card-spotlight p-6 rounded-2xl border border-white/10 hover:border-primary/20 shadow-xl flex flex-col justify-between hover:-translate-y-1 duration-300 relative overflow-hidden"
                         data-category={cat.id}
                         data-name={item.name}
                         data-description={item.description || ''}
