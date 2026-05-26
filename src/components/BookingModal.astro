@@ -1,0 +1,205 @@
+---
+import { RESTAURANT } from '../data/site-config';
+---
+
+<div id="booking-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" data-phone={RESTAURANT.phone}>
+  <div id="booking-modal-content" class="bg-[#2a0506] border border-primary/20 p-8 rounded-2xl max-w-md w-full mx-4 shadow-2xl relative transform scale-95 transition-all duration-300">
+    <button id="close-booking-modal" class="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors" aria-label="Close">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+    
+    <h3 id="modal-package-title" class="font-headline text-2xl font-black text-secondary-fixed uppercase tracking-tight mb-2">Configure Package</h3>
+    <p class="text-xs text-on-surface-variant font-label uppercase tracking-widest mb-6">Grill & Chill Service Inquiry</p>
+    
+    <form id="booking-form" class="space-y-4">
+      <input type="hidden" id="modal-package-name" value="" />
+      
+      <div id="guest-count-group">
+        <label for="guest-count" class="block text-xs font-label uppercase tracking-wider text-on-surface-variant mb-1.5">Number of Guests / Plates</label>
+        <input type="number" id="guest-count" min="20" max="1000" placeholder="e.g. 50 (Min. 20)" 
+          class="w-full px-4 py-2.5 bg-[#310002] border border-primary/20 rounded-lg text-white focus:outline-none focus:border-primary text-sm" required />
+      </div>
+      
+      <div id="duration-group" class="hidden">
+        <label for="tiffin-duration" class="block text-xs font-label uppercase tracking-wider text-on-surface-variant mb-1.5">Subscription Duration</label>
+        <select id="tiffin-duration" class="w-full px-4 py-2.5 bg-[#310002] border border-primary/20 rounded-lg text-white focus:outline-none focus:border-primary text-sm">
+          <option value="1 Week">1 Week Trial</option>
+          <option value="1 Month">1 Month Subscription</option>
+          <option value="Custom Duration">Custom Period</option>
+        </select>
+      </div>
+
+      <div>
+        <span class="block text-xs font-label uppercase tracking-wider text-on-surface-variant mb-1.5">Preference</span>
+        <div class="grid grid-cols-2 gap-3">
+          <label class="flex items-center justify-center gap-2 py-2 px-3 bg-[#310002] border border-primary/20 rounded-lg cursor-pointer hover:bg-[#420003] transition-colors">
+            <input type="radio" name="diet-pref" value="Veg" checked class="text-primary focus:ring-0 bg-transparent border-primary/40" />
+            <span class="text-sm font-body text-white">Pure Veg</span>
+          </label>
+          <label class="flex items-center justify-center gap-2 py-2 px-3 bg-[#310002] border border-primary/20 rounded-lg cursor-pointer hover:bg-[#420003] transition-colors">
+            <input type="radio" name="diet-pref" value="Mix (Veg & Non-Veg)" class="text-primary focus:ring-0 bg-transparent border-primary/40" />
+            <span class="text-sm font-body text-white">Mix / Non-Veg</span>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <label for="booking-date" class="block text-xs font-label uppercase tracking-wider text-on-surface-variant mb-1.5">Preferred Event / Start Date</label>
+        <input type="date" id="booking-date" 
+          class="w-full px-4 py-2.5 bg-[#310002] border border-primary/20 rounded-lg text-white focus:outline-none focus:border-primary text-sm" required />
+      </div>
+
+      <div>
+        <label for="booking-location" class="block text-xs font-label uppercase tracking-wider text-on-surface-variant mb-1.5">Delivery Location (Surat)</label>
+        <select id="booking-location" class="w-full px-4 py-2.5 bg-[#310002] border border-primary/20 rounded-lg text-white focus:outline-none focus:border-primary text-sm">
+          <option value="Vesu">Vesu</option>
+          <option value="Piplod">Piplod</option>
+          <option value="Adajan">Adajan</option>
+          <option value="Magdalla">Magdalla</option>
+          <option value="Dumas">Dumas</option>
+          <option value="Other Area">Other (Specify in Chat)</option>
+        </select>
+      </div>
+
+      <button type="submit" class="w-full py-3 mt-4 bg-primary hover:bg-secondary-fixed text-on-primary hover:text-on-secondary-fixed font-headline font-extrabold uppercase tracking-widest text-sm rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-primary/25">
+        <span class="material-symbols-outlined text-lg">chat</span> Send to WhatsApp
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function initBookingModal() {
+    const isCateringPage = window.location.pathname.toLowerCase().includes('catering');
+    const isTiffinPage = window.location.pathname.toLowerCase().includes('tiffin');
+    if (!isCateringPage && !isTiffinPage) return;
+
+    const modal = document.getElementById('booking-modal');
+    if (!modal) return;
+
+    const modalContent = document.getElementById('booking-modal-content');
+    const closeBtn = document.getElementById('close-booking-modal');
+    const form = document.getElementById('booking-form') as HTMLFormElement;
+    const packageTitle = document.getElementById('modal-package-title');
+    const packageNameHidden = document.getElementById('modal-package-name') as HTMLInputElement;
+    const guestGroup = document.getElementById('guest-count-group');
+    const durationGroup = document.getElementById('duration-group');
+    const dateInput = document.getElementById('booking-date') as HTMLInputElement;
+    const guestInput = document.getElementById('guest-count') as HTMLInputElement;
+    const phone = modal.getAttribute('data-phone') || '';
+
+    if (!modalContent || !closeBtn || !form || !packageTitle || !packageNameHidden || !guestGroup || !durationGroup || !dateInput || !guestInput) return;
+
+    // Date prefill (tomorrow)
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    dateInput.value = tomorrow.toISOString().split('T')[0];
+
+    function openModal(packageName: string) {
+      packageNameHidden.value = packageName;
+      if (packageTitle) packageTitle.textContent = packageName;
+
+      if (isTiffinPage) {
+        guestGroup?.classList.add('hidden');
+        guestInput?.removeAttribute('required');
+        durationGroup?.classList.remove('hidden');
+        
+        const tiffinDurationSelect = document.getElementById('tiffin-duration') as HTMLSelectElement;
+        if (tiffinDurationSelect) {
+          if (packageName.toLowerCase().includes('weekly')) {
+            tiffinDurationSelect.value = '1 Week';
+          } else if (packageName.toLowerCase().includes('monthly')) {
+            tiffinDurationSelect.value = '1 Month';
+          } else {
+            tiffinDurationSelect.value = 'Custom Duration';
+          }
+        }
+      } else {
+        guestGroup?.classList.remove('hidden');
+        guestInput?.setAttribute('required', 'required');
+        durationGroup?.classList.add('hidden');
+      }
+
+      modal.classList.remove('hidden');
+      modal.offsetHeight;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-95');
+      modalContent.classList.add('scale-100');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      document.body.classList.remove('overflow-hidden');
+
+      setTimeout(() => {
+        if (modal.classList.contains('opacity-0')) {
+          modal.classList.add('hidden');
+        }
+      }, 300);
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Event listener hooks for buttons on catering/tiffin pages
+    document.body.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const targetBtn = target.closest('button, a');
+      if (!targetBtn) return;
+
+      const text = targetBtn.textContent?.replace(/\s+/g, ' ').trim().toLowerCase() || '';
+      
+      if (isCateringPage) {
+        if (text.includes('select basic') || text.includes('book standard') || text.includes('select premium')) {
+          e.preventDefault();
+          let pkg = "Catering: Standard Package";
+          if (text.includes('basic')) pkg = "Catering: Basic Package";
+          if (text.includes('premium')) pkg = "Catering: Premium Package";
+          openModal(pkg);
+        }
+      } else if (isTiffinPage) {
+        if (text.includes('start trial') || text.includes('subscribe now') || text.includes('contact sales') || text.includes('order now')) {
+          e.preventDefault();
+          let pkg = "Tiffin: Monthly Subscription";
+          if (text.includes('trial') || text.includes('week')) pkg = "Tiffin: Weekly Trial";
+          if (text.includes('sales') || text.includes('corporate')) pkg = "Tiffin: Corporate Plan";
+          if (text.includes('order now')) pkg = "Tiffin: Plan Inquiry";
+          openModal(pkg);
+        }
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const pkg = packageNameHidden.value;
+      const diet = (form.elements.namedItem('diet-pref') as RadioNodeList).value;
+      const date = (document.getElementById('booking-date') as HTMLInputElement).value;
+      const loc = (document.getElementById('booking-location') as HTMLSelectElement).value;
+      
+      let detailLine = "";
+      if (isTiffinPage) {
+        const dur = (document.getElementById('tiffin-duration') as HTMLSelectElement).value;
+        detailLine = `Duration: ${dur}`;
+      } else {
+        const count = guestInput.value;
+        detailLine = `Estimated Guests: ${count}`;
+      }
+
+      const msg = `Hi Grill & Chill, I would like to make an inquiry:\n• Package: ${pkg}\n• Diet Preference: ${diet}\n• Date: ${date}\n• Location: ${loc}\n• ${detailLine}\n\nPlease confirm availability. Thanks!`;
+      const phoneDigits = phone.replace(/\D/g, '');
+      const waLink = `https://wa.me/${phoneDigits}?text=${encodeURIComponent(msg)}`;
+      
+      window.open(waLink, '_blank', 'noopener,noreferrer');
+      closeModal();
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initBookingModal);
+  document.addEventListener('astro:after-swap', initBookingModal);
+</script>

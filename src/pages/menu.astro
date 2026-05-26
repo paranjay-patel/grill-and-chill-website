@@ -165,28 +165,32 @@ function getSubcategories(categoryId) {
   </main>
 
   <!-- Client-side filter, search and tab switching logic -->
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-      const searchInput = document.getElementById('menu-search');
-      const vegToggle = document.getElementById('veg-only-toggle');
+  <script>
+    function setupMenuFilters() {
+      const searchInput = document.getElementById('menu-search') as HTMLInputElement | null;
+      const vegToggle = document.getElementById('veg-only-toggle') as HTMLInputElement | null;
       const tabButtons = document.querySelectorAll('.tab-btn');
       const cards = document.querySelectorAll('.menu-card');
       const subcategories = document.querySelectorAll('.subcategory-group');
       const categories = document.querySelectorAll('.category-group');
       const emptyState = document.getElementById('empty-state');
 
+      if (!searchInput || !vegToggle || !emptyState) return;
+
       let activeCategory = 'all';
 
       // Function to execute the filtering logic
       function filterMenu() {
+        if (!searchInput || !vegToggle || !emptyState) return;
         const query = searchInput.value.toLowerCase().trim();
         const vegOnly = vegToggle.checked;
         let visibleCount = 0;
 
-        cards.forEach(card => {
+        cards.forEach(cardEl => {
+          const card = cardEl as HTMLElement;
           const category = card.dataset.category;
-          const name = card.dataset.name.toLowerCase();
-          const desc = card.dataset.description.toLowerCase();
+          const name = card.dataset.name?.toLowerCase() || '';
+          const desc = card.dataset.description?.toLowerCase() || '';
           const isVeg = card.dataset.veg === 'true';
 
           const matchesCategory = activeCategory === 'all' || category === activeCategory;
@@ -230,7 +234,8 @@ function getSubcategories(categoryId) {
       }
 
       // Tab switcher click listener
-      tabButtons.forEach(btn => {
+      tabButtons.forEach(btnEl => {
+        const btn = btnEl as HTMLElement;
         btn.addEventListener('click', () => {
           tabButtons.forEach(b => {
             b.classList.remove('active', 'bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
@@ -240,7 +245,7 @@ function getSubcategories(categoryId) {
           btn.classList.add('active', 'bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
           btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant', 'border', 'border-outline-variant/5');
 
-          activeCategory = btn.dataset.category;
+          activeCategory = btn.dataset.category || 'all';
           filterMenu();
         });
       });
@@ -248,6 +253,9 @@ function getSubcategories(categoryId) {
       // Search & Toggle listeners
       searchInput.addEventListener('input', filterMenu);
       vegToggle.addEventListener('change', filterMenu);
-    });
+    }
+
+    setupMenuFilters();
+    document.addEventListener('astro:after-swap', setupMenuFilters);
   </script>
 </Layout>

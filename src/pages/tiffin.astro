@@ -172,8 +172,8 @@ import tiffinPlans from '../data/tiffin.json';
   </section>
 
   <!-- Client-side script to wire up the Subscribe button to the plans list -->
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
+  <script>
+    function setupHeroScroll() {
       const heroBtn = document.getElementById('tiffin-hero-subscribe-btn');
       const pricingSection = document.getElementById('pricing-plans-section');
       if (heroBtn && pricingSection) {
@@ -181,6 +181,9 @@ import tiffinPlans from '../data/tiffin.json';
           pricingSection.scrollIntoView({ behavior: 'smooth' });
         });
       }
-    });
+    }
+
+    setupHeroScroll();
+    document.addEventListener('astro:after-swap', setupHeroScroll);
   </script>
 </Layout>
