@@ -412,12 +412,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* 5. Magnetic CTA buttons */
-.btn-magnetic {
-  display: inline-block;
-  will-change: transform;
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
+
 
 /* 6. Morphing Background Blobs */
 .morphing-blob-container {
