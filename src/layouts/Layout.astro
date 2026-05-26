@@ -454,7 +454,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://grilland
 
       // Set hover event listeners
       function updateHoverables() {
-        const hoverables = document.querySelectorAll('a, button, [role="button"], .cuisine-card, .menu-card, .tilt-card, .btn-magnetic');
+        const hoverables = document.querySelectorAll('a, button, [role="button"], .cuisine-card, .menu-card, .tilt-card');
         hoverables.forEach(item => {
           // Remove old listeners to avoid stacking
           item.removeEventListener('mouseenter', onMouseEnter);
@@ -523,27 +523,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://grilland
         });
       });
     }
-
-    function setupMagneticButtons() {
-      const magnets = document.querySelectorAll('.btn-magnetic');
-      magnets.forEach((magnetEl) => {
-        const magnet = magnetEl as HTMLElement;
-        magnet.addEventListener('mousemove', function(e) {
-          const bound = magnet.getBoundingClientRect();
-          const x = (e as MouseEvent).clientX - (bound.left + bound.width / 2);
-          const y = (e as MouseEvent).clientY - (bound.top + bound.height / 2);
-          magnet.style.transform = `translate(${x * 0.4}px, ${y * 0.4}px)`;
-        });
-        magnet.addEventListener('mouseleave', function() {
-          magnet.style.transform = 'translate(0px, 0px)';
-          magnet.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
-        });
-        magnet.addEventListener('mouseenter', function() {
-          magnet.style.transition = 'none';
-        });
-      });
-    }
-
     function setupScrollProgress() {
       const progressBar = document.getElementById('scroll-progress-bar') as HTMLElement | null;
       if (!progressBar) return;
@@ -561,6 +540,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://grilland
 
 
 
+
     // Run on load and on page transition swap (Astro view transitions support)
     function initAll() {
       initMobileMenu();
@@ -568,7 +548,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://grilland
       setupCustomCursor();
       setupGlassSpotlights();
       setupTiltCards();
-      setupMagneticButtons();
       setupScrollProgress();
     }
 

@@ -20,18 +20,18 @@ import tiffinPlans from '../data/tiffin.json';
           Elevating your daily lunch with chef-prepared meals delivered straight to your desk or home. Fresh, authentic, and consistently delicious.
         </p>
         <div class="flex flex-wrap gap-4">
-          <button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-extrabold uppercase tracking-tight flex items-center gap-2 btn-magnetic" id="tiffin-hero-subscribe-btn">
+          <button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-extrabold uppercase tracking-tight flex items-center gap-2" id="tiffin-hero-subscribe-btn">
             Subscribe Now
             <span class="material-symbols-outlined">arrow_forward</span>
           </button>
-          <a class="bg-green-500 text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 btn-magnetic" href={RESTAURANT_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+          <a class="bg-green-500 text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40" href={RESTAURANT_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
             <span class="material-symbols-outlined">chat</span>
             WhatsApp
           </a>
         </div>
       </div>
       <div class="relative flex justify-center items-center">
-        <div class="aspect-square rounded-full overflow-hidden border-[12px] border-surface-container-high shadow-2xl relative max-w-md w-full glass-card-spotlight">
+        <div class="aspect-square rounded-full overflow-hidden border-[12px] border-surface-container-high shadow-2xl relative max-w-md w-full">
           <img alt="Premium Punjabi Tiffin" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDokvRTlmiXdfrRjbmztZ6uDxnDugsLj53b-71zBdhbb243DVWmywYOptoVyk8bbBFH0bgvr0tWpL2s1Zg1QZx17J9lxPCpxBfjQ9JWSzJ-Ka2HKTLg_C7QqKp-iKS77Im0DggDMXgD0MVlEkCXhrMCeRa0iZPo1-BynFKPPOnw4CCFUmXEgvCvYHrt-0hzVpOAKUFwJj8YOsw4lgVjRnVtjuZ2t-3WMLVmV-062RDDcHpkekGR9B4QWitxa9I65d0Zm1SHVtj9k6Y"/>
         </div>
         <!-- Floating Badge -->
@@ -54,8 +54,8 @@ import tiffinPlans from '../data/tiffin.json';
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Professionals -->
-        <div class="bg-surface-container-highest/40 backdrop-blur-md p-8 rounded-2xl flex flex-col justify-between group border border-outline-variant/10 shadow-lg glass-card-spotlight tilt-card">
-          <div class="tilt-inner">
+        <div class="glass-card-spotlight p-8 rounded-2xl flex flex-col justify-between group border border-white/10 hover:border-primary/20 shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div>
             <span class="material-symbols-outlined text-4xl text-primary mb-6 block">business_center</span>
             <h3 class="text-2xl font-headline font-bold text-on-background mb-3 uppercase tracking-tight">Professionals</h3>
             <p class="text-on-surface-variant font-body">Fuel your productivity with balanced nutrition, delivered directly to your office hub.</p>
@@ -65,8 +65,8 @@ import tiffinPlans from '../data/tiffin.json';
           </div>
         </div>
         <!-- Students -->
-        <div class="bg-surface-container-highest/40 backdrop-blur-md p-8 rounded-2xl flex flex-col justify-between group border border-outline-variant/10 shadow-lg glass-card-spotlight tilt-card">
-          <div class="tilt-inner">
+        <div class="glass-card-spotlight p-8 rounded-2xl flex flex-col justify-between group border border-white/10 hover:border-primary/20 shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div>
             <span class="material-symbols-outlined text-4xl text-primary mb-6 block">school</span>
             <h3 class="text-2xl font-headline font-bold text-on-background mb-3 uppercase tracking-tight">Students</h3>
             <p class="text-on-surface-variant font-body">Home-style taste for those staying away from home. Affordable and hygienic.</p>
@@ -76,8 +76,8 @@ import tiffinPlans from '../data/tiffin.json';
           </div>
         </div>
         <!-- Families -->
-        <div class="bg-surface-container-highest/40 backdrop-blur-md p-8 rounded-2xl flex flex-col justify-between group border border-outline-variant/10 shadow-lg glass-card-spotlight tilt-card">
-          <div class="tilt-inner">
+        <div class="glass-card-spotlight p-8 rounded-2xl flex flex-col justify-between group border border-white/10 hover:border-primary/20 shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div>
             <span class="material-symbols-outlined text-4xl text-primary mb-6 block">family_restroom</span>
             <h3 class="text-2xl font-headline font-bold text-on-background mb-3 uppercase tracking-tight">Busy Families</h3>
             <p class="text-on-surface-variant font-body">Take the night off from cooking. Wholesome dinner solutions for the whole house.</p>
@@ -97,41 +97,57 @@ import tiffinPlans from '../data/tiffin.json';
         <h2 class="text-3xl sm:text-5xl font-headline font-black text-on-background mb-4 uppercase tracking-tight">Pricing Plans</h2>
         <p class="text-on-surface-variant font-body max-w-2xl mx-auto">Choose the commitment that fits your lifestyle. Flexible pausing and cancellation included with all plans.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
         {tiffinPlans.map(plan => (
-          <div class={`p-10 rounded-3xl flex flex-col h-full transition-all duration-300 relative glass-card-spotlight tilt-card ${
+          <div class={`group p-8 md:p-10 rounded-3xl flex flex-col justify-between transition-all duration-500 relative glass-card-spotlight !overflow-visible ${
             plan.isPopular 
-              ? 'border-2 border-primary transform md:scale-105 shadow-2xl z-10' 
-              : 'border border-outline-variant/10'
+              ? 'border-2 border-primary shadow-[0_25px_60px_rgba(255,225,109,0.12)] scale-105 z-10 bg-gradient-to-b from-[#2a0406] to-[#150203]' 
+              : 'border border-white/10 hover:border-primary/30 hover:-translate-y-1 shadow-2xl'
           }`}>
-            <div class="tilt-inner h-full flex flex-col justify-between">
-              {plan.isPopular && (
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-on-secondary-fixed px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest z-20">Most Popular</div>
-              )}
-              <div class="mb-8 tilt-layer-text">
-                <h3 class={`font-headline font-bold text-xl mb-2 uppercase tracking-wide ${plan.isPopular ? 'text-primary' : 'text-secondary'}`}>{plan.name}</h3>
-                <div class="flex items-baseline gap-1">
-                  <span class="text-4xl font-headline font-black text-on-background">{plan.price}</span>
-                  <span class="font-body text-sm text-on-surface-variant">{plan.period}</span>
+            {plan.isPopular && (
+              <div class="absolute -top-[16px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-[#ffcb47] text-[#180001] text-[11px] font-black px-6 py-2 rounded-full uppercase tracking-[0.25em] shadow-[0_4px_25px_rgba(255,225,109,0.35)] z-20 whitespace-nowrap">
+                Most Popular
+              </div>
+            )}
+            <div>
+              <div class="mb-8">
+                <h3 class="text-3xl font-headline font-black text-white uppercase tracking-tighter">{plan.name}</h3>
+              </div>
+              <div class="mb-8">
+                <div class="flex items-baseline">
+                  {plan.price.startsWith('₹') && !plan.price.includes('Custom') && (
+                    <span class="text-3xl font-headline font-bold text-primary mr-0.5">₹</span>
+                  )}
+                  <span class="text-5xl sm:text-6xl font-headline font-black text-white leading-none tracking-tighter">
+                    {plan.price.startsWith('₹') && !plan.price.includes('Custom') 
+                      ? plan.price.replace('₹', '') 
+                      : plan.price}
+                  </span>
+                  <span class="font-body text-xs text-[#dac1bf]/60 ml-2 uppercase tracking-widest">{plan.period}</span>
                 </div>
               </div>
-              <ul class="space-y-4 mb-12 flex-grow font-body text-sm tilt-layer-text text-on-surface-variant">
+              <ul class="space-y-4 mb-12 text-[#dac1bf] font-body">
                 {plan.features.map(feat => (
                   <li class="flex items-center gap-3">
-                    <span class="material-symbols-outlined text-sm text-primary">check_circle</span> {feat}
+                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                    <span class="text-sm font-semibold">{feat}</span>
                   </li>
                 ))}
               </ul>
-              {plan.isPopular ? (
-                <button class="w-full py-4 rounded-full bg-primary text-on-primary font-headline font-extrabold uppercase tracking-tight hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-all btn-magnetic">{plan.buttonText}</button>
-              ) : (
-                <button class={`w-full py-4 rounded-full font-headline font-extrabold uppercase tracking-tight transition-all border btn-magnetic ${
-                  plan.id === 'corporate' 
-                    ? 'border-outline text-on-background hover:bg-primary hover:text-on-primary hover:border-primary' 
-                    : 'border-primary text-primary hover:bg-primary hover:text-on-primary'
-                }`}>{plan.buttonText}</button>
-              )}
             </div>
+            {plan.isPopular ? (
+              <button class="w-full py-4 sm:py-5 text-center rounded-full bg-gradient-to-r from-primary to-[#ffcb47] hover:brightness-110 text-black font-extrabold font-label shadow-xl transition-all duration-300 transform hover:scale-[1.02] uppercase tracking-wider text-sm block">
+                {plan.buttonText}
+              </button>
+            ) : (
+              <button class={`w-full py-4 sm:py-5 text-center rounded-full border font-bold font-label transition-all duration-300 transform hover:scale-[1.02] shadow-lg text-sm uppercase tracking-wider block ${
+                plan.id === 'corporate'
+                  ? 'border-white/20 text-white bg-white/5 hover:bg-primary hover:text-black hover:border-transparent'
+                  : 'border-primary/30 text-primary bg-primary/5 hover:bg-primary hover:text-black hover:border-transparent'
+              }`}>
+                {plan.buttonText}
+              </button>
+            )}
           </div>
         ))}
       </div>
@@ -143,30 +159,30 @@ import tiffinPlans from '../data/tiffin.json';
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div class="lg:col-span-4 flex flex-col justify-center">
-          <h2 class="font-headline text-5xl font-black text-secondary-fixed mb-6 leading-tight tracking-tight uppercase">Serving the Heart of Surat</h2>
-          <p class="font-body text-on-surface-variant text-lg">Fast, consistent delivery across Surat's primary corporate and residential zones.</p>
+          <h2 class="font-headline text-5xl font-black text-[#ffe16d] mb-6 leading-tight tracking-tight uppercase">Serving the Heart of Surat</h2>
+          <p class="font-body text-[#dac1bf] text-lg">Fast, consistent delivery across Surat's primary corporate and residential zones.</p>
         </div>
         <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-surface-container-highest/40 backdrop-blur-md p-8 rounded-2xl flex flex-col items-center text-center border border-outline-variant/10 shadow-lg glass-card-spotlight">
-            <div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-4">
+          <div class="glass-card-spotlight p-8 rounded-2xl flex flex-col items-center text-center border border-white/10 hover:border-primary/20 shadow-lg transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-[#310002]/90 border border-primary/20 flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-primary">location_on</span>
             </div>
-            <h4 class="font-headline font-bold text-xl text-secondary mb-2 uppercase tracking-wide">Vesu</h4>
-            <p class="font-body text-sm text-on-surface-variant">Residential Clusters &amp; Corporate Parks</p>
+            <h4 class="font-headline font-bold text-xl text-white mb-2 uppercase tracking-wide">Vesu</h4>
+            <p class="font-body text-sm text-[#dac1bf]">Residential Clusters &amp; Corporate Parks</p>
           </div>
-          <div class="bg-surface-container-highest/40 backdrop-blur-md p-8 rounded-2xl flex flex-col items-center text-center border border-outline-variant/10 shadow-lg glass-card-spotlight">
-            <div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-4">
+          <div class="glass-card-spotlight p-8 rounded-2xl flex flex-col items-center text-center border border-white/10 hover:border-primary/20 shadow-lg transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-[#310002]/90 border border-primary/20 flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-primary">location_on</span>
             </div>
-            <h4 class="font-headline font-bold text-xl text-secondary mb-2 uppercase tracking-wide">Piplod</h4>
-            <p class="font-body text-sm text-on-surface-variant">Luxury Housing &amp; Commercial Hubs</p>
+            <h4 class="font-headline font-bold text-xl text-white mb-2 uppercase tracking-wide">Piplod</h4>
+            <p class="font-body text-sm text-[#dac1bf]">Luxury Housing &amp; Commercial Hubs</p>
           </div>
-          <div class="bg-surface-container-highest/40 backdrop-blur-md p-8 rounded-2xl flex flex-col items-center text-center border border-outline-variant/10 shadow-lg glass-card-spotlight">
-            <div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-4">
+          <div class="glass-card-spotlight p-8 rounded-2xl flex flex-col items-center text-center border border-white/10 hover:border-primary/20 shadow-lg transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-[#310002]/90 border border-primary/20 flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-primary">location_on</span>
             </div>
-            <h4 class="font-headline font-bold text-xl text-secondary mb-2 uppercase tracking-wide">Magdalla</h4>
-            <p class="font-body text-sm text-on-surface-variant">Tech Parks &amp; Industrial Offices</p>
+            <h4 class="font-headline font-bold text-xl text-white mb-2 uppercase tracking-wide">Magdalla</h4>
+            <p class="font-body text-sm text-[#dac1bf]">Tech Parks &amp; Industrial Offices</p>
           </div>
         </div>
       </div>

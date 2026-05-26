@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import { RESTAURANT, RESTAURANT_PHONE_LINK } from '../data/site-config';
+import { RESTAURANT, RESTAURANT_PHONE_LINK, RESTAURANT_WHATSAPP_LINK, RESTAURANT_EMAIL_LINK } from '../data/site-config';
 import heroImage from '../assets/herosection.png';
+import hearthSpacePreview from '../assets/hearth_space_preview.png';
 ---
 
 <Layout title="Grill & Chill | Best Punjabi Restaurant & Tandoor in Surat" activeTab="home">
@@ -24,7 +25,7 @@ import heroImage from '../assets/herosection.png';
         A curated journey through heritage recipes, where the flame meets the finest ingredients in a dance of smoky perfection.
       </p>
       <div class="flex flex-wrap gap-6">
-        <a href="/menu" class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline tracking-widest uppercase hover:bg-primary-fixed transition-colors text-center inline-block btn-magnetic shadow-lg shadow-primary/20">
+        <a href="/menu" class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline font-bold tracking-widest uppercase hover:bg-primary-fixed transition-colors text-center inline-block shadow-lg shadow-primary/20">
           EXPLORE THE MENU
         </a>
       </div>
@@ -47,7 +48,7 @@ import heroImage from '../assets/herosection.png';
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Punjabi Cuisine Card -->
-        <article class="cuisine-card group rounded-3xl overflow-hidden border border-white/5 bg-[#2D0B0D] shadow-2xl flex flex-col justify-between">
+        <article class="cuisine-card group rounded-3xl overflow-hidden border border-white/10 glass-card-spotlight shadow-2xl flex flex-col justify-between">
           <div class="h-full flex flex-col justify-between">
             <div class="cuisine-card-media relative">
               <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDn2K4rueHS-LK2dE7WbhNI1bpURfsXyY4T9bwc_Osw4-Q1YTYu6ZKDZhFqOTWdsMn387S-1JNwPFdmKnmoauWdyye1whNmhtDtL2jzlYenlpar-UmCKBlai4TldrWOQEkEo-gwBoIzPdnl86i2wWc5GbOpQCZI2YOKmO-rc4wQ0kH0pn-I3Kp-5HF_icc7cr87PlUPmIPG9tpzTUT-6xy2y5AxcB6WLXQ99s2BjW7CTtLMfEh76s_8xa_zJYtOCuPqwPHhPYMqI8" alt="Punjabi cuisine" loading="lazy" class="cuisine-card-image w-full h-full object-cover"/>
@@ -88,7 +89,7 @@ import heroImage from '../assets/herosection.png';
         </article>
 
         <!-- Chinese Cuisine Card -->
-        <article class="cuisine-card group rounded-3xl overflow-hidden border border-white/5 bg-[#2D0B0D] shadow-2xl flex flex-col justify-between">
+        <article class="cuisine-card group rounded-3xl overflow-hidden border border-white/10 glass-card-spotlight shadow-2xl flex flex-col justify-between">
           <div class="h-full flex flex-col justify-between">
             <div class="cuisine-card-media relative">
               <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4sDMmFxe_CA2sUcgbymzArzMIGLlsKmCaUgyeVnTieKYB4-_qNlbJrSL2kNY8re-6oOrfuyzeQ5fYg7GNxD7MdgU0NBDQq1LCCHjlcEMNwiPe5U-BvpIN314HdD7jwCLkgmgZCgzkvuvAtF-PoBfqfjfTFq88tXp9-GbZDvPsS7WtMlHkvwUX5GZvt5DqcdQQ-BeWyjD4p9C1BYii-pn_GS41HD_5VqcnRyLGuvGAYem0Xt-Rz8VBlaVVPSegOpo2B346sN7fHQM" alt="Chinese cuisine" loading="lazy" class="cuisine-card-image w-full h-full object-cover"/>
@@ -129,7 +130,7 @@ import heroImage from '../assets/herosection.png';
         </article>
 
         <!-- Chicken Cuisine Card -->
-        <article class="cuisine-card group rounded-3xl overflow-hidden border border-white/5 bg-[#2D0B0D] shadow-2xl flex flex-col justify-between">
+        <article class="cuisine-card group rounded-3xl overflow-hidden border border-white/10 glass-card-spotlight shadow-2xl flex flex-col justify-between">
           <div class="h-full flex flex-col justify-between">
             <div class="cuisine-card-media relative">
               <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtkNeHyzWfjXzxFIPimqDlXzo7a4t0cST2-mCq7NOdW76wGrnvFoqh6wyI0hYZSbvC8sPHK4K41_z7PUz1wMg-wgLgqgzeja0vR6n1kaf2YVzbMevYxki2YPe8qGNWhFQ0gK065zYqukSVNCTZtuL3rbFXv_a0tN-BZu8YlXjdzSpYV15_GK7biGV9vCBM0hLBGTLQe6QURbl3YEml6UJVijnF9XjPqCyCNw9jxcpDBKDYimuY0BJnlryI81AR0mYrPY38k_pV9Wk" alt="Chicken cuisine" loading="lazy" class="cuisine-card-image w-full h-full object-cover"/>
@@ -171,7 +172,7 @@ import heroImage from '../assets/herosection.png';
       </div>
 
       <div class="mt-14 text-center">
-        <a href="/menu" class="inline-flex items-center gap-3 px-10 md:px-14 py-4 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold tracking-widest uppercase shadow-lg shadow-black/15 hover:bg-secondary-container hover:shadow-black/20 transition-all btn-magnetic">
+        <a href="/menu" class="inline-flex items-center gap-3 px-10 md:px-14 py-4 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold tracking-widest uppercase shadow-lg shadow-black/15 hover:bg-secondary-container hover:shadow-black/20 transition-all">
           View Full Menu
           <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
         </a>
@@ -192,9 +193,9 @@ import heroImage from '../assets/herosection.png';
       </div>
       <div class="bento-grid gap-6">
         <!-- Point 1 (Bento Span 4) -->
-        <div class="bento-card bento-span-4 bg-[#2D0B0D] p-8 md:p-10 rounded-2xl border border-white/5 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+        <div class="bento-card bento-span-4 glass-card-spotlight p-8 md:p-10 rounded-2xl border border-white/10 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-full bg-[#1e0304] border border-[#ffb3ac]/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
+            <div class="w-14 h-14 rounded-full bg-[#310002]/90 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
               <span class="material-symbols-outlined text-3xl">restaurant</span>
             </div>
             <h3 class="font-headline text-[#ffe16d] uppercase text-xl mb-4 tracking-wider font-extrabold">Freshly Cooked, Not Pre-made</h3>
@@ -202,16 +203,16 @@ import heroImage from '../assets/herosection.png';
               Every dish is prepared from scratch when you order, ensuring the highest quality, rich authentic spices, and piping hot taste.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-xs font-label uppercase tracking-widest text-primary font-extrabold">
+          <div class="mt-8 pt-4 border-t border-white/10 flex justify-between items-center text-xs font-label uppercase tracking-widest text-primary font-extrabold">
             <span>Made on order</span>
             <span class="material-symbols-outlined text-sm">check_circle</span>
           </div>
         </div>
 
         <!-- Point 2 (Bento Span 2) -->
-        <div class="bento-card bento-span-2 bg-[#2D0B0D] p-8 rounded-2xl border border-white/5 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+        <div class="bento-card bento-span-2 glass-card-spotlight p-8 rounded-2xl border border-white/10 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-full bg-[#1e0304] border border-[#ffb3ac]/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
+            <div class="w-14 h-14 rounded-full bg-[#310002]/90 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
               <span class="material-symbols-outlined text-3xl">set_meal</span>
             </div>
             <h3 class="font-headline text-[#ffe16d] uppercase text-lg mb-4 tracking-wider font-extrabold">Combos & Thalis</h3>
@@ -219,16 +220,16 @@ import heroImage from '../assets/herosection.png';
               Budget-friendly and complete meal sets showcasing diverse Punjabi & Chinese flavors.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-[10px] font-label uppercase tracking-widest text-primary font-extrabold">
+          <div class="mt-8 pt-4 border-t border-white/10 flex justify-between items-center text-[10px] font-label uppercase tracking-widest text-primary font-extrabold">
             <span>Great value</span>
             <span class="material-symbols-outlined text-sm">payments</span>
           </div>
         </div>
 
         <!-- Point 3 (Bento Span 2) -->
-        <div class="bento-card bento-span-2 bg-[#2D0B0D] p-8 rounded-2xl border border-white/5 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+        <div class="bento-card bento-span-2 glass-card-spotlight p-8 rounded-2xl border border-white/10 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-full bg-[#1e0304] border border-[#ffb3ac]/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
+            <div class="w-14 h-14 rounded-full bg-[#310002]/90 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
               <span class="material-symbols-outlined text-3xl">speed</span>
             </div>
             <h3 class="font-headline text-[#ffe16d] uppercase text-lg mb-4 tracking-wider font-extrabold">Quick Service</h3>
@@ -236,16 +237,16 @@ import heroImage from '../assets/herosection.png';
               Fresh takeaway or dine-in, structured for high speed without compromising absolute flavor.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-[10px] font-label uppercase tracking-widest text-primary font-extrabold">
+          <div class="mt-8 pt-4 border-t border-white/10 flex justify-between items-center text-[10px] font-label uppercase tracking-widest text-primary font-extrabold">
             <span>Fast turnaround</span>
             <span class="material-symbols-outlined text-sm">bolt</span>
           </div>
         </div>
 
         <!-- Point 4 (Bento Span 4) -->
-        <div class="bento-card bento-span-4 bg-[#2D0B0D] p-8 md:p-10 rounded-2xl border border-white/5 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+        <div class="bento-card bento-span-4 glass-card-spotlight p-8 md:p-10 rounded-2xl border border-white/10 hover:border-primary/20 shadow-2xl transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-full bg-[#1e0304] border border-[#ffb3ac]/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
+            <div class="w-14 h-14 rounded-full bg-[#310002]/90 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#680008] transition-all duration-300 text-primary">
               <span class="material-symbols-outlined text-3xl">local_shipping</span>
             </div>
             <h3 class="font-headline text-[#ffe16d] uppercase text-xl mb-4 tracking-wider font-extrabold">Free Delivery Nearby</h3>
@@ -253,7 +254,7 @@ import heroImage from '../assets/herosection.png';
               Order your tandoori items or daily curries and enjoy free shipping straight to your doorstep (within a 1km radius).
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-xs font-label uppercase tracking-widest text-primary font-extrabold">
+          <div class="mt-8 pt-4 border-t border-white/10 flex justify-between items-center text-xs font-label uppercase tracking-widest text-primary font-extrabold">
             <span>Surat Adajan & Magdalla</span>
             <span class="material-symbols-outlined text-sm">home</span>
           </div>
@@ -302,7 +303,7 @@ import heroImage from '../assets/herosection.png';
           </div>
 
           <!-- Timeline Promise -->
-          <div class="bg-[#2D0B0D]/40 border border-white/5 rounded-3xl p-8 flex-grow">
+          <div class="glass-card-spotlight border border-white/10 rounded-3xl p-8 flex-grow">
             <h3 class="font-headline text-lg text-[#ffe16d] uppercase tracking-widest mb-6 font-bold flex items-center gap-2">
               <span class="material-symbols-outlined text-[#ffe16d]">electric_bolt</span>
               The Tiffin Promise
@@ -312,7 +313,7 @@ import heroImage from '../assets/herosection.png';
               <!-- Step 1 -->
               <div class="relative">
                 <div class="absolute -left-[31px] top-0 w-4.5 h-4.5 rounded-full bg-[#150001] border-2 border-primary flex items-center justify-center">
-                  <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                   <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
                 </div>
                 <h4 class="font-headline text-xs text-white uppercase tracking-wider font-extrabold mb-1">09:00 AM — Fresh Sourcing</h4>
                 <p class="font-body text-[#dac1bf] text-xs leading-relaxed">Daily handpicked fresh vegetables and premium spices arrive at our kitchen.</p>
@@ -341,7 +342,7 @@ import heroImage from '../assets/herosection.png';
 
         <!-- Right: Interactive Tiffin Menu Widget (Col-Span-7) -->
         <div class="lg:col-span-7">
-          <div class="relative bg-[#2D0B0D] border border-primary/20 rounded-3xl p-8 md:p-10 shadow-2xl h-full flex flex-col justify-between overflow-hidden">
+          <div class="relative glass-card-spotlight border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl h-full flex flex-col justify-between overflow-hidden">
             <!-- Glow effect -->
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -542,7 +543,7 @@ import heroImage from '../assets/herosection.png';
 
             <!-- Footer subscription call -->
             <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 mt-8 border-t border-white/10">
-              <a href="/tiffin" class="w-full sm:w-auto group bg-primary text-on-primary px-8 py-4 rounded-xl font-headline tracking-widest text-xs uppercase hover:bg-primary-fixed transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 text-center inline-block btn-magnetic font-bold">
+              <a href="/tiffin" class="w-full sm:w-auto group bg-primary text-on-primary px-8 py-4 rounded-xl font-headline tracking-widest text-xs uppercase hover:bg-primary-fixed transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 text-center inline-block font-bold">
                 <span class="flex items-center justify-center gap-2">
                   View Subscription Plans
                   <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -609,141 +610,389 @@ import heroImage from '../assets/herosection.png';
     </script>
   </section>
 
-  <!-- Testimonials Section (Glassmorphism cards & Magnetic Share Button) -->
-  <section class="py-32 px-6 md:px-12 bg-surface-container-low relative overflow-hidden">
+  <!-- Testimonials Section (Glassmorphism cards & Experience Share Button) -->
+  <section class="py-28 md:py-36 px-6 md:px-12 bg-gradient-to-b from-[#180001] via-[#150203] to-[#120001] relative overflow-hidden border-t border-white/5">
+    <!-- Ambient glows -->
+    <div class="absolute top-1/4 left-1/3 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 translate-y-1/2 w-[400px] h-[400px] bg-[#601e1d]/5 rounded-full blur-[100px] pointer-events-none"></div>
+
     <div class="max-w-7xl mx-auto relative z-10">
-      <div class="mb-20 text-center">
-        <span class="text-primary font-label tracking-[0.4em] uppercase text-xs mb-4 block">Guest Experiences</span>
-        <h2 class="font-headline text-4xl md:text-6xl text-secondary-fixed uppercase">What Customers Say</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Review 1 -->
-        <div class="glass-card-spotlight p-10 rounded-2xl flex flex-col justify-between group">
-          <div>
-            <div class="flex gap-1 mb-6 text-secondary-fixed">
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Left Side: Editorial Intro & Ratings Recap -->
+        <div class="lg:col-span-4 flex flex-col justify-center">
+          <span class="text-primary font-label tracking-[0.4em] uppercase text-xs mb-4 block font-extrabold">Guest Experiences</span>
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl text-secondary-fixed uppercase leading-tight mb-8">
+            What Our <br class="hidden lg:inline" /> Guests Say
+          </h2>
+          <div class="glass-card-spotlight p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-primary/20 transition-all duration-500">
+            <div class="absolute -top-10 -right-10 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-all"></div>
+            
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-5xl sm:text-6xl font-headline font-black text-secondary-fixed">4.8</span>
+              <span class="text-lg text-on-surface-variant font-label font-bold uppercase tracking-wider">/ 5.0</span>
             </div>
-            <p class="font-headline text-xl text-on-surface mb-8 italic leading-relaxed">"Best grilled food in Surat, must try!"</p>
-          </div>
-          <div class="flex items-center gap-4">
-            <div class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center font-headline text-primary text-xs border border-primary/20">AK</div>
-            <div class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Arjun K.</div>
+            
+            <div class="flex gap-1 mb-4 text-[#ffe16d]">
+              <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1">star</span>
+              <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1">star</span>
+              <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1">star</span>
+              <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1">star</span>
+              <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1">star</span>
+            </div>
+            
+            <p class="text-xs text-[#dac1bf]/70 leading-relaxed font-body mb-6">
+              Based on over 1,800+ verified ratings on Google, Zomato, and direct feedback.
+            </p>
+            
+            <button id="feedback-trigger-btn" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-[#680008] hover:bg-primary-fixed hover:scale-[1.02] rounded-xl font-headline tracking-widest text-xs uppercase font-extrabold transition-all duration-300 shadow-lg shadow-primary/10">
+              <span class="material-symbols-outlined text-sm">rate_review</span> Share Experience
+            </button>
           </div>
         </div>
-        <!-- Review 2 -->
-        <div class="glass-card-spotlight p-10 rounded-2xl flex flex-col justify-between group">
-          <div>
-            <div class="flex gap-1 mb-6 text-secondary-fixed">
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+
+        <!-- Right Side: Staggered Editorial Cards -->
+        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+          <!-- Review 1: Featured Card (Spans 2 Columns) -->
+          <div class="glass-card-spotlight p-8 md:p-10 rounded-3xl border border-white/10 flex flex-col justify-between relative overflow-hidden group hover:border-primary/20 transition-all duration-500 md:col-span-2">
+            <!-- Huge quote icon -->
+            <span class="font-headline text-9xl text-primary/5 absolute -top-8 -right-2 pointer-events-none italic font-black select-none leading-none group-hover:text-primary/10 transition-colors duration-500">“</span>
+            
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <!-- Stars -->
+                <div class="flex gap-1 text-[#ffe16d]">
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                </div>
+                <!-- Pill tag -->
+                <span class="px-3 py-1 rounded-full border border-white/5 bg-white/5 font-label text-[9px] uppercase tracking-widest text-[#dac1bf]/70">
+                  Tiffin Client
+                </span>
+              </div>
+              
+              <blockquote class="font-headline text-xl md:text-2xl text-on-surface mb-8 italic leading-relaxed relative z-10 font-medium">
+                "We hired Grill & Chill for our corporate desk lunches and later for a small team party. The Tiffin service is unmatched in Surat - variety, hygiene, and timely delivery."
+              </blockquote>
             </div>
-            <p class="font-headline text-xl text-on-surface mb-8 italic leading-relaxed">"Affordable and tasty, perfect for late night."</p>
+            
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center font-headline text-primary font-bold text-sm tracking-wide shadow-inner">
+                  RL
+                </div>
+                <div>
+                  <div class="font-label text-xs uppercase tracking-widest text-[#ffdad7] font-extrabold">Riya L.</div>
+                  <div class="text-[10px] text-[#dac1bf]/50 mt-0.5 font-body">HR Manager, Piplod</div>
+                </div>
+              </div>
+              <!-- Source Badge -->
+              <span class="text-[10px] text-[#dac1bf]/40 font-label uppercase tracking-widest flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs">verified</span> Verified Direct Review
+              </span>
+            </div>
           </div>
-          <div class="flex items-center gap-4">
-            <div class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center font-headline text-primary text-xs border border-primary/20">SP</div>
-            <div class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Siddharth P.</div>
+
+          <!-- Review 2 -->
+          <div class="glass-card-spotlight p-8 md:p-10 rounded-3xl border border-white/10 flex flex-col justify-between relative overflow-hidden group hover:border-primary/20 transition-all duration-500">
+            <!-- Huge quote icon -->
+            <span class="font-headline text-9xl text-primary/5 absolute -top-8 -right-2 pointer-events-none italic font-black select-none leading-none group-hover:text-primary/10 transition-colors duration-500">“</span>
+            
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <!-- Stars -->
+                <div class="flex gap-1 text-[#ffe16d]">
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                </div>
+                <!-- Pill tag -->
+                <span class="px-3 py-1 rounded-full border border-white/5 bg-white/5 font-label text-[9px] uppercase tracking-widest text-[#dac1bf]/70">
+                  Dine-In Guest
+                </span>
+              </div>
+              
+              <blockquote class="font-headline text-lg text-on-surface mb-8 italic leading-relaxed relative z-10 font-medium">
+                "Hands down the best grilled paneer and tandoori food in Surat. The smokiness is authentic, and the presentation in their restaurant matches the incredible taste."
+              </blockquote>
+            </div>
+            
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center font-headline text-primary font-bold text-sm tracking-wide shadow-inner">
+                  AK
+                </div>
+                <div>
+                  <div class="font-label text-xs uppercase tracking-widest text-[#ffdad7] font-extrabold">Arjun K.</div>
+                  <div class="text-[10px] text-[#dac1bf]/50 mt-0.5 font-body">Local Guide</div>
+                </div>
+              </div>
+              <!-- Source Badge -->
+              <span class="text-[10px] text-red-400 font-label uppercase tracking-widest flex items-center gap-1 font-bold">
+                Google Review
+              </span>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="glass-card-spotlight p-8 md:p-10 rounded-3xl border border-white/10 flex flex-col justify-between relative overflow-hidden group hover:border-primary/20 transition-all duration-500">
+            <!-- Huge quote icon -->
+            <span class="font-headline text-9xl text-primary/5 absolute -top-8 -right-2 pointer-events-none italic font-black select-none leading-none group-hover:text-primary/10 transition-colors duration-500">“</span>
+            
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <!-- Stars -->
+                <div class="flex gap-1 text-[#ffe16d]">
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+                </div>
+                <!-- Pill tag -->
+                <span class="px-3 py-1 rounded-full border border-white/5 bg-white/5 font-label text-[9px] uppercase tracking-widest text-[#dac1bf]/70">
+                  Late-Night Delivery
+                </span>
+              </div>
+              
+              <blockquote class="font-headline text-lg text-on-surface mb-8 italic leading-relaxed relative z-10 font-medium">
+                "Affordable, exceptionally clean, and bursting with flavors. Their late-night deliveries are a lifesaver, and the packaging keeps the flatbreads piping hot!"
+              </blockquote>
+            </div>
+            
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center font-headline text-primary font-bold text-sm tracking-wide shadow-inner">
+                  SP
+                </div>
+                <div>
+                  <div class="font-label text-xs uppercase tracking-widest text-[#ffdad7] font-extrabold">Siddharth P.</div>
+                  <div class="text-[10px] text-[#dac1bf]/50 mt-0.5 font-body">Food Blogger</div>
+                </div>
+              </div>
+              <!-- Source Badge -->
+              <span class="text-[10px] text-red-500 font-label uppercase tracking-widest flex items-center gap-1 font-bold">
+                Zomato Review
+              </span>
+            </div>
           </div>
         </div>
-        <!-- Review 3 -->
-        <div class="glass-card-spotlight p-10 rounded-2xl flex flex-col justify-between group">
-          <div>
-            <div class="flex gap-1 mb-6 text-secondary-fixed">
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
-            </div>
-            <p class="font-headline text-xl text-on-surface mb-8 italic leading-relaxed">"The Tiffin service is a lifesaver for our office - variety and quality are unmatched."</p>
-          </div>
-          <div class="flex items-center gap-4">
-            <div class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center font-headline text-primary text-xs border border-primary/20">RL</div>
-            <div class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Riya L.</div>
-          </div>
-        </div>
-      </div>
-      <div class="mt-16 text-center">
-        <button id="feedback-trigger-btn" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-primary/30 hover:border-primary text-primary hover:bg-primary/5 rounded-full font-headline tracking-widest text-xs uppercase transition-all duration-300 shadow-lg btn-magnetic">
-          <span class="material-symbols-outlined text-sm">rate_review</span> Share Your Experience
-        </button>
+
       </div>
     </div>
   </section>
 
   <!-- Visit Us Section -->
-  <section id="contact" class="relative w-full min-h-[700px] md:h-[700px] py-16 md:py-0 overflow-hidden">
-    <!-- Full Width Map -->
-    <div class="absolute inset-0 bg-surface-container-low">
-      <iframe allowfullscreen="" class="w-full h-full grayscale-[0.8] invert-[0.1] contrast-[1.2] opacity-50 border-0 animate-fade-in" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.000000000000!2d72.8!3d21.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzAwLjAiTiA3MsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"></iframe>
-      <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-    </div>
-    <div class="relative z-10 min-h-[700px] md:h-full py-8 md:py-0 max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center">
-      <div class="mb-12">
-        <span class="inline-block px-4 py-1 mb-4 border border-primary/30 text-primary font-label text-xs tracking-[0.3em] uppercase rounded-full bg-background/60 backdrop-blur-md">Location</span>
-        <h2 class="font-display text-5xl md:text-7xl text-on-surface uppercase italic leading-tight">Visit The Hearth</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Address Card (Glassmorphism card) -->
-        <div class="glass-card-spotlight p-8 rounded-xl shadow-2xl transform hover:-translate-y-2 transition-all duration-500">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-              <span class="material-symbols-outlined text-primary">pin_drop</span>
-            </div>
-            <h4 class="font-headline text-lg text-secondary-fixed uppercase tracking-widest">Find Us</h4>
+  <section id="contact" class="relative w-full py-24 md:py-32 overflow-hidden bg-gradient-to-b from-background via-surface-container-low/30 to-background border-t border-white/5">
+    <!-- Accent Ambient Light -->
+    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#601e1d]/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Side: Information Details -->
+        <div class="lg:col-span-5 space-y-10">
+          <div class="space-y-4">
+            <span class="inline-block px-4 py-1.5 border border-primary/20 bg-surface-container-high/40 text-secondary-fixed font-label text-[10px] tracking-[0.25em] uppercase rounded-full">
+              Our Location
+            </span>
+            <h2 class="font-headline text-4xl sm:text-5xl md:text-6xl text-secondary-fixed uppercase leading-tight">
+              Visit The <br class="hidden sm:inline" /><span class="text-primary italic font-normal">Hearth</span>
+            </h2>
+            <p class="font-body text-[#dac1bf] text-sm sm:text-base leading-relaxed">
+              Step into the warm embrace of fire and spice. Located in the heart of Surat, our doors are open everyday to serve you authentic Punjabi specialties and fresh Chinese creations.
+            </p>
           </div>
-          <p class="font-body text-on-surface-variant leading-relaxed mb-4 text-lg">{RESTAURANT.address}</p>
-          <a class="inline-flex items-center gap-2 text-primary font-label tracking-widest text-xs uppercase hover:gap-4 transition-all" href={RESTAURANT.mapsLink} target="_blank" rel="noopener noreferrer">
-            Get Directions <span class="material-symbols-outlined text-sm">open_in_new</span>
-          </a>
-        </div>
-        <!-- Hours Card (Glassmorphism card) -->
-        <div class="glass-card-spotlight p-8 rounded-xl shadow-2xl transform hover:-translate-y-2 transition-all duration-500 delay-75">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-              <span class="material-symbols-outlined text-primary">schedule</span>
-            </div>
-            <h4 class="font-headline text-lg text-secondary-fixed uppercase tracking-widest">Service Hours</h4>
-          </div>
-          <div class="space-y-3 font-body text-on-surface-variant">
-            <div class="flex justify-between border-b border-outline-variant/10 pb-2">
-              <span>Mon - Sun</span>
-              <span class="text-on-surface">{RESTAURANT.timingsDisplay}</span>
-            </div>
-            <div class="pt-2 italic text-sm">Fresh flavors, every hour of the day.</div>
-          </div>
-        </div>
-        <!-- Contact Card (Solid highlighting card) -->
-        <div class="bg-secondary-fixed p-8 rounded-xl border border-secondary-container shadow-2xl transform hover:-translate-y-2 transition-all duration-500 delay-150 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-12 h-12 rounded-full bg-on-secondary-fixed/10 flex items-center justify-center">
-                <span class="material-symbols-outlined text-on-secondary-fixed">hub</span>
+
+          <!-- Quick Details Panel -->
+          <div class="space-y-6">
+            <!-- Location Details -->
+            <div class="glass-card-spotlight p-6 rounded-2xl border border-white/10 shadow-lg relative group">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                  <span class="material-symbols-outlined text-lg">pin_drop</span>
+                </div>
+                <div class="space-y-2">
+                  <h4 class="font-label text-xs uppercase tracking-widest font-bold text-white">Find Us</h4>
+                  <p class="font-body text-xs sm:text-sm text-[#dac1bf] leading-relaxed">{RESTAURANT.address}</p>
+                  <a class="inline-flex items-center gap-1.5 text-primary hover:text-white font-label tracking-widest text-[10px] uppercase hover:gap-3 transition-all" href={RESTAURANT.mapsLink} target="_blank" rel="noopener noreferrer">
+                    Get Directions <span class="material-symbols-outlined text-xs">open_in_new</span>
+                  </a>
+                </div>
               </div>
-              <h4 class="font-headline text-lg text-on-secondary-fixed uppercase tracking-widest">Inquiries</h4>
             </div>
-            <div class="space-y-4">
-              <a class="flex items-center gap-3 text-on-secondary-fixed-variant hover:text-on-secondary-fixed transition-colors" href={RESTAURANT_PHONE_LINK}>
-                <span class="material-symbols-outlined text-xl">call</span>
-                <span class="font-headline text-sm tracking-wider">{RESTAURANT.displayPhone}</span>
-              </a>
-              <a class="flex items-center gap-3 text-on-secondary-fixed-variant hover:text-on-secondary-fixed transition-colors" href={`mailto:${RESTAURANT.email}`}>
-                <span class="material-symbols-outlined text-xl">mail</span>
-                <span class="font-headline text-sm tracking-wider">{RESTAURANT.email}</span>
-              </a>
+
+            <!-- Hours Details -->
+            <div class="glass-card-spotlight p-6 rounded-2xl border border-white/10 shadow-lg relative">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                  <span class="material-symbols-outlined text-lg">schedule</span>
+                </div>
+                <div class="flex-grow space-y-2">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-label text-xs uppercase tracking-widest font-bold text-white">Service Hours</h4>
+                    <!-- Live Status Badge -->
+                    <span id="live-status-badge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-label font-bold uppercase tracking-wider bg-zinc-800 border border-zinc-700 text-zinc-400">
+                      <span class="relative flex h-1.5 w-1.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-1.5 w-1.5"></span>
+                      </span>
+                      <span id="live-status-text">Checking...</span>
+                    </span>
+                  </div>
+                  <p class="font-body text-xs sm:text-sm text-[#dac1bf]">{RESTAURANT.timings}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="glass-card-spotlight p-6 rounded-2xl border border-white/10 shadow-lg relative">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                  <span class="material-symbols-outlined text-lg">contact_phone</span>
+                </div>
+                <div class="space-y-3 flex-grow">
+                  <h4 class="font-label text-xs uppercase tracking-widest font-bold text-white">Get In Touch</h4>
+                  <div class="flex flex-wrap gap-x-6 gap-y-2 font-body text-xs sm:text-sm text-[#dac1bf]">
+                    <a class="flex items-center gap-2 hover:text-white transition-colors" href={RESTAURANT_PHONE_LINK}>
+                      <span class="material-symbols-outlined text-sm text-primary">call</span>
+                      <span>{RESTAURANT.displayPhone}</span>
+                    </a>
+                    <a class="flex items-center gap-2 hover:text-white transition-colors" href={RESTAURANT_EMAIL_LINK}>
+                      <span class="material-symbols-outlined text-sm text-primary">mail</span>
+                      <span>{RESTAURANT.email}</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <a href="https://wa.me/918980356776?text=Hi%2C%20I%20want%20to%20book%20a%20table%20at%20Grill%20%26%20Chill" target="_blank" rel="noopener noreferrer" class="w-full mt-6 bg-on-secondary-fixed text-secondary-fixed py-4 rounded-lg font-headline text-xs tracking-widest uppercase hover:opacity-90 transition-opacity text-center flex items-center justify-center btn-magnetic font-bold">
-            Book Table
-          </a>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="https://wa.me/918980356776?text=Hi%2C%20I%20want%20to%20book%20a%20table%20at%20Grill%20%26%20Chill" target="_blank" rel="noopener noreferrer" class="flex-grow sm:flex-grow-0 bg-primary text-[#680008] hover:bg-primary-fixed hover:scale-105 px-8 py-4 rounded-xl font-headline tracking-widest text-xs uppercase font-extrabold transition-all duration-300 shadow-lg shadow-primary/10 text-center flex items-center justify-center">
+              Book A Table
+            </a>
+            <a href={RESTAURANT_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="flex-grow sm:flex-grow-0 bg-green-600 hover:bg-green-700 text-white hover:scale-105 px-8 py-4 rounded-xl font-headline tracking-widest text-xs uppercase font-extrabold transition-all duration-300 shadow-lg shadow-green-900/20 flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-base">chat</span> WhatsApp Chat
+            </a>
+          </div>
         </div>
+
+        <!-- Right Side: Interactive Console (col-span-7) -->
+        <div class="lg:col-span-7 w-full">
+          <div class="relative w-full h-[450px] sm:h-[520px] rounded-3xl overflow-hidden border border-white/10 bg-[#250507] shadow-[0_30px_70px_rgba(0,0,0,0.8)] flex flex-col justify-between group">
+            
+            <!-- Window Tab Bar -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-background/50 backdrop-blur-md z-20">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/60"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500/60"></span>
+              </div>
+              
+              <!-- Tab Switcher -->
+              <div class="flex bg-surface-container-high/70 p-1 rounded-full border border-white/5">
+                <button id="view-map-btn" class="px-4 py-1.5 rounded-full font-label font-bold text-[10px] uppercase tracking-wider bg-primary text-[#680008] shadow-lg transition-all duration-300">
+                  Map View
+                </button>
+                <button id="view-space-btn" class="px-4 py-1.5 rounded-full font-label font-bold text-[10px] uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-all duration-300">
+                  Space Preview
+                </button>
+              </div>
+            </div>
+
+            <!-- Viewport Area -->
+            <div class="relative flex-grow w-full h-full overflow-hidden">
+              <!-- Map View Container -->
+              <div id="map-view-container" class="absolute inset-0 z-10 transition-opacity duration-500 opacity-100">
+                <iframe allowfullscreen="" class="w-full h-full border-0 grayscale-[0.35] invert-[0.05] contrast-[1.1] filter opacity-85 hover:opacity-100 transition-opacity duration-300" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29769.244220211112!2d72.72121617431641!3d21.146208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0527f87e48501%3A0xcce1104d05e07735!2sGrill%20%26%20Chill!5e0!3m2!1sen!2sin!4v1775391580654!5m2!1sen!2sin"></iframe>
+              </div>
+
+              <!-- Space Preview Container -->
+              <div id="space-view-container" class="absolute inset-0 z-0 transition-opacity duration-500 opacity-0 pointer-events-none">
+                <Image alt="Cozy dining room and open flame cooking hearth at Grill & Chill" class="w-full h-full object-cover" src={hearthSpacePreview} />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#250507]/90 via-transparent to-black/30"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- Script for Visit Us section -->
+  <script>
+    function initVisitUsSection() {
+      // 1. Tab switching for Map vs Space Preview
+      const mapBtn = document.getElementById('view-map-btn');
+      const spaceBtn = document.getElementById('view-space-btn');
+      const mapContainer = document.getElementById('map-view-container');
+      const spaceContainer = document.getElementById('space-view-container');
+
+      if (mapBtn && spaceBtn && mapContainer && spaceContainer) {
+        mapBtn.addEventListener('click', () => {
+          mapBtn.className = 'px-4 py-1.5 rounded-full font-label font-bold text-[10px] uppercase tracking-wider bg-primary text-[#680008] shadow-lg transition-all duration-300';
+          spaceBtn.className = 'px-4 py-1.5 rounded-full font-label font-bold text-[10px] uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-all duration-300';
+          
+          mapContainer.classList.remove('opacity-0', 'pointer-events-none');
+          mapContainer.classList.add('opacity-100');
+          mapContainer.style.zIndex = '10';
+
+          spaceContainer.classList.remove('opacity-100');
+          spaceContainer.classList.add('opacity-0', 'pointer-events-none');
+          spaceContainer.style.zIndex = '0';
+        });
+
+        spaceBtn.addEventListener('click', () => {
+          spaceBtn.className = 'px-4 py-1.5 rounded-full font-label font-bold text-[10px] uppercase tracking-wider bg-primary text-[#680008] shadow-lg transition-all duration-300';
+          mapBtn.className = 'px-4 py-1.5 rounded-full font-label font-bold text-[10px] uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-all duration-300';
+          
+          spaceContainer.classList.remove('opacity-0', 'pointer-events-none');
+          spaceContainer.classList.add('opacity-100');
+          spaceContainer.style.zIndex = '10';
+
+          mapContainer.classList.remove('opacity-100');
+          mapContainer.classList.add('opacity-0', 'pointer-events-none');
+          mapContainer.style.zIndex = '0';
+        });
+      }
+
+      // 2. Live Status Badge logic
+      const statusTextEl = document.getElementById('live-status-text');
+      const statusDotEl = document.querySelector('#live-status-badge .relative.inline-flex');
+      const statusPingEl = document.querySelector('#live-status-badge .animate-ping');
+      const statusContainer = document.getElementById('live-status-badge');
+
+      if (statusTextEl && statusDotEl && statusPingEl && statusContainer) {
+        const now = new Date();
+        const currentHour = now.getHours();
+        // 11:00 to 23:00 (11 AM to 11 PM)
+        const isOpen = currentHour >= 11 && currentHour < 23;
+
+        if (isOpen) {
+          statusTextEl.textContent = 'Open Now';
+          statusContainer.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-label font-bold uppercase tracking-wider bg-green-500/10 border border-green-500/30 text-green-400';
+          statusDotEl.className = 'relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500';
+          statusPingEl.className = 'animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75';
+        } else {
+          statusTextEl.textContent = 'Closed';
+          statusContainer.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-label font-bold uppercase tracking-wider bg-red-500/10 border border-red-500/30 text-red-400';
+          statusDotEl.className = 'relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500';
+          statusPingEl.className = 'animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75';
+        }
+      }
+    }
+
+    // Initialize scripts on first load and view transition swap
+    initVisitUsSection();
+    document.addEventListener('astro:after-swap', initVisitUsSection);
+  </script>
 </Layout>
