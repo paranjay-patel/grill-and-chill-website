@@ -103,7 +103,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://grilland
   </script>
 </head>
 
-<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary overflow-x-hidden relative">
+  <!-- Custom Cursor Elements -->
+  <div id="custom-cursor" class="hidden lg:block"></div>
+  <div id="custom-cursor-dot" class="hidden lg:block"></div>
+
+  <!-- Background Morphing Blobs -->
+  <div class="morphing-blob-container">
+    <div class="morphing-blob top-0 left-[-10%]"></div>
+    <div class="morphing-blob-2 top-[35%] right-[-15%]"></div>
+    <div class="morphing-blob-3 bottom-[5%] left-[-5%]"></div>
+  </div>
+
+
+
   <!-- TopAppBar -->
   <header class="fixed top-0 w-full z-50 bg-[#310002]/70 backdrop-blur-xl shadow-2xl shadow-[#290003]/40">
     <div class="bg-[#200001] border-b border-primary/20 py-2 px-4 md:px-12 flex justify-between items-center text-[10px] md:text-xs font-label tracking-[0.2em] text-secondary-fixed/90 uppercase overflow-x-auto no-scrollbar gap-4">
@@ -153,6 +166,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://grilland
         </button>
       </div>
     </nav>
+    <!-- Top-Docked Scroll Progress Bar -->
+    <div class="absolute bottom-0 left-0 w-full h-[3px] bg-primary/10 overflow-hidden">
+      <div id="scroll-progress-bar" class="h-full w-0 bg-gradient-to-r from-primary to-secondary transition-all duration-100 ease-out"></div>
+    </div>
   </header>
   
   <!-- Mobile Navigation Drawer -->
@@ -397,15 +414,166 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://grilland
       setInterval(checkStatus, 30000);
     }
 
+
+
+    function setupCustomCursor() {
+      const cursor = document.getElementById('custom-cursor');
+      const cursorDot = document.getElementById('custom-cursor-dot');
+      if (!cursor || !cursorDot) return;
+
+      let mouse = { x: -100, y: -100 };
+      let pos = { x: -100, y: -100 };
+      let speed = 0;
+      let angle = 0;
+
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      function updateCursor() {
+        const dx = mouse.x - pos.x;
+        const dy = mouse.y - pos.y;
+        pos.x += dx * 0.15;
+        pos.y += dy * 0.15;
+
+        const dist = Math.hypot(dx, dy);
+        speed = Math.min(dist * 0.08, 6); // clamp speed
+        angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+        cursorDot.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0)`;
+
+        // Rotate and stretch outline based on speed
+        const scaleX = 1 + speed * 0.08;
+        const scaleY = 1 - speed * 0.04;
+        cursor.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0) rotate(${angle}deg) scale(${scaleX}, ${scaleY})`;
+
+        requestAnimationFrame(updateCursor);
+      }
+      requestAnimationFrame(updateCursor);
+
+      // Set hover event listeners
+      function updateHoverables() {
+        const hoverables = document.querySelectorAll('a, button, [role="button"], .cuisine-card, .menu-card, .tilt-card, .btn-magnetic');
+        hoverables.forEach(item => {
+          // Remove old listeners to avoid stacking
+          item.removeEventListener('mouseenter', onMouseEnter);
+          item.removeEventListener('mouseleave', onMouseLeave);
+          item.addEventListener('mouseenter', onMouseEnter);
+          item.addEventListener('mouseleave', onMouseLeave);
+        });
+      }
+
+      function onMouseEnter() {
+        cursor.classList.add('cursor-hover');
+        cursorDot.classList.add('cursor-dot-hover');
+      }
+
+      function onMouseLeave() {
+        cursor.classList.remove('cursor-hover');
+        cursorDot.classList.remove('cursor-dot-hover');
+      }
+
+      updateHoverables();
+      // Watch DOM changes to bind new elements (for modals, menu filter etc.)
+      const observer = new MutationObserver(updateHoverables);
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    function setupGlassSpotlights() {
+      const glassCards = document.querySelectorAll('.glass-card-spotlight');
+      glassCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = (e as MouseEvent).clientX - rect.left;
+          const y = (e as MouseEvent).clientY - rect.top;
+          (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+          (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+    }
+
+    function setupTiltCards() {
+      const tiltCards = document.querySelectorAll('.tilt-card');
+      tiltCards.forEach(card => {
+        const inner = card.querySelector('.tilt-inner') as HTMLElement;
+        if (!inner) return;
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = (e as MouseEvent).clientX - rect.left;
+          const y = (e as MouseEvent).clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          // Calculate rotation angles (-15deg to +15deg)
+          const rotateX = ((y - centerY) / centerY) * -15;
+          const rotateY = ((x - centerX) / centerX) * 15;
+          
+          inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
+          inner.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+        });
+        
+        card.addEventListener('mouseenter', () => {
+          inner.style.transition = 'none';
+        });
+      });
+    }
+
+    function setupMagneticButtons() {
+      const magnets = document.querySelectorAll('.btn-magnetic');
+      magnets.forEach((magnetEl) => {
+        const magnet = magnetEl as HTMLElement;
+        magnet.addEventListener('mousemove', function(e) {
+          const bound = magnet.getBoundingClientRect();
+          const x = (e as MouseEvent).clientX - (bound.left + bound.width / 2);
+          const y = (e as MouseEvent).clientY - (bound.top + bound.height / 2);
+          magnet.style.transform = `translate(${x * 0.4}px, ${y * 0.4}px)`;
+        });
+        magnet.addEventListener('mouseleave', function() {
+          magnet.style.transform = 'translate(0px, 0px)';
+          magnet.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+        });
+        magnet.addEventListener('mouseenter', function() {
+          magnet.style.transition = 'none';
+        });
+      });
+    }
+
+    function setupScrollProgress() {
+      const progressBar = document.getElementById('scroll-progress-bar') as HTMLElement | null;
+      if (!progressBar) return;
+
+      function updateScrollProgress() {
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollHeight <= 0) return;
+        const scrollPercent = (window.scrollY / scrollHeight) * 100;
+        progressBar.style.width = `${scrollPercent}%`;
+      }
+
+      window.addEventListener('scroll', updateScrollProgress, { passive: true });
+      updateScrollProgress();
+    }
+
+
+
     // Run on load and on page transition swap (Astro view transitions support)
-    document.addEventListener('DOMContentLoaded', () => {
+    function initAll() {
       initMobileMenu();
       setupLiveStatusIndicator();
-    });
-    document.addEventListener('astro:after-swap', () => {
-      initMobileMenu();
-      setupLiveStatusIndicator();
-    });
+      setupCustomCursor();
+      setupGlassSpotlights();
+      setupTiltCards();
+      setupMagneticButtons();
+      setupScrollProgress();
+    }
+
+    document.addEventListener('DOMContentLoaded', initAll);
+    document.addEventListener('astro:after-swap', initAll);
   </script>
 </body>
 </html>

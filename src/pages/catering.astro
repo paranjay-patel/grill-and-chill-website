@@ -26,11 +26,11 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
         Exquisite Punjabi &amp; Authentic Chinese delicacies crafted for intimate house parties and special small events. Experience the heritage of taste at your doorstep.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-        <a class="w-full sm:w-auto bg-primary text-on-primary px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-primary/20 hover:scale-105 transition-all duration-300"
+        <a class="w-full sm:w-auto bg-primary text-on-primary px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-primary/20 btn-magnetic"
           href={RESTAURANT_PHONE_LINK}>
           <span class="material-symbols-outlined">call</span> Call Now
         </a>
-        <a class="w-full sm:w-auto bg-green-500 text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 hover:scale-105 transition-all duration-300"
+        <a class="w-full sm:w-auto bg-green-500 text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 btn-magnetic"
           href={RESTAURANT_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
           <span class="material-symbols-outlined">chat</span> WhatsApp
         </a>
@@ -48,7 +48,7 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
     </div>
   </section>
 
-  <!-- Perfect For -->
+  <!-- Perfect For (Bento Grid of Images) -->
   <section class="py-24 px-6 md:px-12 bg-[#1a0001] relative overflow-hidden">
     <div class="absolute inset-0 opacity-5 pointer-events-none pricing-grid-bg"></div>
     <div class="max-w-7xl mx-auto relative z-10">
@@ -57,75 +57,69 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline font-black text-white uppercase tracking-tight">Perfect For</h2>
         <div class="w-24 h-0.5 bg-brand-gold/40 mx-auto mt-6"></div>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <!-- Birthday Parties -->
-        <div class="group relative aspect-[4/5] overflow-hidden rounded-sm border border-white/5 bg-brand-maroon-deep transition-all duration-700">
-          <img alt="Beautiful birthday dinner candle table setup" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-60 group-hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVdFNKLAgYt0qKL68fiyU_elbiN3EDE1qo7mNUyoYlVBEek8SPlc3j_FFd10bYN2StWFXDnt_lnrsSqzlqBlxlwcN2hutdF0lsQ7i1uGmY6OBFm8JET0lzU8v6e6F-zlJMY89Fq6T4sNayn6BC3Vt3yKMxsCJ35YjV05uIc8LWnqv_PW3EHfX-OEvdrM13uFy7EOU_NYxi7uDlUEjnyPnfyCqmcLiGBCLzra4I1JqXxyy_lCBqJoz3ujvEys9djlniXnpO84aYZeY"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-maroon-deep via-brand-maroon-deep/20 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-6 w-full">
-            <div class="overflow-hidden">
-              <h3 class="text-xl font-headline font-bold text-white mb-2 translate-y-0 transition-transform duration-500 group-hover:-translate-y-1">Birthday Celebrations</h3>
-            </div>
-            <p class="text-xs text-brand-gold font-label tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Intimate &amp; Joyful</p>
+      <div class="bento-grid gap-6">
+        <!-- Birthday Parties (Bento Span 3) -->
+        <div class="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/5 bg-brand-maroon-deep transition-all duration-700 bento-span-3 glass-card-spotlight">
+          <img alt="Beautiful birthday dinner candle table setup" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-60 group-hover:opacity-85" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVdFNKLAgYt0qKL68fiyU_elbiN3EDE1qo7mNUyoYlVBEek8SPlc3j_FFd10bYN2StWFXDnt_lnrsSqzlqBlxlwcN2hutdF0lsQ7i1uGmY6OBFm8JET0lzU8v6e6F-zlJMY89Fq6T4sNayn6BC3Vt3yKMxsCJ35YjV05uIc8LWnqv_PW3EHfX-OEvdrM13uFy7EOU_NYxi7uDlUEjnyPnfyCqmcLiGBCLzra4I1JqXxyy_lCBqJoz3ujvEys9djlniXnpO84aYZeY"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+            <h3 class="text-2xl font-headline font-bold text-white mb-2">Birthday Celebrations</h3>
+            <p class="text-xs text-primary font-label tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">Intimate &amp; Joyful</p>
           </div>
-          <div class="absolute top-0 right-0 p-4">
-            <span class="material-symbols-outlined text-brand-gold/30 group-hover:text-brand-gold transition-colors duration-500">cake</span>
+          <div class="absolute top-0 right-0 p-6 z-10">
+            <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors duration-500 text-3xl">cake</span>
           </div>
         </div>
-        <!-- House Gatherings -->
-        <div class="group relative aspect-[4/5] overflow-hidden rounded-sm border border-white/5 bg-brand-maroon-deep transition-all duration-700">
-          <img alt="Friends gathering at house sharing delicious food" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-60 group-hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE5BU-wyUZPy5U4eOOq7GzweMeiQyh0YA39JGYPxNbqYHGGXT1DPxG-6VJKnuWd5tqAic3Wez7y0RWo3kfOjpNpUaU71IPSVRKQqqFBtK-0W-nmZmi1AUUrrgsut9bgMgb3GjEjRZ2egjyeunSJV-TpS4-653puuJ_CIe2mmBvsfXZHcoEWDmuVD4q7082W3OMJucAKDmy3A5zZK8Ikc9R4AaJEup0M_UP0-CbRoboBdKW7L57b3YrEXe1ZGahDAvi4JWQm4e9uBI"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-maroon-deep via-brand-maroon-deep/20 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-6 w-full">
-            <div class="overflow-hidden">
-              <h3 class="text-xl font-headline font-bold text-white mb-2 translate-y-0 transition-transform duration-500 group-hover:-translate-y-1">House Parties</h3>
-            </div>
-            <p class="text-xs text-brand-gold font-label tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Warm &amp; Casual</p>
+
+        <!-- House Gatherings (Bento Span 3) -->
+        <div class="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/5 bg-brand-maroon-deep transition-all duration-700 bento-span-3 glass-card-spotlight">
+          <img alt="Friends gathering at house sharing delicious food" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-60 group-hover:opacity-85" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE5BU-wyUZPy5U4eOOq7GzweMeiQyh0YA39JGYPxNbqYHGGXT1DPxG-6VJKnuWd5tqAic3Wez7y0RWo3kfOjpNpUaU71IPSVRKQqqFBtK-0W-nmZmi1AUUrrgsut9bgMgb3GjEjRZ2egjyeunSJV-TpS4-653puuJ_CIe2mmBvsfXZHcoEWDmuVD4q7082W3OMJucAKDmy3A5zZK8Ikc9R4AaJEup0M_UP0-CbRoboBdKW7L57b3YrEXe1ZGahDAvi4JWQm4e9uBI"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+            <h3 class="text-2xl font-headline font-bold text-white mb-2">House Parties</h3>
+            <p class="text-xs text-primary font-label tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">Warm &amp; Casual</p>
           </div>
-          <div class="absolute top-0 right-0 p-4">
-            <span class="material-symbols-outlined text-brand-gold/30 group-hover:text-brand-gold transition-colors duration-500">home</span>
-          </div>
-        </div>
-        <!-- Small Functions -->
-        <div class="group relative aspect-[4/5] overflow-hidden rounded-sm border border-white/5 bg-brand-maroon-deep transition-all duration-700">
-          <img alt="Elegant table settings for boutique event function" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-60 group-hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBFSl4IY2C77Jcsm-SYi8d-ZCOnXfu19wUSCEJ1c6_VHbMcQon8afgGbYwjxmVANmbQqKSPITdZ6qbga0uwL-RB8lxGkLHzIf52vGB33qM65Zmdu8dkeo2BrzJ32dm9EEkETUgaiTzVfbccpwl_-Gws0uAQmWhMKaJUVs8-Z64F6PVHZofrR2yh81nIQoNxB6YelKjS8JPa1lqSqkWesk8ZcJry9MCVWeTS-Kk80UyCtU9oUCsBPo-XbV46dYc1hPf8fDmffIQSMM"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-maroon-deep via-brand-maroon-deep/20 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-6 w-full">
-            <div class="overflow-hidden">
-              <h3 class="text-xl font-headline font-bold text-white mb-2 translate-y-0 transition-transform duration-500 group-hover:-translate-y-1">Elegant Functions</h3>
-            </div>
-            <p class="text-xs text-brand-gold font-label tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Refined &amp; Sophisticated</p>
-          </div>
-          <div class="absolute top-0 right-0 p-4">
-            <span class="material-symbols-outlined text-brand-gold/30 group-hover:text-brand-gold transition-colors duration-500">celebration</span>
+          <div class="absolute top-0 right-0 p-6 z-10">
+            <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors duration-500 text-3xl">home</span>
           </div>
         </div>
-        <!-- Office Lunches -->
-        <div class="group relative aspect-[4/5] overflow-hidden rounded-sm border border-white/5 bg-brand-maroon-deep transition-all duration-700">
-          <img alt="Corporate office team eating lunch together" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-60 group-hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmZVdrjB88JRta62H9snahyBy-OsgUHCcvp-t3cjKwyrYX8pLp8QSrLimB2igjkCfdeLaxnIzUOoGpr_h8p5fOzbApvspksaYubO3bm2XciUanKkeSR2JIjbU_AlARwvQpTYj_RTavNx50LSlHqzY72Cn-pgwaXFgUZ8HM6iXL4GVz7jHm8mU4VZE8QlPdxYCT9iA-8nc1-m_UVFIcvRyxhBThLDcLSg_2GX3YzF7l7N3JtqntOMDXh2uVF7OaQyecJF_RkusfePU"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-maroon-deep via-brand-maroon-deep/20 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-6 w-full">
-            <div class="overflow-hidden">
-              <h3 class="text-xl font-headline font-bold text-white mb-2 translate-y-0 transition-transform duration-500 group-hover:-translate-y-1">Office Meets</h3>
-            </div>
-            <p class="text-xs text-brand-gold font-label tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Professional &amp; Seamless</p>
+
+        <!-- Small Functions (Bento Span 2) -->
+        <div class="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/5 bg-brand-maroon-deep transition-all duration-700 bento-span-2 glass-card-spotlight">
+          <img alt="Elegant table settings for boutique event function" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-60 group-hover:opacity-85" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBFSl4IY2C77Jcsm-SYi8d-ZCOnXfu19wUSCEJ1c6_VHbMcQon8afgGbYwjxmVANmbQqKSPITdZ6qbga0uwL-RB8lxGkLHzIf52vGB33qM65Zmdu8dkeo2BrzJ32dm9EEkETUgaiTzVfbccpwl_-Gws0uAQmWhMKaJUVs8-Z64F6PVHZofrR2yh81nIQoNxB6YelKjS8JPa1lqSqkWesk8ZcJry9MCVWeTS-Kk80UyCtU9oUCsBPo-XbV46dYc1hPf8fDmffIQSMM"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+            <h3 class="text-xl font-headline font-bold text-white mb-2">Elegant Functions</h3>
+            <p class="text-xs text-primary font-label tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">Refined &amp; Sophisticated</p>
           </div>
-          <div class="absolute top-0 right-0 p-4">
-            <span class="material-symbols-outlined text-brand-gold/30 group-hover:text-brand-gold transition-colors duration-500">work</span>
+          <div class="absolute top-0 right-0 p-6 z-10">
+            <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors duration-500 text-3xl">celebration</span>
           </div>
         </div>
-        <!-- Family Meets -->
-        <div class="group relative aspect-[4/5] overflow-hidden rounded-sm border border-white/5 bg-brand-maroon-deep transition-all duration-700">
-          <img alt="Multigenerational family sharing classic Indian dishes" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-60 group-hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw5WxEJVIcFeQnwlI9xGnialqSoMt4-FkaMYb-kftnNARo-7bKJzYzqaJRXK7ZCw0LfhpOnlA_Dk-h3HQ37aOan0B0s-2EEmmpxV49Dj548CzZ7ccBGz5aah2Rm44cgfu0UqwTmrj-hJUEjjZPo4GMAFZgsD5Os7RGv4yy7suJJX-QKZXmkVynSKtjHnqg-p89_wqAM4ngPxcIjdhEslz6NMog6fPhwVtD4PNq9CxfXMkeJxtEWIQ2RMnJDHtxnFr5N7iOZxp3Ebs"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-maroon-deep via-brand-maroon-deep/20 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-6 w-full">
-            <div class="overflow-hidden">
-              <h3 class="text-xl font-headline font-bold text-white mb-2 translate-y-0 transition-transform duration-500 group-hover:-translate-y-1">Family Gatherings</h3>
-            </div>
-            <p class="text-xs text-brand-gold font-label tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Traditional &amp; Hearty</p>
+
+        <!-- Office Lunches (Bento Span 2) -->
+        <div class="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/5 bg-brand-maroon-deep transition-all duration-700 bento-span-2 glass-card-spotlight">
+          <img alt="Corporate office team eating lunch together" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-60 group-hover:opacity-85" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmZVdrjB88JRta62H9snahyBy-OsgUHCcvp-t3cjKwyrYX8pLp8QSrLimB2igjkCfdeLaxnIzUOoGpr_h8p5fOzbApvspksaYubO3bm2XciUanKkeSR2JIjbU_AlARwvQpTYj_RTavNx50LSlHqzY72Cn-pgwaXFgUZ8HM6iXL4GVz7jHm8mU4VZE8QlPdxYCT9iA-8nc1-m_UVFIcvRyxhBThLDcLSg_2GX3YzF7l7N3JtqntOMDXh2uVF7OaQyecJF_RkusfePU"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+            <h3 class="text-xl font-headline font-bold text-white mb-2">Office Meets</h3>
+            <p class="text-xs text-primary font-label tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">Seamless</p>
           </div>
-          <div class="absolute top-0 right-0 p-4">
-            <span class="material-symbols-outlined text-brand-gold/30 group-hover:text-brand-gold transition-colors duration-500">groups</span>
+          <div class="absolute top-0 right-0 p-6 z-10">
+            <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors duration-500 text-3xl">work</span>
+          </div>
+        </div>
+
+        <!-- Family Meets (Bento Span 2) -->
+        <div class="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/5 bg-brand-maroon-deep transition-all duration-700 bento-span-2 glass-card-spotlight">
+          <img alt="Multigenerational family sharing classic Indian dishes" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-60 group-hover:opacity-85" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw5WxEJVIcFeQnwlI9xGnialqSoMt4-FkaMYb-kftnNARo-7bKJzYzqaJRXK7ZCw0LfhpOnlA_Dk-h3HQ37aOan0B0s-2EEmmpxV49Dj548CzZ7ccBGz5aah2Rm44cgfu0UqwTmrj-hJUEjjZPo4GMAFZgsD5Os7RGv4yy7suJJX-QKZXmkVynSKtjHnqg-p89_wqAM4ngPxcIjdhEslz6NMog6fPhwVtD4PNq9CxfXMkeJxtEWIQ2RMnJDHtxnFr5N7iOZxp3Ebs"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+            <h3 class="text-xl font-headline font-bold text-white mb-2">Family Meets</h3>
+            <p class="text-xs text-primary font-label tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">Traditional</p>
+          </div>
+          <div class="absolute top-0 right-0 p-6 z-10">
+            <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors duration-500 text-3xl">groups</span>
           </div>
         </div>
       </div>
@@ -135,65 +129,70 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
     </div>
   </section>
 
-  <!-- Menu Options (Bento Style) -->
+  <!-- Menu Options (Bento Style with spotlights & tilt) -->
   <section class="py-24 px-6 md:px-12 bg-surface-container-low">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-2 gap-12">
         <!-- Punjabi Menu -->
-        <div class="relative overflow-hidden group rounded-3xl bg-surface-container-high border border-primary/10 hover:border-primary/40 shadow-2xl transition-all duration-500 hover:-translate-y-2">
-          <div class="h-72 overflow-hidden relative">
-            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-high to-transparent z-10 opacity-60"></div>
-            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSjtLIRjLw3HwZEW1G4r2adr0U5b5iebAvoL5vWMTQeQyO7CVe1qJ22301UT9WT9tm-C6dMXTpcFqW-kU7WXuHeSGmfWlIoQGRULBFvINkcoSIdHiv3je6inNOaQPnHoHjgVr52-G8MQ8CfoZqo0xnXlf4Rv2TenrX47FlpkBhdgVNA31wLhOS3j7A10D3a1UlCEm2EpXhAmdSwCmw8qOiEvjfW5hPXtH9fppfPg8G8Iqw4HBzx8nwRQiWkMUzYvmuWGaaSzTVkqE"/>
-          </div>
-          <div class="p-10 relative z-20 -mt-12">
-            <div class="bg-surface-container-high p-8 rounded-2xl shadow-xl">
-              <h3 class="text-4xl font-headline font-black text-secondary-fixed mb-6 uppercase tracking-tighter">Punjabi<br />Cuisine</h3>
-              <ul class="space-y-4 text-on-surface-variant font-body mb-6">
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
-                  <span>Paneer Specialities</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
-                  <span>Dal Makhani &amp; Tadka</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
-                  <span>Assorted Tandoori Breads</span>
-                </li>
-              </ul>
-              <a href="/menu" class="block w-full py-3 text-center rounded-full border border-primary/20 text-primary font-bold font-label hover:bg-primary hover:text-on-primary transition-all">
-                Explore Full Menu
-              </a>
+        <div class="relative overflow-hidden group rounded-3xl glass-card-spotlight tilt-card bg-surface-container-high border border-primary/10 shadow-2xl">
+          <div class="tilt-inner">
+            <div class="h-72 overflow-hidden relative tilt-layer-media">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#310002] to-transparent z-10 opacity-70"></div>
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSjtLIRjLw3HwZEW1G4r2adr0U5b5iebAvoL5vWMTQeQyO7CVe1qJ22301UT9WT9tm-C6dMXTpcFqW-kU7WXuHeSGmfWlIoQGRULBFvINkcoSIdHiv3je6inNOaQPnHoHjgVr52-G8MQ8CfoZqo0xnXlf4Rv2TenrX47FlpkBhdgVNA31wLhOS3j7A10D3a1UlCEm2EpXhAmdSwCmw8qOiEvjfW5hPXtH9fppfPg8G8Iqw4HBzx8nwRQiWkMUzYvmuWGaaSzTVkqE"/>
+            </div>
+            <div class="p-10 relative z-20 -mt-12 tilt-layer-text">
+              <div class="bg-surface-container-high/90 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/5">
+                <h3 class="text-4xl font-headline font-black text-secondary-fixed mb-6 uppercase tracking-tighter">Punjabi Cuisine</h3>
+                <ul class="space-y-4 text-on-surface-variant font-body mb-6">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
+                    <span>Paneer Specialities</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
+                    <span>Dal Makhani &amp; Tadka</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
+                    <span>Assorted Tandoori Breads</span>
+                  </li>
+                </ul>
+                <a href="/menu#punjabi" class="block w-full py-4 text-center rounded-full border border-primary/20 text-primary font-bold font-label hover:bg-primary hover:text-on-primary transition-all btn-magnetic">
+                  Explore Full Menu
+                </a>
+              </div>
             </div>
           </div>
         </div>
+
         <!-- Chinese Menu -->
-        <div class="relative overflow-hidden group rounded-3xl bg-surface-container-high border border-primary/10 hover:border-primary/40 shadow-2xl transition-all duration-500 hover:-translate-y-2">
-          <div class="h-72 overflow-hidden relative">
-            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-high to-transparent z-10 opacity-60"></div>
-            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd7F3F65i649kAhLUsTCNf5HbgAQQeIVoRPaIu-OriGd7yMvqonfk8kZENeCd9CrGhBeo84MXiXuYlaSNymQRnBu8e9xzZVTcCMtkALn0TEmgkOkWHAhDwOpJLZtKC09l-XVS3ogLs0peylZKSvrLX4X3G5BmQHRImsEiORysbTxI-cSe5R8cDE1xJsffnOJxWveiu7G2O5556krUoDJpShnjW4HnnoI_YlVfjNDPOHdSHV2v-k3KaRyKO6o-Bol8Lu_6go3Pc2LU"/>
-          </div>
-          <div class="p-10 relative z-20 -mt-12">
-            <div class="bg-surface-container-high p-8 rounded-2xl shadow-xl">
-              <h3 class="text-4xl font-headline font-black text-secondary-fixed mb-6 uppercase tracking-tighter">Chinese<br />Culinary</h3>
-              <ul class="space-y-4 text-on-surface-variant font-body mb-6">
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
-                  <span>Veg Manchurian Special</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
-                  <span>Hakka &amp; Schezwan Noodles</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
-                  <span>Crispy Honey Chili Potato</span>
-                </li>
-              </ul>
-              <a href="/menu" class="block w-full py-3 text-center rounded-full border border-primary/20 text-primary font-bold font-label hover:bg-primary hover:text-on-primary transition-all">
-                Explore Full Menu
-              </a>
+        <div class="relative overflow-hidden group rounded-3xl glass-card-spotlight tilt-card bg-surface-container-high border border-primary/10 shadow-2xl">
+          <div class="tilt-inner">
+            <div class="h-72 overflow-hidden relative tilt-layer-media">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#310002] to-transparent z-10 opacity-70"></div>
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd7F3F65i649kAhLUsTCNf5HbgAQQeIVoRPaIu-OriGd7yMvqonfk8kZENeCd9CrGhBeo84MXiXuYlaSNymQRnBu8e9xzZVTcCMtkALn0TEmgkOkWHAhDwOpJLZtKC09l-XVS3ogLs0peylZKSvrLX4X3G5BmQHRImsEiORysbTxI-cSe5R8cDE1xJsffnOJxWveiu7G2O5556krUoDJpShnjW4HnnoI_YlVfjNDPOHdSHV2v-k3KaRyKO6o-Bol8Lu_6go3Pc2LU"/>
+            </div>
+            <div class="p-10 relative z-20 -mt-12 tilt-layer-text">
+              <div class="bg-surface-container-high/90 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/5">
+                <h3 class="text-4xl font-headline font-black text-secondary-fixed mb-6 uppercase tracking-tighter">Chinese Culinary</h3>
+                <ul class="space-y-4 text-on-surface-variant font-body mb-6">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
+                    <span>Veg Manchurian Special</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
+                    <span>Hakka &amp; Schezwan Noodles</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-1">star</span>
+                    <span>Crispy Honey Chili Potato</span>
+                  </li>
+                </ul>
+                <a href="/menu#chinese" class="block w-full py-4 text-center rounded-full border border-primary/20 text-primary font-bold font-label hover:bg-primary hover:text-on-primary transition-all btn-magnetic">
+                  Explore Full Menu
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -201,36 +200,40 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
     </div>
   </section>
 
-  <!-- Customization & Order Size -->
+  <!-- Customization & Order Size (Tilt and spotlights) -->
   <section class="py-24 px-6 md:px-12 bg-surface">
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
-      <div class="group bg-surface-bright p-12 rounded-2xl flex flex-col justify-center border-b-8 border-primary shadow-2xl hover:-translate-y-4 transition-all duration-500 cursor-default relative overflow-hidden">
-        <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
-        <h3 class="text-4xl font-headline font-black text-secondary-fixed mb-6 uppercase tracking-tighter">Fully<br />Customizable</h3>
-        <p class="text-xl text-on-surface-variant leading-relaxed font-body">
-          Tailor every dish to match your budget, guest list, and taste preferences. We believe your party should reflect your unique culinary style.
-        </p>
+      <div class="group bg-surface-bright p-12 rounded-3xl border-b-8 border-primary shadow-2xl relative overflow-hidden glass-card-spotlight tilt-card">
+        <div class="tilt-inner">
+          <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
+          <h3 class="text-4xl font-headline font-black text-secondary-fixed mb-6 uppercase tracking-tighter">Fully Customizable</h3>
+          <p class="text-xl text-on-surface-variant leading-relaxed font-body tilt-layer-text">
+            Tailor every dish to match your budget, guest list, and taste preferences. We believe your party should reflect your unique culinary style.
+          </p>
+        </div>
       </div>
-      <div class="bg-surface-bright p-12 rounded-2xl flex flex-col justify-center border-l-8 border-primary shadow-2xl relative overflow-hidden">
-        <div class="absolute inset-0 bg-primary/5 opacity-20"></div>
-        <h3 class="text-4xl font-headline font-black text-secondary-fixed mb-10 uppercase tracking-tighter relative z-10">Service<br />Scale</h3>
-        <div class="space-y-10 relative z-10">
-          <div class="flex items-center gap-6 group">
-            <div class="w-16 h-16 bg-primary-container rounded-lg flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-              <span class="material-symbols-outlined text-primary group-hover:text-on-primary">person_add</span>
+      <div class="bg-surface-bright p-12 rounded-3xl border-l-8 border-primary shadow-2xl relative overflow-hidden glass-card-spotlight tilt-card">
+        <div class="tilt-inner">
+          <div class="absolute inset-0 bg-primary/5 opacity-20"></div>
+          <h3 class="text-4xl font-headline font-black text-secondary-fixed mb-10 uppercase tracking-tighter relative z-10">Service Scale</h3>
+          <div class="space-y-10 relative z-10 tilt-layer-text">
+            <div class="flex items-center gap-6 group">
+              <div class="w-16 h-16 bg-primary-container rounded-lg flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <span class="material-symbols-outlined text-primary group-hover:text-on-primary">person_add</span>
+              </div>
+              <div>
+                <p class="text-xs font-label uppercase tracking-[0.3em] text-on-surface-variant mb-1">Minimum Guests</p>
+                <p class="text-3xl font-headline font-black text-on-surface leading-none">20 – 30 <span class="text-sm font-normal text-primary">PERSONS</span></p>
+              </div>
             </div>
-            <div>
-              <p class="text-xs font-label uppercase tracking-[0.3em] text-on-surface-variant mb-1">Minimum Guests</p>
-              <p class="text-3xl font-headline font-black text-on-surface leading-none">20 – 30 <span class="text-sm font-normal text-primary">PERSONS</span></p>
-            </div>
-          </div>
-          <div class="flex items-center gap-6 group">
-            <div class="w-16 h-16 bg-primary-container rounded-lg flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-              <span class="material-symbols-outlined text-primary group-hover:text-on-primary">group</span>
-            </div>
-            <div>
-              <p class="text-xs font-label uppercase tracking-[0.3em] text-on-surface-variant mb-1">Maximum Guests</p>
-              <p class="text-3xl font-headline font-black text-on-surface leading-none">80 – 100 <span class="text-sm font-normal text-primary">PERSONS</span></p>
+            <div class="flex items-center gap-6 group">
+              <div class="w-16 h-16 bg-primary-container rounded-lg flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <span class="material-symbols-outlined text-primary group-hover:text-on-primary">group</span>
+              </div>
+              <div>
+                <p class="text-xs font-label uppercase tracking-[0.3em] text-on-surface-variant mb-1">Maximum Guests</p>
+                <p class="text-3xl font-headline font-black text-on-surface leading-none">80 – 100 <span class="text-sm font-normal text-primary">PERSONS</span></p>
+              </div>
             </div>
           </div>
         </div>
@@ -238,7 +241,7 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
     </div>
   </section>
 
-  <!-- Pricing Packages -->
+  <!-- Pricing Packages (Spotlights & Tilt) -->
   <section class="py-24 px-6 md:px-12 bg-surface-container-low">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
@@ -247,47 +250,53 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
       </div>
       <div class="grid md:grid-cols-3 gap-8">
         {tiers.map(pkg => (
-          <div class={`group p-10 rounded-3xl flex flex-col transition-all duration-500 hover:-translate-y-4 shadow-xl relative ${
+          <div class={`group p-10 rounded-3xl flex flex-col transition-all duration-500 shadow-xl relative glass-card-spotlight tilt-card ${
             pkg.isPopular 
-              ? 'bg-surface-bright border-2 border-primary transform scale-105 shadow-[0_20px_50px_rgba(255,179,172,0.15)] z-10' 
-              : 'bg-surface-container-high border border-primary/10 hover:border-primary/40'
+              ? 'border-2 border-primary transform md:scale-105 shadow-[0_20px_50px_rgba(255,179,172,0.15)] z-10' 
+              : 'border border-primary/10'
           }`}>
-            {pkg.isPopular && (
-              <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] font-black px-6 py-1.5 rounded-full uppercase tracking-[0.3em] shadow-xl">
-                MOST POPULAR
-              </div>
-            )}
-            <div class="flex justify-between items-start mb-8">
-              <div>
-                <h4 class="text-sm font-label font-bold text-primary tracking-[0.3em] mb-2">{pkg.badge}</h4>
-                <h3 class="text-3xl font-headline font-black text-on-surface uppercase tracking-tighter">{pkg.name}</h3>
+            <div class="tilt-inner h-full flex flex-col justify-between">
+              {pkg.isPopular && (
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] font-black px-6 py-1.5 rounded-full uppercase tracking-[0.3em] shadow-xl z-20 tilt-layer-badge">
+                  MOST POPULAR
+                </div>
+              )}
+              <div class="tilt-layer-text flex-grow flex flex-col justify-between">
+                <div>
+                  <div class="flex justify-between items-start mb-8">
+                    <div>
+                      <h4 class="text-sm font-label font-bold text-primary tracking-[0.3em] mb-2">{pkg.badge}</h4>
+                      <h3 class="text-3xl font-headline font-black text-on-surface uppercase tracking-tighter">{pkg.name}</h3>
+                    </div>
+                  </div>
+                  <div class="mb-10">
+                    <p class="text-5xl font-headline font-black text-secondary-fixed leading-none mb-2">{pkg.price}</p>
+                    <p class="text-xs font-label uppercase tracking-widest text-on-surface-variant">{pkg.subtitle}</p>
+                  </div>
+                  <ul class="space-y-4 mb-12 text-on-surface-variant font-body">
+                    {pkg.features.map(feature => (
+                      <li class="flex items-center gap-3">
+                        {pkg.isPopular ? (
+                          <span class="material-symbols-outlined text-primary text-sm" data-weight="fill">verified</span>
+                        ) : (
+                          <span class="material-symbols-outlined text-primary text-sm">circle</span>
+                        )}
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {pkg.isPopular ? (
+                  <button class="w-full py-4 rounded-full bg-primary text-on-primary font-bold font-label shadow-xl shadow-primary/20 hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-all btn-magnetic">
+                    Book {pkg.name}
+                  </button>
+                ) : (
+                  <button class="w-full py-4 rounded-full border border-primary/20 text-primary font-bold font-label hover:bg-primary hover:text-on-primary transition-all shadow-lg hover:shadow-primary/20 btn-magnetic">
+                    Select {pkg.name}
+                  </button>
+                )}
               </div>
             </div>
-            <div class="mb-10">
-              <p class="text-5xl font-headline font-black text-secondary-fixed leading-none mb-2">{pkg.price}</p>
-              <p class="text-xs font-label uppercase tracking-widest text-on-surface-variant">{pkg.subtitle}</p>
-            </div>
-            <ul class="space-y-4 mb-12 text-on-surface-variant font-body flex-grow">
-              {pkg.features.map(feature => (
-                <li class="flex items-center gap-3">
-                  {pkg.isPopular ? (
-                    <span class="material-symbols-outlined text-primary text-sm" data-weight="fill">verified</span>
-                  ) : (
-                    <span class="material-symbols-outlined text-primary text-sm">circle</span>
-                  )}
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            {pkg.isPopular ? (
-              <button class="w-full py-4 rounded-full bg-primary text-on-primary font-bold font-label shadow-xl shadow-primary/20 hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-all">
-                Book {pkg.name}
-              </button>
-            ) : (
-              <button class="w-full py-4 rounded-full border border-primary/20 text-primary font-bold font-label hover:bg-primary hover:text-on-primary transition-all shadow-lg hover:shadow-primary/20">
-                Select {pkg.name}
-              </button>
-            )}
           </div>
         ))}
       </div>
@@ -301,20 +310,22 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
   <section class="py-24 px-6 md:px-12 bg-surface">
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
       {starterPackage && (
-        <div class="group bg-surface-container-high p-12 rounded-3xl border border-primary/20 shadow-2xl relative overflow-hidden transition-all duration-500 hover:border-primary/50">
-          <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary rounded-full blur-[100px] opacity-10"></div>
-          <div class="flex items-center gap-3 mb-6">
-            <span class="material-symbols-outlined text-primary text-3xl">restaurant_menu</span>
-            <h3 class="text-3xl font-headline font-black text-on-surface uppercase tracking-tighter">{starterPackage.name}</h3>
+        <div class="group glass-card-spotlight tilt-card p-12 rounded-3xl border border-primary/20 shadow-2xl relative overflow-hidden">
+          <div class="tilt-inner">
+            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary rounded-full blur-[100px] opacity-10"></div>
+            <div class="flex items-center gap-3 mb-6 tilt-layer-badge">
+              <span class="material-symbols-outlined text-primary text-3xl">restaurant_menu</span>
+              <h3 class="text-3xl font-headline font-black text-on-surface uppercase tracking-tighter">{starterPackage.name}</h3>
+            </div>
+            <div class="flex items-baseline gap-3 mb-8 tilt-layer-text">
+              <span class="text-5xl font-headline font-black text-secondary-fixed font-label">{starterPackage.price}</span>
+              <span class="text-sm font-label uppercase tracking-widest text-on-surface-variant">{starterPackage.badge}</span>
+            </div>
+            <p class="text-lg text-on-surface-variant mb-10 leading-relaxed font-body tilt-layer-text">{starterPackage.description}</p>
+            <a href="/menu" class="inline-flex items-center gap-2 text-primary font-bold font-label group-hover:gap-4 transition-all uppercase tracking-widest text-sm btn-magnetic">
+              View Detailed Menu <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
           </div>
-          <div class="flex items-baseline gap-3 mb-8">
-            <span class="text-5xl font-headline font-black text-secondary-fixed font-label">{starterPackage.price}</span>
-            <span class="text-sm font-label uppercase tracking-widest text-on-surface-variant">{starterPackage.badge}</span>
-          </div>
-          <p class="text-lg text-on-surface-variant mb-10 leading-relaxed font-body">{starterPackage.description}</p>
-          <a href="/menu" class="inline-flex items-center gap-2 text-primary font-bold font-label group-hover:gap-4 transition-all uppercase tracking-widest text-sm">
-            View Detailed Menu <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
         </div>
       )}
       <div>
@@ -341,28 +352,28 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl font-headline font-black text-center text-primary mb-16 uppercase tracking-wider">Why Choose Us</h2>
       <div class="grid md:grid-cols-4 gap-6">
-        <div class="group bg-surface-container-high p-8 rounded-2xl text-center border border-primary/5 hover:border-primary/30 transition-all duration-500 shadow-lg hover:-translate-y-2">
+        <div class="group bg-surface-container-high p-8 rounded-2xl text-center border border-primary/5 hover:border-primary/30 transition-all duration-500 shadow-lg hover:-translate-y-2 glass-card-spotlight">
           <div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform">
             <span class="material-symbols-outlined text-primary text-3xl">restaurant</span>
           </div>
           <h4 class="font-headline font-black text-on-surface uppercase tracking-tight mb-3">Freshly Prepared</h4>
           <p class="text-sm text-on-surface-variant leading-relaxed font-body">Made with hand-picked ingredients just hours before your event begins.</p>
         </div>
-        <div class="group bg-surface-container-high p-8 rounded-2xl text-center border border-primary/5 hover:border-primary/30 transition-all duration-500 shadow-lg hover:-translate-y-2">
+        <div class="group bg-surface-container-high p-8 rounded-2xl text-center border border-primary/5 hover:border-primary/30 transition-all duration-500 shadow-lg hover:-translate-y-2 glass-card-spotlight">
           <div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform">
             <span class="material-symbols-outlined text-primary text-3xl">payments</span>
           </div>
           <h4 class="font-headline font-black text-on-surface uppercase tracking-tight mb-3">Affordable</h4>
           <p class="text-sm text-on-surface-variant leading-relaxed font-body">Premium catering experience that fits perfectly within your budget.</p>
         </div>
-        <div class="group bg-surface-container-high p-8 rounded-2xl text-center border border-primary/5 hover:border-primary/30 transition-all duration-500 shadow-lg hover:-translate-y-2">
+        <div class="group bg-surface-container-high p-8 rounded-2xl text-center border border-primary/5 hover:border-primary/30 transition-all duration-500 shadow-lg hover:-translate-y-2 glass-card-spotlight">
           <div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform">
             <span class="material-symbols-outlined text-primary text-3xl">edit_calendar</span>
           </div>
           <h4 class="font-headline font-black text-on-surface uppercase tracking-tight mb-3">Custom Flex</h4>
           <p class="text-sm text-on-surface-variant leading-relaxed font-body">Highly flexible menu options tailored to your specific guest list.</p>
         </div>
-        <div class="group bg-surface-container-high p-8 rounded-2xl text-center border border-primary/5 hover:border-primary/30 transition-all duration-500 shadow-lg hover:-translate-y-2">
+        <div class="group bg-surface-container-high p-8 rounded-2xl text-center border border-primary/5 hover:border-primary/30 transition-all duration-500 shadow-lg hover:-translate-y-2 glass-card-spotlight">
           <div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform">
             <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
           </div>
@@ -394,11 +405,11 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
             </div>
           </div>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a class="bg-primary text-on-primary px-8 py-4 rounded-full font-label font-bold text-lg text-center hover:scale-105 transition-all duration-300"
+            <a class="bg-primary text-on-primary px-8 py-4 rounded-full font-label font-bold text-lg text-center hover:scale-105 transition-all duration-300 btn-magnetic"
               href={RESTAURANT_PHONE_LINK}>
               Call Now
             </a>
-            <a class="bg-green-500 text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 hover:scale-105 transition-all duration-300"
+            <a class="bg-green-500 text-white px-8 py-4 rounded-full font-label font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 hover:scale-105 transition-all duration-300 btn-magnetic"
               href={RESTAURANT_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               <span class="material-symbols-outlined">chat</span> WhatsApp
             </a>
@@ -412,4 +423,4 @@ const starterPackage = cateringPackages.find(p => p.isFixedPrice);
       </div>
     </div>
   </section>
-</Layout>
+</Layout>Layout>
