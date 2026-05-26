@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Order Online on Zomato & Swiggy | Grill & Chill" activeTab="zomato" description="Order online from Grill & Chill on Zomato and Swiggy for fast delivery of our signature sizzling kebabs, rich curries, and warm biryanis right to your door in Surat.">
+  <!-- Hero Section -->
+  <section class="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden px-6 bg-surface">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img alt="Sizzling grilled meat" class="w-full h-full object-cover scale-105 opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANcgtLXCL8fnVoKFga5TcEW4GhKCdG6hBG3F49wHEJiWSYZU4AGKJ27-bDF4QoYwFCvDC7cdYUfAn6prmjYstvzPhz9dkDTLD7GabPnZWfC75ZCrdl5f5cHyH6jLG5equq9r_vRxG0wzEjA8oGlWA97JkGF8YCmDTqHDLdkTQ9vxwlUf5KHtCtVzthWQt6GToWQOPZZia-VtGfOvRZ1FiOLsFb7tp8dNNOMDvlSAjGPA-1-nxp1KCMCOQrcDI4Gsx8K6q6A4IN440"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/65 to-surface/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-surface via-transparent to-surface"></div>
+    </div>
+    <!-- Content Container -->
+    <div class="relative z-10 max-w-5xl w-full text-center space-y-12">
+      <div class="inline-block px-6 py-2 rounded-full border border-secondary-fixed/20 bg-surface-container-low/50 backdrop-blur-md mb-4">
+        <span class="text-secondary-fixed font-label text-sm tracking-[0.2em] uppercase">The Heritage of Fire</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl md:text-8xl font-black font-headline text-on-surface leading-tight tracking-tighter uppercase">
+        Coming Soon to <br/>
+        <span class="text-secondary-fixed">Your Doorstep</span>
+      </h1>
+      <p class="max-w-2xl mx-auto text-lg md:text-xl text-on-surface-variant font-medium leading-relaxed font-body">
+        Grill &amp; Chill is firing up for Zomato and Swiggy. Get ready for the heritage of fire and spice, delivered directly to you.
+      </p>
+      <!-- Platform Logos & Badges (Asymmetric Bento Style) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto pt-8">
+        <!-- Zomato Card -->
+        <div class="bg-surface-container-high/40 backdrop-blur-xl p-8 rounded-3xl flex flex-col items-center gap-4 border border-outline-variant/10 shadow-2xl glass-card-spotlight tilt-card">
+          <div class="tilt-inner flex flex-col items-center">
+            <div class="w-16 h-16 rounded-full bg-[#E23744] flex items-center justify-center shadow-xl mb-2 tilt-layer-badge">
+              <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+            </div>
+            <div class="space-y-2 tilt-layer-text">
+              <h3 class="font-headline text-xl text-white uppercase tracking-wider">Zomato</h3>
+              <span class="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold tracking-wider uppercase">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+        <!-- Swiggy Card -->
+        <div class="bg-surface-container-high/40 backdrop-blur-xl p-8 rounded-3xl flex flex-col items-center gap-4 border border-outline-variant/10 shadow-2xl glass-card-spotlight tilt-card">
+          <div class="tilt-inner flex flex-col items-center">
+            <div class="w-16 h-16 rounded-full bg-[#FC8019] flex items-center justify-center shadow-xl mb-2 tilt-layer-badge">
+              <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">delivery_dining</span>
+            </div>
+            <div class="space-y-2 tilt-layer-text">
+              <h3 class="font-headline text-xl text-white uppercase tracking-wider">Swiggy</h3>
+              <span class="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold tracking-wider uppercase">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

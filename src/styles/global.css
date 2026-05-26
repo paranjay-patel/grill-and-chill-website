@@ -1,0 +1,505 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Color Theme variables */
+    --color-primary: #ffb3ac;            
+    --color-secondary: #fff9ef;          
+    --color-gold: #ffe16d;               
+    
+    /* Backgrounds & Surface Containers */
+    --color-bg-deep: #310002;            
+    
+    /* Typography Font Names */
+    --font-headline: 'Epilogue', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+    --font-label: 'Work Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+    font-weight: 800;
+  }
+}
+
+/* Base custom styles and global overrides */
+body {
+  background-color: var(--color-bg-deep);
+  color: #ffdad7;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Typography shortcuts */
+.font-headline {
+  font-family: var(--font-headline);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+.font-label {
+  font-family: var(--font-label);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 179, 172, 0.3);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.editorial-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 225, 109, 0.15), transparent);
+}
+
+.map-grayscale {
+  filter: grayscale(1) invert(1) contrast(1.2);
+}
+
+/* Smooth custom transitions */
+.transition-smooth {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Category transition animations */
+.category-item {
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-item.hidden {
+  display: none !important;
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+}
+
+/* --- Original custom styles from assets/css/styles.css --- */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.editorial-text-mask {
+  -webkit-text-stroke: 1px rgba(255, 179, 172, 0.2);
+  color: transparent;
+}
+
+.backdrop-blur-custom {
+  backdrop-filter: blur(24px);
+}
+
+.hero-gradient {
+  background: linear-gradient(rgba(49, 0, 2, 0.6), rgba(49, 0, 2, 0.95)), url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.glass-nav {
+  background: rgba(49, 0, 2, 0.7);
+  backdrop-filter: blur(24px);
+}
+
+.pricing-grid-bg {
+  background-color: #2A0001;
+  background-image: radial-gradient(#3d0506 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.crop-birthday,
+.crop-house,
+.crop-functions,
+.crop-office,
+.crop-family {
+  object-position: center center;
+}
+
+.active-nav-link {
+  color: #FFB3AC;
+  font-weight: 700;
+}
+
+.cuisine-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(255, 225, 109, 0.12), transparent 30%),
+    radial-gradient(circle at top right, rgba(255, 179, 172, 0.11), transparent 26%),
+    linear-gradient(180deg, #3d0506 0%, #310002 48%, #270002 100%);
+}
+
+.cuisine-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.14;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.3));
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.3));
+}
+
+.cuisine-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 179, 172, 0.08);
+  border-radius: 1.75rem;
+  background: #2D0B0D;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+}
+
+.cuisine-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 225, 109, 0.28);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+}
+
+.cuisine-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.cuisine-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 800ms ease;
+}
+
+.cuisine-card:hover .cuisine-card-image {
+  transform: scale(1.07);
+}
+
+.cuisine-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background: #1e0304;
+  border: 1px solid rgba(255, 179, 172, 0.2);
+  color: #ffe16d;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.cuisine-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.8rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff9ef;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cuisine-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px;
+  background: #1d0001;
+  border: 1px solid rgba(255, 179, 172, 0.08);
+  color: #dac1bf;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cuisine-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #ffe16d;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.cuisine-link:hover {
+  color: #fff2a8;
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   PREMIUM CUSTOM DESIGN SYSTEM & EFFECTS
+   ========================================================================== */
+
+/* 1. Custom Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 179, 172, 0.2);
+  border-radius: 9999px;
+  border: 2px solid var(--color-bg-deep);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 179, 172, 0.4);
+}
+
+/* 2. Custom Cursor Elements */
+#custom-cursor {
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+#custom-cursor-dot {
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100000;
+  will-change: transform;
+}
+.cursor-hover {
+  width: 48px !important;
+  height: 48px !important;
+  top: -24px !important;
+  left: -24px !important;
+  background-color: rgba(255, 179, 172, 0.15);
+  border-color: rgba(255, 179, 172, 0.8) !important;
+}
+.cursor-dot-hover {
+  transform: scale(1.5);
+  background-color: var(--color-gold) !important;
+}
+
+/* Hide standard cursor on desktop screens */
+@media (min-width: 1024px) {
+  body, a, button, input, select, textarea, [role="button"] {
+    cursor: none !important;
+  }
+}
+
+/* 3. Glassmorphism & Dynamic Light Tracking */
+.glass-card-spotlight {
+  position: relative;
+  background: rgba(49, 0, 2, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+.glass-card-spotlight:hover {
+  border-color: rgba(255, 179, 172, 0.2);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 50px -10px rgba(255, 179, 172, 0.08);
+}
+.glass-card-spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(255, 179, 172, 0.08),
+    transparent 40%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+.glass-card-spotlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(
+    350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(255, 225, 109, 0.45),
+    transparent 50%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 4. Parallax 3D Hover tilt */
+.tilt-card {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.tilt-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+.tilt-layer-bg {
+  transform: translateZ(-20px) scale(0.95);
+  transition: transform 0.3s ease;
+}
+.tilt-layer-media {
+  transform: translateZ(15px);
+  transition: transform 0.3s ease;
+}
+.tilt-layer-text {
+  transform: translateZ(40px);
+  transition: transform 0.3s ease;
+}
+.tilt-layer-badge {
+  transform: translateZ(65px);
+  transition: transform 0.3s ease;
+}
+
+/* 5. Magnetic CTA buttons */
+.btn-magnetic {
+  display: inline-block;
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 6. Morphing Background Blobs */
+.morphing-blob-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.morphing-blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(97, 30, 29, 0.35) 0%, rgba(49, 0, 2, 0) 70%);
+  filter: blur(60px);
+  mix-blend-mode: screen;
+  animation: float-blob 25s infinite alternate ease-in-out;
+  opacity: 0.6;
+}
+.morphing-blob-2 {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255, 179, 172, 0.08) 0%, rgba(49, 0, 2, 0) 70%);
+  filter: blur(80px);
+  mix-blend-mode: plus-lighter;
+  animation: float-blob-reverse 35s infinite alternate ease-in-out;
+  opacity: 0.75;
+}
+.morphing-blob-3 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 225, 109, 0.06) 0%, rgba(49, 0, 2, 0) 70%);
+  filter: blur(50px);
+  mix-blend-mode: screen;
+  animation: float-blob-slow 40s infinite alternate ease-in-out;
+  opacity: 0.5;
+}
+
+@keyframes float-blob {
+  0% {
+    transform: translate(-10%, -10%) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(20%, 15%) rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: translate(-5%, 25%) rotate(360deg) scale(0.9);
+  }
+}
+@keyframes float-blob-reverse {
+  0% {
+    transform: translate(15%, 20%) rotate(360deg) scale(1.1);
+  }
+  50% {
+    transform: translate(-15%, -10%) rotate(180deg) scale(0.8);
+  }
+  100% {
+    transform: translate(10%, -20%) rotate(0deg) scale(1);
+  }
+}
+@keyframes float-blob-slow {
+  0% {
+    transform: translate(25%, -25%) rotate(0deg) scale(0.9);
+  }
+  50% {
+    transform: translate(-20%, 20%) rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: translate(5%, -15%) rotate(360deg) scale(1);
+  }
+}
+
+/* 7. Bento Grid Asymmetric Layout Utilities */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .bento-span-1 { grid-column: span 1; }
+  .bento-span-2 { grid-column: span 2; }
+  .bento-span-3 { grid-column: span 3; }
+  .bento-span-4 { grid-column: span 4; }
+  .bento-span-5 { grid-column: span 5; }
+  .bento-span-6 { grid-column: span 6; }
+}
+
+/* Bento card styling */
+.bento-card {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+.bento-card:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* Text Glow upgrade */
+.text-glow-premium {
+  text-shadow: 0 0 30px rgba(255, 179, 172, 0.4), 0 0 10px rgba(255, 179, 172, 0.2);
+}
+.text-glow-gold {
+  text-shadow: 0 0 30px rgba(255, 225, 109, 0.4), 0 0 10px rgba(255, 225, 109, 0.2);
+}
+
+
+

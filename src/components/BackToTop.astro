@@ -1,0 +1,52 @@
+<button id="back-to-top-btn" class="fixed right-6 bottom-6 z-50 w-12 h-12 rounded-full bg-[#310002] border border-primary/20 text-[#FFB3AC] flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none translate-y-4" aria-label="Scroll back to top">
+  <!-- Circular scroll progress border -->
+  <svg class="absolute inset-0 w-full h-full -rotate-90">
+    <circle cx="24" cy="24" r="22" stroke="rgba(255, 179, 172, 0.1)" stroke-width="2" fill="transparent" />
+    <circle id="scroll-progress-circle" cx="24" cy="24" r="22" stroke="#FFB3AC" stroke-width="2" fill="transparent" stroke-dasharray="138" stroke-dashoffset="138" stroke-linecap="round" />
+  </svg>
+  <span class="material-symbols-outlined relative z-10">arrow_upward</span>
+</button>
+
+<script>
+  function initBackToTop() {
+    const btn = document.getElementById('back-to-top-btn');
+    const circle = document.getElementById('scroll-progress-circle');
+    if (!btn || !circle) return;
+
+    // Radius = 22, circumference = 2 * PI * r = ~138
+    const circumference = 138;
+    
+    function updateProgress() {
+      const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollVal = window.scrollY;
+      
+      if (scrollTotal <= 0) return;
+
+      const progress = scrollVal / scrollTotal;
+      const offset = circumference - (progress * circumference);
+      circle.setAttribute('stroke-dashoffset', offset.toString());
+
+      if (scrollVal > 300) {
+        btn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        btn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      } else {
+        btn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        btn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+      }
+    }
+
+    // Use passive scroll listener for better performance
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress(); // Initial check
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initBackToTop);
+  document.addEventListener('astro:after-swap', initBackToTop);
+</script>

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "basic",
+    "name": "BASIC",
+    "badge": "ENTRY LEVEL",
+    "price": "₹200-220",
+    "subtitle": "Per Plate Selection",
+    "isPopular": false,
+    "features": [
+      "1 Signature Starter",
+      "2 Main Course Delicacies",
+      "Traditional Daal & Rice",
+      "Assorted Indian Breads"
+    ]
+  },
+  {
+    "id": "standard",
+    "name": "STANDARD",
+    "badge": "BALANCED CHOICE",
+    "price": "₹250-280",
+    "subtitle": "Per Plate Selection",
+    "isPopular": true,
+    "features": [
+      "2 Signature Starters",
+      "3 Main Course Delicacies",
+      "Handi Veg Biryani",
+      "1 Classic Dessert"
+    ]
+  },
+  {
+    "id": "premium",
+    "name": "PREMIUM",
+    "badge": "FULL HERITAGE",
+    "price": "₹300-350",
+    "subtitle": "Per Plate Selection",
+    "isPopular": false,
+    "features": [
+      "3 Signature Starters",
+      "4 Main Course Delicacies",
+      "Premium Heritage Desserts",
+      "Welcome Mocktails"
+    ]
+  },
+  {
+    "id": "starter-package",
+    "name": "Starter Package",
+    "badge": "FIXED HOUSE PARTY MENU",
+    "price": "₹4,999",
+    "subtitle": "Fixed Price",
+    "isPopular": false,
+    "description": "Perfect for small house parties. Includes a curated selection of our most loved Punjabi and Chinese dishes delivered fresh to your door.",
+    "isFixedPrice": true
+  }
+]
